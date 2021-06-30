@@ -1,7 +1,7 @@
 require 'net/http'
 require 'json'
 
-def buildURL(albumID)
+def getCredits(albumID)
 	# Main credits URL
 	uri = URI("https://listen.tidal.com/v1/albums/#{albumID}/items/credits")
 	
@@ -36,10 +36,24 @@ def buildURL(albumID)
 		http.request req
 	end
 	# Return json prettier object
-	return JSON.pretty_generate(JSON.parse(response.body))
+	return JSON.parse(response.body)
+end
+
+def processCredits(credits)
+	credits['items'].each do |track|
+		puts track['item']['title']
+		track['credits'].each do |credit|
+			puts ("#{credit['type'].to_s}:")
+			credit['contributors'].each do |contributor|
+				puts "#{contributor['name']}: https://listen.tidal.com/artist/#{contributor['id']}"
+			end
+			puts ""
+		end
+		puts ""
+	end
 end
 
 puts "Enter an album ID: "
 albumID = gets.chomp
 
-puts buildURL(albumID)
+processCredits(getCredits(Enter))
