@@ -85,7 +85,10 @@ def processCredits(trackIDs)
 	end
 end
 
-puts "Enter an album ID: "
-albumID = gets.chomp
+# If run from terminal
+if __FILE__== $PROGRAM_NAME
+	puts "Enter an album ID: "
+	albumID = gets.chomp
 
-getTracks(albumID)
+	getTracks(albumID)
+end
