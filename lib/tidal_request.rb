@@ -38,9 +38,19 @@ def getCredits(albumID)
 	response = Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
 		http.request req
 	end
-	# Return json object
 
-	return JSON.parse(response.body)
+	if response.is_a?(Net::HTTPSuccess)
+		response_json = JSON.parse(response.body)
+	else
+		puts "HTTP error"
+		puts response.body
+		return
+	end
+
+	# Return json object
+	response_json = JSON.parse(response.body)
+
+	processCredits(response_json)
 end
 
 # Display credits per track
@@ -68,4 +78,4 @@ end
 puts "Enter an album ID: "
 albumID = gets.chomp
 
-processCredits(getCredits(albumID))
+getCredits(albumID)
