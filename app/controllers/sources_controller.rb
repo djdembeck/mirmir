@@ -5,7 +5,7 @@ class SourcesController < ApplicationController
   def show
     albumID = params[:id]
     getTracks = JaxstaRequest.getTracks(albumID)
-    @releaseTitle = getTracks[0]
+    @albumJson = getTracks[0]
     @creditsJson = getTracks[1]
   end
 

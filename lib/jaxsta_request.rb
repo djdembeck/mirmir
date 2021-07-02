@@ -14,26 +14,22 @@ module JaxstaRequest
 		end
 
 		if response.is_a?(Net::HTTPSuccess)
-			response_json = JSON.parse(response.body)
+			@albumJson = JSON.parse(response.body)
 		else
 			puts "HTTP error"
 			puts response.body
 			return
 		end
 
-		# Return json object
-		response_json = JSON.parse(response.body)
-
 		trackIDs = []
 		# Start loop into tracklisting
-		response_json['track_list'].each do |disc|
+		@albumJson['track_list'].each do |disc|
 			# puts "Disc: #{disc['disc']}"
 			# Loop into disc tracks
 			disc['tracks'].each do |track|
 				trackIDs.append(track['recording_id'])
 			end
 		end
-		@releaseTitle = response_json['title']
 
 		processCredits(trackIDs)
 	end
@@ -78,7 +74,7 @@ module JaxstaRequest
 			trackObj = {title: @fullCredits['title'], contribsum: @fullCredits['summary']['contributors'], roles: @subRoleArr}
 			trackObjsArr.append(trackObj)
 		end
-		return @releaseTitle, trackObjsArr
+		return @albumJson, trackObjsArr
 	end
 
 	# If run from terminal
