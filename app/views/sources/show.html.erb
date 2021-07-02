@@ -1,0 +1,42 @@
+<script>
+function copyElementText(id) {
+	var text = document.getElementById(id).innerText;
+	var elem = document.createElement("textarea");
+	document.body.appendChild(elem);
+	elem.value = text;
+	elem.select();
+	document.execCommand("copy");
+	document.body.removeChild(elem);
+}
+</script>
+<div class="box has-background-grey-lighter">
+	<p class="title has-text-dark has-text-centered"><%= @releaseTitle %></p>
+</div>
+<div class="columns is-multiline is-1 is-variable is-centered">
+	<% @creditsJson.each_with_index do |track, index| %>
+		<div class="column is-one-quarter">
+			<div class="card">
+				<div class="card-header has-background-dark">
+					<div class="card-header-title is-centered has-text-light">
+						<p><%= track[:title] %></p>
+					</div>
+				</div>
+				<div class="card-content has-background-grey-light">
+					<div class="content has-text-grey-lighter">
+						<p class="has-text-weight-semibold is-size-5 has-text-dark">Credits by role:</p>
+							<% track[:roles].each do |role| %>
+						<blockquote class="has-background-grey-dark">
+								<p class="has-text-weight-semibold is-size-6"><%= role[:group] %>:</p>
+								<ul>
+									<% role[:persons].each_with_index do |person, pindex| %>
+										<li onclick="copyElementText(this.id)" id="person-<%= pindex %>"><%= person %></li>
+									<% end %>
+								</ul>
+						</blockquote>
+							<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>

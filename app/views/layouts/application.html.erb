@@ -8,9 +8,39 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   </head>
 
   <body>
+    <nav class="navbar has-background-dark" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-light" href="/sources/new">
+          <p class="has-text-weight-bold is-size-3">Mirmir</p>
+        </a>
+      </div>
+    </nav>
+    <section class="section has-background-primary-dark">
+      <div class="container">
+        <% if flash[:success] %>
+          <div class="notification is-success">
+            <p>
+              <%= flash[:success] %>
+            </p>
+          </div>
+        <% end %>
+        <% if flash[:errors] %>
+          <div class="notification is-danger">
+            <ul>
+              <% flash[:errors].each do |error| %>
+                <li><%= error %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="block"></div>
+      </div>
+
     <%= yield %>
+
   </body>
 </html>
