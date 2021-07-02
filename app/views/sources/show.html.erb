@@ -23,13 +23,13 @@ function copyElementText(id) {
 				</div>
 				<div class="card-content has-background-grey-light">
 					<div class="content has-text-grey-lighter">
-						<p class="has-text-weight-semibold is-size-5 has-text-dark">Credits by role:</p>
+						<p class="has-text-weight-semibold is-size-6 has-text-dark">Credits by role:</p>
 							<% track[:roles].each do |role| %>
 						<blockquote class="has-background-grey-dark">
-								<p class="has-text-weight-semibold is-size-6"><%= role[:group] %>:</p>
+								<p class="has-text-weight-semibold is-size-7"><%= role[:group] %>:</p>
 								<ul>
-									<% role[:persons].each_with_index do |person, pindex| %>
-										<li onclick="copyElementText(this.id)" id="person-<%= pindex %>"><%= person %></li>
+									<% role[:persons].each do |person| %>
+										<li class="is-size-7" onclick="copyElementText(this.id)" id="<%= person['entity_id'] %>"><%= person['name'] %></li>
 									<% end %>
 								</ul>
 						</blockquote>

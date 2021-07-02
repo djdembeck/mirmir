@@ -69,7 +69,7 @@ module JaxstaRequest
 					# Loop through all people per role
 					personArr = []
 					roleSubGroup['credit_list'].each do |person|
-						personArr.append(person['name'].gsub('"', '\''))
+						personArr.append(person)
 					end
 					roleObj = {group: roleSubGroup['role'], persons: personArr}
 					@subRoleArr.append(roleObj)
