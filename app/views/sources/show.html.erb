@@ -1,6 +1,6 @@
 <script>
 function copyElementText(id) {
-	var text = document.getElementById(id).innerText;
+	var text = document.getElementById(id).value;
 	var elem = document.createElement("textarea");
 	document.body.appendChild(elem);
 	elem.value = text;
@@ -63,34 +63,37 @@ function hideShow() {
 		</div>
 	</div>
 	<div class="column">
-		<p class="notification title has-text-centered is-dark">Tracks</p>
-		<div class="columns is-multiline is-1 is-variable is-centered">
-			<% @creditsJson.each_with_index do |track, index| %>
-				<div class="column is-one-quarter">
-					<div class="card">
-						<div class="card-header has-background-dark">
-							<div class="card-header-title is-centered has-text-light">
-								<p>#<%= index+1 %>: <%= track[:title] %></p>
+		<% @creditsJson.each_with_index do |disc, index| %>
+			<p class="notification title has-text-centered is-dark">Disc #<%= disc[:disc] %> tracks</p>
+			<div class="columns is-multiline is-1 is-variable is-centered">
+				<% disc[:tracks].each_with_index do |track, index| %>
+					<div class="column is-one-quarter">
+						<div class="card">
+							<div class="card-header has-background-dark">
+								<div class="card-header-title is-centered has-text-light">
+									<p>#<%= index+1 %>: <%= track[:title] %></p>
+								</div>
 							</div>
-						</div>
-						<div class="card-content has-background-grey-light">
-							<div class="content has-text-grey-lighter">
-								<p class="has-text-weight-semibold is-size-6 has-text-dark">Credits by role:</p>
-								<% track[:roles].each do |role| %>
-									<blockquote class="has-background-grey-dark">
-											<p class="has-text-weight-semibold is-size-7"><%= role[:group] %>:</p>
-											<ul>
-												<% role[:persons].each do |person| %>
-													<li><input class="input is-small" type="text" onclick="copyElementText(this.id)" id="<%= person['entity_id'] %>" value="<%= person['name'] %>" readonly></input></li>
-												<% end %>
-											</ul>
-									</blockquote>
-								<% end %>
+							<div class="card-content has-background-grey-light">
+								<div class="content has-text-grey-lighter">
+									<p class="has-text-weight-semibold is-size-6 has-text-dark">Credits by role:</p>
+									<% track[:credits].each do |role| %>
+										<blockquote class="has-background-grey-dark">
+												<p class="has-text-weight-semibold is-size-7"><%= role[:role] %>:</p>
+												<ul>
+													<% role[:contributors].each do |person| %>
+														<li><input class="input is-small" type="text" onclick="copyElementText(this.id)" id="<%= person[:entity_id] %>" value="<%= person[:name] %>" readonly></input></li>
+													<% end %>
+												</ul>
+										</blockquote>
+									<% end %>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			<% end %>
-		</div>
+				<% end %>
+			<div class="block"></div>
+			</div>
+		<% end %>
 	</div>
 </div>
