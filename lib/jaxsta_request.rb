@@ -94,43 +94,53 @@ class Jaxsta
 		@releaseTrackCredits.each do |credit|
 			credit[:contribution].each do |discContrib|
 				if discContrib[:tracks].length > 1
-					findRole = @creditRoles.find {|x| x[:role] == credit[:role] }
-
-					# If the role group exists, append to it, else create it
-					if findRole
-						findPerson = findRole[:credits].find {|x| x[:name] == credit[:name] }
-						# If the person withing group exists, append to it
-						if findPerson
-							findPerson[:credits].append(discContrib)
-						else
-							findRole[:credits].append({name: credit[:name], credits: [discContrib]})
-						end
-
-					else
-						@creditRoles.append({role: credit[:role], credits: [{name: credit[:name], credits: [discContrib]}]})
-					end
+					collectCommonContributors(discContrib, credit)
 				end
 				discContrib[:tracks].each do |trackContrib|
-					# Select index - 1 to find disc, :tracks hash, track number index - 1, contributor hash, role
-					selectedTrack = @releasesDiscs[discContrib[:disc] - 1][:tracks][trackContrib - 1][:credits]
-					# Search for role group to append contributor to
-					findRoleGroup = selectedTrack.find {|x| x[:role] == credit[:role] }
-
-					# Hashes to append
-					creditHashToAppend = {name: credit[:name], entity_id: credit[:entity_id]}
-					# Make array of contributors if it doesnt' exist
-					if ! findRoleGroup
-						selectedTrack.append({role: credit[:role], contributors: []})
-						#TODO: don't like re-searching this
-						findRoleGroup = selectedTrack.find {|x| x[:role] == credit[:role] }
-					end
-					# Append a hash with name and role, to the relevant track in tracklisting
-					findRoleGroup[:contributors].append(creditHashToAppend)
+					attachContributorsToTracks(discContrib, trackContrib, credit)
 				end
 			end
 		end
 
 		return self
+	end
+
+	def collectCommonContributors(discContrib, credit)
+		# Collects common contributors into @creditRoles
+
+		# Search array for role
+		findRole = @creditRoles.find {|x| x[:role] == credit[:role] }
+		# If the role group exists, append to it, else create it
+		if findRole
+			findPerson = findRole[:credits].find {|x| x[:name] == credit[:name] }
+			# If the person withing group exists, append to it
+			if findPerson
+				findPerson[:credits].append(discContrib)
+			else
+				findRole[:credits].append({name: credit[:name], credits: [discContrib]})
+			end
+
+		else
+			@creditRoles.append({role: credit[:role], credits: [{name: credit[:name], credits: [discContrib]}]})
+		end
+	end
+
+	def attachContributorsToTracks(discContrib, trackContrib, credit)
+		# Select index - 1 to find disc, :tracks hash, track number index - 1, contributor hash, role
+		selectedTrack = @releasesDiscs[discContrib[:disc] - 1][:tracks][trackContrib - 1][:credits]
+		# Search for role group to append contributor to
+		findRoleGroup = selectedTrack.find {|x| x[:role] == credit[:role] }
+
+		# Hashes to append
+		creditHashToAppend = {name: credit[:name], entity_id: credit[:entity_id]}
+		# Make array of contributors if it doesnt' exist
+		if ! findRoleGroup
+			selectedTrack.append({role: credit[:role], contributors: []})
+			#TODO: don't like re-searching this
+			findRoleGroup = selectedTrack.find {|x| x[:role] == credit[:role] }
+		end
+		# Append a hash with name and role, to the relevant track in tracklisting
+		findRoleGroup[:contributors].append(creditHashToAppend)
 	end
 end
 
