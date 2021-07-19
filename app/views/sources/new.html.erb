@@ -1,0 +1,25 @@
+<p class="title has-text-white has-text-centered">Get Jaxsta release credits</p>
+<div class="container">
+	<div class="columns">
+		<div class="column">
+			<div class="card has-background-info-light">
+				<form action='/sources' method='post'>
+					<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+					<div class="card-content has-background-grey-light">
+						<div class="field">
+							<label class="label">Release ID:</label>
+							<div class="control">
+								<input class="input" type="text" name="id" placeholder="eg ce1cff5f-c18d-466c-ac7d-07f00b2826b9">
+							</div>
+						</div>
+						<div class="field has-text-centered">
+							<div class="control">
+								<button class="button is-link">Submit</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
