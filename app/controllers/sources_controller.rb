@@ -26,6 +26,7 @@ class SourcesController < ApplicationController
   end
 
   def index
+    redirect_to new_source_path
   end
 
   def create
