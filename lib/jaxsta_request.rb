@@ -1,11 +1,14 @@
 require 'json'
 require 'net/http'
 
-module JaxstaRequest
-	# Get all track ids from an album
-	def self.getTracks(albumID)
+class Jaxsta
+	attr_accessor :albumID
+
+	def callAPI
+		# This function will call the Jaxsta API and store it as @albumJson
+
 		# Main credits URL per track
-		albumURI = URI("https://api.jaxsta.io/catalog/release-variant/#{albumID}")
+		albumURI = URI("https://api.jaxsta.io/catalog/release-variant/#{@albumID}")
 
 		# Open connection, then send request
 		req = Net::HTTP::Get.new albumURI
@@ -13,6 +16,7 @@ module JaxstaRequest
 			http.request req
 		end
 
+		# Verify successful response from http
 		if response.is_a?(Net::HTTPSuccess)
 			@albumJson = JSON.parse(response.body)
 		else
@@ -21,67 +25,130 @@ module JaxstaRequest
 			return
 		end
 
-		trackIDs = []
-		# Start loop into tracklisting
+		return self
+	end
+
+	def generateTrackListing
+		# From the initial JSON response,
+		# this function will put together an array of track hashes
+
+		# Prepare array to hold disc objects
+		@releasesDiscs = []
+		# Traverse through discs
 		@albumJson['track_list'].each do |disc|
-			# puts "Disc: #{disc['disc']}"
-			# Loop into disc tracks
+			# Prepare array to hold track objects
+			tracksInDiscArr = []
+			# Traverse through tracks
 			disc['tracks'].each do |track|
-				trackIDs.append(track['recording_id'])
+				# Generate an object with data we want
+				trackObject = {number: track['track'], title: track['title'], duration: track['duration'], credits: []}
+				tracksInDiscArr.append(trackObject)
 			end
+			# Set disc number, and append it's tracks
+			trackListingByDisc = {disc: disc['disc'], tracks: tracksInDiscArr}
+			@releasesDiscs.append(trackListingByDisc)
 		end
 
-		processCredits(trackIDs)
+		return self
 	end
 
-	# Get all credits per track
-	def self.getCredits(trackID)
-		# Track credits URL
-		creditURI = URI("https://api.jaxsta.io/catalog/recording/#{trackID}")
+	def generateCreditListing
+		# From the initial JSON response,
+		# this function will parse data that we need into ruby hashes
 
-		# Open connection, then send request
-		req = Net::HTTP::Get.new creditURI
-		response = Net::HTTP.start(creditURI.host, creditURI.port, use_ssl: true) do |http|
-			http.request req
-		end
-
-		# Return json object
-		return JSON.parse(response.body)
-	end
-
-	# Display credits per track
-	def self.processCredits(trackIDs)
-		# Loop through each track ID
-		trackObjsArr = []
-		trackIDs.each do |id|
-			@fullCredits = getCredits(id)
-
-			# Loop through all role credits per track
-			@fullCredits['role_group_credits'].each do |roleGroup|
-
-				# Loop through all roles per track
-				@subRoleArr = []
-				roleGroup['role_credits'].each do |roleSubGroup|
-					# Loop through all people per role
-					personArr = []
-					roleSubGroup['credit_list'].each do |person|
-						personArr.append(person)
+		# Start array to hold tracks with their credits
+		@releaseTrackCredits = []
+		# Traverse into each role
+		@albumJson['role_group_credits'].each do |grandparent|
+			# Traverse into each roles' credits
+			grandparent['role_credits'].each do |parent|
+				# Traverse through the person of each credit grouping
+				parent['credit_list'].each do |child|
+					discCreditArr = []
+					# Only iterate through contributions if it exists
+					if child['contribution']
+						child['contribution'].each do |contrib|
+							# Only keep the disc (as integer) and track data
+							discCreditObject = {disc: contrib['disc'][0].to_i, tracks: contrib['track']}
+							discCreditArr.append(discCreditObject)
+						end
+						# Finalized object for this contributor
+						trackCreditObject = {name: child['name'], contribution: discCreditArr, role: parent['role'], entity_id: child['entity_id']}
+						@releaseTrackCredits.append(trackCreditObject)
 					end
-					roleObj = {group: roleSubGroup['role'], persons: personArr}
-					@subRoleArr.append(roleObj)
 				end
 			end
-			trackObj = {title: @fullCredits['title'], contribsum: @fullCredits['summary']['contributors'], roles: @subRoleArr}
-			trackObjsArr.append(trackObj)
 		end
-		return @albumJson, trackObjsArr
+
+		return self
 	end
 
-	# If run from terminal
-	if __FILE__== $PROGRAM_NAME
-		puts "Enter an album ID: "
-		albumID = gets.chomp
+	def stitchCreditsWithTracks
+		# This function will concatenate the track listing with the credits
+		# in a way that is easily parseable on the frontend
 
-		getTracks(albumID)
+		# Start an array with common contributors
+		@creditRoles = []
+
+		# Traverse through track credits
+		@releaseTrackCredits.each do |credit|
+			credit[:contribution].each do |discContrib|
+				if discContrib[:tracks].length > 1
+					collectCommonContributors(discContrib, credit)
+				end
+				discContrib[:tracks].each do |trackContrib|
+					attachContributorsToTracks(discContrib, trackContrib, credit)
+				end
+			end
+		end
+
+		return self
 	end
+
+	def collectCommonContributors(discContrib, credit)
+		# Collects common contributors into @creditRoles
+
+		# Search array for role
+		findRole = @creditRoles.find {|x| x[:role] == credit[:role] }
+		# If the role group exists, append to it, else create it
+		if findRole
+			findPerson = findRole[:credits].find {|x| x[:name] == credit[:name] }
+			# If the person withing group exists, append to it
+			if findPerson
+				findPerson[:credits].append(discContrib)
+			else
+				findRole[:credits].append({name: credit[:name], credits: [discContrib]})
+			end
+
+		else
+			@creditRoles.append({role: credit[:role], credits: [{name: credit[:name], credits: [discContrib]}]})
+		end
+	end
+
+	def attachContributorsToTracks(discContrib, trackContrib, credit)
+		# Select index - 1 to find disc, :tracks hash, track number index - 1, contributor hash, role
+		selectedTrack = @releasesDiscs[discContrib[:disc] - 1][:tracks][trackContrib - 1][:credits]
+		# Search for role group to append contributor to
+		findRoleGroup = selectedTrack.find {|x| x[:role] == credit[:role] }
+
+		# Hashes to append
+		creditHashToAppend = {name: credit[:name], entity_id: credit[:entity_id]}
+		# Make array of contributors if it doesnt' exist
+		if ! findRoleGroup
+			selectedTrack.append({role: credit[:role], contributors: []})
+			#TODO: don't like re-searching this
+			findRoleGroup = selectedTrack.find {|x| x[:role] == credit[:role] }
+		end
+		# Append a hash with name and role, to the relevant track in tracklisting
+		findRoleGroup[:contributors].append(creditHashToAppend)
+	end
+end
+
+# If run from terminal
+if __FILE__== $PROGRAM_NAME
+	puts "Enter an album ID: "
+	albumID = gets.chomp
+	j = Jaxsta.new
+	j.albumID = albumID
+	j.callAPI.generateTrackListing.generateCreditListing.stitchCreditsWithTracks
 end
