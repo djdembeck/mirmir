@@ -87,20 +87,27 @@ class Jaxsta
 		# This function will concatenate the track listing with the credits
 		# in a way that is easily parseable on the frontend
 
+		# Start an array with common contributors
 		@creditRoles = []
 		
-		# Start an array with common contributors
-		commonContributors = []
 		# Traverse through track credits
 		@releaseTrackCredits.each do |credit|
 			credit[:contribution].each do |discContrib|
 				if discContrib[:tracks].length > 1
 					findRole = @creditRoles.find {|x| x[:role] == credit[:role] }
+					
 					# If the role group exists, append to it, else create it
 					if findRole
-						findRole[:credits].append({name: credit[:name], credits: discContrib})
+						findPerson = findRole[:credits].find {|x| x[:name] == credit[:name] }
+						# If the person withing group exists, append to it
+						if findPerson
+							findPerson[:credits].append(discContrib)
+						else
+							findRole[:credits].append({name: credit[:name], credits: [discContrib]})
+						end
+						
 					else
-						@creditRoles.append({role: credit[:role], credits: [{name: credit[:name], credits: discContrib}]})
+						@creditRoles.append({role: credit[:role], credits: [{name: credit[:name], credits: [discContrib]}]})
 					end
 				end
 				discContrib[:tracks].each do |trackContrib|
@@ -129,12 +136,11 @@ class Jaxsta
 	end
 end
 
-	# If run from terminal
-	if __FILE__== $PROGRAM_NAME
-		puts "Enter an album ID: "
-		albumID = gets.chomp
-		j = Jaxsta.new
-		j.albumID = albumID
-		j.callAPI.generateTrackListing.generateCreditListing.stitchCreditsWithTracks
-	end
+# If run from terminal
+if __FILE__== $PROGRAM_NAME
+	puts "Enter an album ID: "
+	albumID = gets.chomp
+	j = Jaxsta.new
+	j.albumID = albumID
+	j.callAPI.generateTrackListing.generateCreditListing.stitchCreditsWithTracks
 end

@@ -17,8 +17,12 @@ class SourcesController < ApplicationController
     # Concatenate the track listing with the credits
     j.stitchCreditsWithTracks
     # Set frontend variables from object
+    # Raw json response for debug
     @albumJson = j.instance_variable_get(:@albumJson)
+    # Parsed response
     @creditsJson = j.instance_variable_get(:@releasesDiscs)
+    # Common roles/contrib
+    @creditRoles = j.instance_variable_get(:@creditRoles)
   end
 
   def index
