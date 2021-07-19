@@ -1,12 +1,16 @@
+require 'jaxsta_request'
 class SourcesController < ApplicationController
   def new
   end
 
   def show
     albumID = params[:id]
-    getTracks = JaxstaRequest.getTracks(albumID)
-    @albumJson = getTracks[0]
-    @creditsJson = getTracks[1]
+    j = Jaxsta.new
+		j.albumID = albumID
+		j.callAPI.generateTrackListing.generateCreditListing.stitchCreditsWithTracks
+    # getTracks = JaxstaRequest.getTracks(albumID)
+    @albumJson = j.instance_variable_get(:@albumJson)
+    @creditsJson = j.instance_variable_get(:@releaseTrackCredits)
   end
 
   def index
