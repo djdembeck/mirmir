@@ -1,4 +1,6 @@
 # Mirmir
+[![CodeFactor](https://www.codefactor.io/repository/github/djdembeck/mirmir/badge)](https://www.codefactor.io/repository/github/djdembeck/mirmir)
+
 A tool written in Ruby on Rails, to seed MusicBrainz track relationships with data from Jaxsta track credits.
 
 NOTE: Currently, this is only a data display tool, until I can determine the best course of action for seeding MB either through API, scraping or automation tools.
