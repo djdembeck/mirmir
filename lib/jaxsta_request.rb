@@ -48,7 +48,7 @@ class Jaxsta
 			trackListingByDisc = {disc: disc['disc'], tracks: tracksInDiscArr}
 			@releasesDiscs.append(trackListingByDisc)
 		end
-		
+
 		return self
 	end
 
@@ -82,20 +82,20 @@ class Jaxsta
 
 		return self
 	end
-	
+
 	def stitchCreditsWithTracks
 		# This function will concatenate the track listing with the credits
 		# in a way that is easily parseable on the frontend
 
 		# Start an array with common contributors
 		@creditRoles = []
-		
+
 		# Traverse through track credits
 		@releaseTrackCredits.each do |credit|
 			credit[:contribution].each do |discContrib|
 				if discContrib[:tracks].length > 1
 					findRole = @creditRoles.find {|x| x[:role] == credit[:role] }
-					
+
 					# If the role group exists, append to it, else create it
 					if findRole
 						findPerson = findRole[:credits].find {|x| x[:name] == credit[:name] }
@@ -105,7 +105,7 @@ class Jaxsta
 						else
 							findRole[:credits].append({name: credit[:name], credits: [discContrib]})
 						end
-						
+
 					else
 						@creditRoles.append({role: credit[:role], credits: [{name: credit[:name], credits: [discContrib]}]})
 					end
@@ -123,15 +123,13 @@ class Jaxsta
 						selectedTrack.append({role: credit[:role], contributors: []})
 						#TODO: don't like re-searching this
 						findRoleGroup = selectedTrack.find {|x| x[:role] == credit[:role] }
-						findRoleGroup[:contributors].append(creditHashToAppend)
-					else
-						# Append a hash with name and role, to the relevant track in tracklisting
-						findRoleGroup[:contributors].append(creditHashToAppend)
 					end
+					# Append a hash with name and role, to the relevant track in tracklisting
+					findRoleGroup[:contributors].append(creditHashToAppend)
 				end
 			end
 		end
-		
+
 		return self
 	end
 end
