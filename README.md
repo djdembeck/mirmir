@@ -28,9 +28,10 @@ Since Docker is the quickest way to get up and running without worrying about re
 
 ### Webserver:
 #### Requirements
-- Ruby 3.0.1 or later
+- Ruby 3.0.0 or later
+- Rails 6.1.4 or later
 
-A great guide on setting up the requirements for setup, can be foundhere: https://gorails.com/setup/ubuntu/21.04#overview
+A great guide on setting up the requirements for setup, can be found here: https://gorails.com/setup/ubuntu/21.04#overview
 
 #### Setup
 Getting up and running is pretty straightforward. From the project directory:
@@ -38,6 +39,12 @@ Getting up and running is pretty straightforward. From the project directory:
 - `bundle install`
 - `rails s -b 127.0.0.1`
 - Open a browser to `127.0.0.1:3000`
+
+
+## Running tests
+After setting up the dependencies above, tests can be run from the project folder with:
+
+    bundle exec rspec
 
 ## Notes
 
