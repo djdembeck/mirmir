@@ -108,4 +108,22 @@ describe Jaxsta do
         it { expect(credit[:name]).to eq("Nineteen85") }
         it { expect(credit[:role]).to eq("Producer") }
     end
+
+    describe '.stitchCreditsWithTracks' do
+        before(:all) do
+            @album.callAPI
+            @album.generateTrackListing
+            @album.generateCreditListing
+            @album.stitchCreditsWithTracks
+        end
+
+        # Setup testing variable
+        let(:creditRoles) { @album.instance_variable_get(:@creditRoles) }
+
+        # Check that creditRoles has 14 role groups
+        it { expect(creditRoles.length).to eq(14) }
+
+        it { expect(creditRoles[0][:role]).to eq("Writer") }
+        it { expect(creditRoles[0][:credits].length).to eq(9) }
+    end
 end
