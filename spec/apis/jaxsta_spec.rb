@@ -77,5 +77,11 @@ describe Jaxsta do
         end
         # Check that releasesDiscs exists
         it { expect(releasesDiscs).to be }
+        # Check data from track 1
+        let(:track_1) { releasesDiscs[0][:tracks][0] }
+        it { expect(track_1[:credits]).to eq([]) }
+        it { expect(track_1[:duration]).to eq("03:35") }
+        it { expect(track_1[:number]).to eq("1") }
+        it { expect(track_1[:title]).to eq("No Good") }
     end
 end
