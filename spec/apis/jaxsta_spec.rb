@@ -84,4 +84,28 @@ describe Jaxsta do
         it { expect(track_1[:number]).to eq("1") }
         it { expect(track_1[:title]).to eq("No Good") }
     end
+
+    describe '.generateCreditListing' do
+        before(:all) do
+            @album.callAPI
+            @album.generateCreditListing
+        end
+
+        # Setup testing variable
+        let(:releaseTrackCredits) { @album.instance_variable_get(:@releaseTrackCredits) }
+
+        # Check that releaseTrackCredits exists
+        it { expect(releaseTrackCredits).to be }
+
+        # Check how many credits we get back
+        it { expect(releaseTrackCredits.length).to eq(167) }
+
+        # Check data from a specific credit
+        let(:credit) { releaseTrackCredits[69] }
+        it { expect(credit[:contribution][0][:disc]).to eq(1) }
+        it { expect(credit[:contribution][0][:tracks].length).to eq(14) }
+        it { expect(credit[:entity_id]).to eq("61f0b5c3-1d03-4c43-baf4-db1748a99779") }
+        it { expect(credit[:name]).to eq("Nineteen85") }
+        it { expect(credit[:role]).to eq("Producer") }
+    end
 end
