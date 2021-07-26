@@ -96,7 +96,6 @@ describe Jaxsta do
 
         # Check that releaseTrackCredits exists
         it { expect(releaseTrackCredits).to be }
-
         # Check how many credits we get back
         it { expect(releaseTrackCredits.length).to eq(167) }
 
@@ -122,8 +121,34 @@ describe Jaxsta do
 
         # Check that creditRoles has 14 role groups
         it { expect(creditRoles.length).to eq(14) }
-
         it { expect(creditRoles[0][:role]).to eq("Writer") }
         it { expect(creditRoles[0][:credits].length).to eq(9) }
+    end
+
+    describe '.attachContributorsToTracks' do
+        before(:all) do
+            @album.callAPI
+            @album.generateTrackListing
+            @album.generateCreditListing
+            @album.stitchCreditsWithTracks
+        end
+
+        # Setup testing variables
+        let(:disc) { releasesDiscs[0] }
+        let(:tracks) { disc[:tracks] }
+
+        # Check disc number
+        it { expect(disc[:disc]).to eq("1") }
+        # Check that there are 16 tracks
+        it { expect(tracks.length).to eq(16) }
+        # Check credit length
+        it { expect(tracks[0][:credits].length).to eq(12) }
+        # Check first contributor data
+        it { expect(tracks[0][:credits][0][:contributors][0][:entity_id]).to eq("5e52ae0e-17ee-40ec-8a26-bf9dec6c04ff") }
+        it { expect(tracks[0][:credits][0][:contributors][0][:name]).to eq("D. Daley") }
+        # Check track metadata
+        it { expect(tracks[0][:duration]).to eq("03:35") }
+        it { expect(tracks[0][:number]).to eq("1") }
+        it { expect(tracks[0][:title]).to eq("No Good") }
     end
 end
