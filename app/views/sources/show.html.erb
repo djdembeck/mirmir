@@ -57,33 +57,34 @@ function hideShow() {
 			</ul>
 			<div class="block"></div>
 			<div class="buttons is-centered">
-				<button class="button is-dark" onclick="hideShow()" id="jsonButton">Show/hide JSON</button>
+				<button class="button is-dark" onclick="hideShow()" id="jsonButton">Raw JSON</button>
 			</div>
-			<pre id="showJson" style="display:none;"><%= JSON.pretty_generate(@albumJson) %></pre>
 		</div>
-		<div class="block"></div>
-		<div class="box has-background-grey-lighter">
-			<div class="content">
-				<p class="has-text-weight-semibold is-size-5">Common contributors:</p> 
-				<% @creditRoles.each do |roleGroup| %>
-					<p class="has-text-weight-bold"><%= roleGroup[:role] %>:</p>
-					<ul>
-						<% roleGroup[:credits].each do |contributor| %>
-							<li><span class="has-text-weight-medium"><%= contributor[:name] %>:</span></li>
-							<ul>
-							<% contributor[:credits].each do |contributorCredits| %>
-								<li>
-									<span class="is-italic">Disc <%= contributorCredits[:disc] %>:</span>
-									<p><span class="is-italic">Tracks: </span><%= contributorCredits[:tracks].join(', ') %></p>
-								</li>
-							<% end %>
-							</ul>
-						<% end %>
-					</ul>
-				<% end %>
-			</div>
+		<% if @creditRoles.length > 1 %>
 			<div class="block"></div>
-		</div>
+			<div class="box has-background-grey-lighter">
+				<div class="content">
+					<p class="has-text-weight-semibold is-size-5">Common contributors:</p> 
+					<% @creditRoles.each do |roleGroup| %>
+						<p class="has-text-weight-bold"><%= roleGroup[:role] %>:</p>
+						<ul>
+							<% roleGroup[:credits].each do |contributor| %>
+								<li><span class="has-text-weight-medium"><%= contributor[:name] %>:</span></li>
+								<ul>
+								<% contributor[:credits].each do |contributorCredits| %>
+									<li>
+										<span class="is-italic">Disc <%= contributorCredits[:disc] %>:</span>
+										<p><span class="is-italic">Tracks: </span><%= contributorCredits[:tracks].join(', ') %></p>
+									</li>
+								<% end %>
+								</ul>
+							<% end %>
+						</ul>
+					<% end %>
+				</div>
+				<div class="block"></div>
+			</div>
+		<% end %>
 	</div>
 	<div class="column">
 		<% @creditsJson.each_with_index do |disc, index| %>
@@ -120,3 +121,4 @@ function hideShow() {
 		<% end %>
 	</div>
 </div>
+<pre id="showJson" style="display:none;"><%= JSON.pretty_generate(@albumJson) %></pre>
