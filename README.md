@@ -1,4 +1,6 @@
 # Mirmir
+[![GitHub](https://img.shields.io/github/license/djdembeck/mirmir)](https://github.com/djdembeck/mirmir/blob/develop/LICENSE)
+[![Docker](https://github.com/djdembeck/mirmir/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/djdembeck/mirmir/actions/workflows/docker-publish.yml)
 [![CodeFactor](https://www.codefactor.io/repository/github/djdembeck/mirmir/badge)](https://www.codefactor.io/repository/github/djdembeck/mirmir)
 
 A tool written in Ruby on Rails, to seed MusicBrainz track relationships with data from Jaxsta track credits.
@@ -15,18 +17,35 @@ But doing a release like that, can take *hours*. As such, this project aims to s
 - In the future, seeding this data into the appropriate fields, and only requiring the user to verify data accuracy.
 
 ## Running
+Eventually, I intend to deploy this as a web service. Until it is stable enough to do so, you can run this locally in one of two ways:
 
-### Requirements
-- Ruby 3.0.1 or later
+### Docker (recommended):
+Since Docker is the quickest way to get up and running without worrying about requirements and dependencies, it's the recommended way to get started.
 
-A great guide on setting up the requirements for setup, can be foundhere: https://gorails.com/setup/ubuntu/21.04#overview
+    docker run --rm -d --name mirmir -p 3000:3000/tcp ghcr.io/djdembeck/mirmir:main
 
-### Setup
+- Open a browser to `127.0.0.1:3000`
+
+### Webserver:
+#### Requirements
+- Ruby 3.0.0 or later
+- Rails 6.1.4 or later
+
+A great guide on setting up the requirements for setup, can be found here: https://gorails.com/setup/ubuntu/21.04#overview
+
+#### Setup
 Getting up and running is pretty straightforward. From the project directory:
 - `gem install bundler`
 - `bundle install`
 - `rails s -b 127.0.0.1`
 - Open a browser to `127.0.0.1:3000`
+
+
+## Running tests
+After setting up the dependencies above, tests can be run from the project folder with:
+
+    bundle exec rspec
+
 ## Notes
 
 Tidal/Spotify methods are also written but not exposed (Bearer can be retrieved from developer tools->network->name:events->request headers)
