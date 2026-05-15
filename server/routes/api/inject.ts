@@ -9,6 +9,8 @@ interface InjectRequestBody {
 	dryRun?: boolean;
 }
 
+const MB_UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
 function getEnvVar(name: string): string | undefined {
 	try {
 		return Deno.env.get(name);
@@ -17,9 +19,26 @@ function getEnvVar(name: string): string | undefined {
 	}
 }
 
+function rejectCrossOrigin(req: Request): Response | null {
+	const origin = req.headers.get('Origin');
+	if (!origin) return null;
+	const host = req.headers.get('Host') ?? new URL(req.url).host;
+	const allowedOrigin = `${req.headers.get('X-Forwarded-Proto') ?? 'http'}://${host}`;
+	if (origin !== allowedOrigin) {
+		return new Response(
+			JSON.stringify({ error: 'Cross-origin requests are not allowed' }),
+			{ status: 403, headers: { 'Content-Type': 'application/json' } },
+		);
+	}
+	return null;
+}
+
 export const handler = {
 	async POST(req: Request): Promise<Response> {
 		const log = getLogger('harmony.server');
+
+		const csrfRejection = rejectCrossOrigin(req);
+		if (csrfRejection) return csrfRejection;
 
 		try {
 			const body = await req.json() as InjectRequestBody;
@@ -28,6 +47,13 @@ export const handler = {
 			if (!recordingMbid || !credits || !Array.isArray(credits)) {
 				return new Response(
 					JSON.stringify({ error: 'Missing required fields: recordingMbid, credits' }),
+					{ status: 400, headers: { 'Content-Type': 'application/json' } },
+				);
+			}
+
+			if (!MB_UUID_RE.test(recordingMbid)) {
+				return new Response(
+					JSON.stringify({ error: 'Invalid recordingMbid: must be a valid MB UUID' }),
 					{ status: 400, headers: { 'Content-Type': 'application/json' } },
 				);
 			}

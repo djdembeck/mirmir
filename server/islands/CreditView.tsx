@@ -1,6 +1,6 @@
 import { Button } from '@/server/components/Button.tsx';
 import { SpriteIcon } from '@/server/components/SpriteIcon.tsx';
-import { fetchRecordingCredits } from '@/mirmir/mb_credits.ts';
+
 
 import { useSignal } from '@preact/signals';
 import { useCallback } from 'preact/hooks';
@@ -188,15 +188,25 @@ export function CreditView({
 		const results = new Map<string, TrackCredit[]>();
 
 		try {
-			for (const track of tracksWithMbids) {
-				if (!track.recordingMbid) continue;
-				const credits = await fetchRecordingCredits(track.recordingMbid);
-				results.set(track.recordingMbid, credits);
+			const mbids = tracksWithMbids
+				.map((t) => t.recordingMbid)
+				.filter((m): m is string => !!m);
+			const response = await fetch('/api/mb-credits', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ recordingMbids: mbids }),
+			});
+			if (!response.ok) {
+				const errBody = await response.json().catch(() => ({ error: response.statusText }));
+				throw new Error(errBody.error ?? `HTTP ${response.status}`);
+			}
+			const data = await response.json() as Record<string, TrackCredit[]>;
+			for (const [mbid, credits] of Object.entries(data)) {
+				results.set(mbid, credits);
 			}
 			mbCredits.value = results;
 		} catch (err) {
 			error.value = err instanceof Error ? err.message : 'Failed to fetch MusicBrainz credits';
-		} finally {
 			isLoading.value = false;
 		}
 	}, [tracksWithMbids]);

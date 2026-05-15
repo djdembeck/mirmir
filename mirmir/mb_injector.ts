@@ -237,9 +237,6 @@ export class MBInjector {
 					result.details.push(`--- Relationship ${relIndex} ---`);
 				}
 				result.details.push(`  ${field.name} = ${field.value}`);
-			} else if (field.name === 'edit_note') {
-				result.details.push(`--- Edit Note ---`);
-				result.details.push(`  ${field.value}`);
 			}
 		}
 

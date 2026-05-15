@@ -17,7 +17,7 @@ export const MB_RELATIONSHIP_TYPES = {
 	performer: '28e41040-6cbf-428d-b561-4e0c59a0e7b6',
 	instruments: 'fd0731c3-6fff-4516-9a22-8fe8c6e4a7a6',
 	vocalist: 'd3a8e3f3-6371-4345-8c3c-797c4a6c14d3',
-	arranger: '5c0ceac3-feb4-41f0-868d-dc06f6e27fc0', // with arranger attribute
+	arranger: '22661fb8-cdb7-4f67-8385-b2a8be6c9f0d', // MusicBrainz arranger relationship type
 	remixer: '', // UNCONFIRMED - needs lookup from MB server SQL
 	djmixer: '', // UNCONFIRMED - needs lookup from MB server SQL
 	orchestrator: '', // UNCONFIRMED - needs lookup from MB server SQL
@@ -33,7 +33,7 @@ export const MB_ATTRIBUTE_TYPES = {
 	solo: '1c186ed2-8932-424b-8d69-0e8f4f8be8b0',
 	keyboard: '95b0c3d2-9606-4ef5-a019-9b7437f3adda',
 	drums: '3bccb7eb-cbca-42cd-b0ac-a5e959df7221',
-	executive: '0a5341f8-3b1d-4f99-a0c6-26b7f4e42c7f', // maps to additional attribute
+	executive: 'e0039285-6667-4f94-80d6-aa6520c6d359', // executive attribute
 	electric: '', // UNCONFIRMED - needs lookup from MB server SQL
 	acoustic: '', // UNCONFIRMED - needs lookup from MB server SQL
 	backing: '', // UNCONFIRMED - needs lookup from MB server SQL
@@ -88,7 +88,7 @@ export const tidalRoleMap: Map<string, RoleMapping> = new Map([
 	['Composer', {
 		sourceRole: 'Composer',
 		mbRelationshipType: 'composer',
-		mbRelationshipId: MB_RELATIONSHIP_TYPES.arranger, // placeholder; work-level
+		mbRelationshipId: '', // placeholder; work-level
 		workLevel: true,
 	}],
 	['Drum Kit', {
@@ -106,7 +106,7 @@ export const tidalRoleMap: Map<string, RoleMapping> = new Map([
 	['Lyricist', {
 		sourceRole: 'Lyricist',
 		mbRelationshipType: 'lyricist',
-		mbRelationshipId: MB_RELATIONSHIP_TYPES.arranger, // placeholder; work-level
+		mbRelationshipId: '', // placeholder; work-level
 		workLevel: true,
 	}],
 	['Mastering Engineer', {
@@ -194,19 +194,19 @@ export const discogsRoleMap: Map<string, RoleMapping> = new Map([
 	['Songwriter', {
 		sourceRole: 'Songwriter',
 		mbRelationshipType: 'songwriter',
-		mbRelationshipId: MB_RELATIONSHIP_TYPES.arranger, // placeholder; work-level
+		mbRelationshipId: '', // placeholder; work-level
 		workLevel: true,
 	}],
 	['Composer', {
 		sourceRole: 'Composer',
 		mbRelationshipType: 'composer',
-		mbRelationshipId: MB_RELATIONSHIP_TYPES.arranger, // placeholder; work-level
+		mbRelationshipId: '', // placeholder; work-level
 		workLevel: true,
 	}],
 	['Lyricist', {
 		sourceRole: 'Lyricist',
 		mbRelationshipType: 'lyricist',
-		mbRelationshipId: MB_RELATIONSHIP_TYPES.arranger, // placeholder; work-level
+		mbRelationshipId: '', // placeholder; work-level
 		workLevel: true,
 	}],
 	// Performance
