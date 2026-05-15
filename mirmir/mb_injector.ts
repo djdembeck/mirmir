@@ -149,7 +149,7 @@ export class MBInjector {
 			editUrls: [],
 		};
 
-		const { formFields, skipped, skipReasons } = this.buildFormFields(credits);
+		const { formFields, skipped } = this.buildFormFields(credits);
 		result.skipped = skipped;
 
 		if (formFields.length === 0) {
@@ -207,7 +207,7 @@ export class MBInjector {
 	 * Dry-run mode: logs what would be submitted without making any POST requests.
 	 * Returns the same structure as injectCredits but with details instead of editUrls.
 	 */
-	async dryRun(recordingMbid: string, credits: TrackCredit[]): Promise<DryRunResult> {
+	dryRun(recordingMbid: string, credits: TrackCredit[]): DryRunResult {
 		const result: DryRunResult = {
 			wouldSubmit: 0,
 			wouldSkip: 0,
@@ -217,6 +217,9 @@ export class MBInjector {
 		const { formFields, skipped, skipReasons } = this.buildFormFields(credits);
 		result.wouldSkip = skipped;
 		result.wouldSubmit = formFields.filter((f) => /^rels\.\d+\.type$/.test(f.name)).length;
+
+		// Add recording MBID to details
+		result.details.push(`Recording: ${recordingMbid}`);
 
 		// Log skip reasons
 		for (const reason of skipReasons) {

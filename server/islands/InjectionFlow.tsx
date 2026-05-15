@@ -1,6 +1,6 @@
 import { Button } from '@/server/components/Button.tsx';
 import { SpriteIcon } from '@/server/components/SpriteIcon.tsx';
-import { getCreditKey, isCreditInjectable, type SelectableCredit } from '@/server/islands/CreditSelector.tsx';
+import { getCreditKey, type SelectableCredit } from '@/server/islands/CreditSelector.tsx';
 
 import { useCallback, useState } from 'preact/hooks';
 

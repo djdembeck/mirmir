@@ -1,5 +1,4 @@
 import { MBInjector } from '@/mirmir/mb_injector.ts';
-import { defineRoute } from 'fresh/server.ts';
 import { getLogger } from 'std/log/get_logger.ts';
 
 import type { TrackCredit } from '@/harmonizer/types.ts';
