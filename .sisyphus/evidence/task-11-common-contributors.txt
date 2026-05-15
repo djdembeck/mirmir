@@ -1,0 +1,39 @@
+Task 11: Common Contributors View — Evidence
+
+1. Created server/islands/CommonContributors.tsx
+   - Fresh island component with props: { tracks: Array<{ number, title, credits? }> }
+   - Computes common contributors: for each unique (name, role) pair, collects track appearances
+   - Filters to contributors appearing on 2+ tracks
+   - Groups by role, sorts roles and contributors alphabetically
+   - Track range compression: 1,2,3,4,5 → "1-5"; 1,3,5 → "1, 3, 5"; 1,2,3,7,8 → "1-3, 7-8"
+   - Displays as collapsible panel with toggle button (chevron icon)
+   - Shows contributor count in header when contributors exist
+   - Source badges on contributor names (same color mapping as CreditView)
+   - Empty state: "No common contributors found"
+   - Uses useSignal from @preact/signals for expand/collapse state
+
+2. Modified server/routes/release.tsx
+   - Imported CommonContributors component
+   - Wrapped CreditView and CommonContributors in a .credit-layout grid (1fr + 320px sidebar)
+   - CommonContributors receives track data without recordingMbid (not needed)
+
+3. Added CSS to server/static/harmony.css
+   - .common-contributors: card container with theme header
+   - .common-contributors-toggle: button with chevron, h3, count
+   - .common-contributors-body: padded content area
+   - .common-contributor-row: flex row with name, badges, track range
+   - .common-contributor-name: clickable/selectable name
+   - .common-contributor-tracks: muted track range text
+   - .credit-layout: grid layout for sidebar positioning
+   - Responsive: collapses to single column below 60rem
+
+4. Type-check results:
+   - deno check server/islands/CommonContributors.tsx: PASS
+   - deno check server/routes/release.tsx: PASS
+
+5. Design decisions:
+   - Followed CreditView.tsx patterns: source badges, role grouping, credit-empty class
+   - Reused existing CSS classes (.role-group, .role-name, .role-credits, .credit-empty, .source-badge)
+   - Added new .credit-layout grid to place CommonContributors as sidebar alongside CreditView
+   - Collapsible panel (default expanded) to save vertical space
+   - Contributor count shown in header for quick overview

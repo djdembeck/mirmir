@@ -976,7 +976,7 @@ Max Concurrent: 4 (Waves 2 & 3)
   - Files: `harmonizer/merge.ts`, `harmonizer/merge_test.ts`
   - Pre-commit: `deno test`
 
-- [ ] 10. Credit-Focused Web UI — Per-Track View
+- [x] 10. Credit-Focused Web UI — Per-Track View
 
   **What to do**:
   - Create a new Fresh island (interactive Preact component) for per-track credit display
@@ -1126,7 +1126,7 @@ Max Concurrent: 4 (Waves 2 & 3)
   - Files: `server/islands/CommonContributors.tsx`
   - Pre-commit: `deno check server/islands/CommonContributors.tsx`
 
-- [ ] 12. Programmatic MB Relationship Injection via URL Seeding + Form Submission
+- [x] 12. Programmatic MB Relationship Injection via URL Seeding + Form Submission
 
   **What to do**:
   - Integrate `musicbrainz-api` NPM package via Deno's NPM compatibility (`npm:musicbrainz-api`)

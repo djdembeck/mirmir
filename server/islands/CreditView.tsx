@@ -16,6 +16,11 @@ export type CreditViewTrack = {
 
 export type CreditViewProps = {
 	tracks: CreditViewTrack[];
+	selectionMode?: boolean;
+	selectedCredits?: Set<string>;
+	onCreditToggle?: (key: string) => void;
+	getCreditKey?: (credit: TrackCredit, trackNumber: number | string) => string;
+	isCreditDisabled?: (credit: TrackCredit) => { disabled: boolean; reason?: string };
 };
 
 const sourceColorMap: Record<string, string> = {
@@ -53,20 +58,70 @@ function SourceBadge({ source }: { source: string }) {
 	);
 }
 
-function CreditEntry({ credit }: { credit: TrackCredit }) {
+function CreditEntry({
+	credit,
+	trackNumber,
+	selectionMode,
+	isSelected,
+	onToggle,
+	isDisabled,
+	disableReason,
+	getCreditKey,
+}: {
+	credit: TrackCredit;
+	trackNumber: number | string;
+	selectionMode?: boolean;
+	isSelected?: boolean;
+	onToggle?: (key: string) => void;
+	isDisabled?: boolean;
+	disableReason?: string;
+	getCreditKey?: (credit: TrackCredit, trackNumber: number | string) => string;
+}) {
 	const displayName = credit.creditedName ?? credit.name;
+	const key = getCreditKey ? getCreditKey(credit, trackNumber) : `${trackNumber}::${credit.name}::${credit.role}`;
+
 	return (
-		<div class='credit-entry'>
+		<div class={`credit-entry ${selectionMode ? 'selectable' : ''}`}>
+			{selectionMode && (
+				<input
+					type='checkbox'
+					checked={isSelected}
+					disabled={isDisabled}
+					onChange={() => onToggle?.(key)}
+					class='credit-select-checkbox'
+					title={disableReason ?? 'Select for injection'}
+				/>
+			)}
 			<span class='credit-name' title='Click to select'>{displayName}</span>
 			{credit.sources.map((source) => <SourceBadge source={source} key={source} />)}
 			{credit.originalRole && credit.originalRole !== credit.role && (
 				<span class='credit-original-role'>({credit.originalRole})</span>
 			)}
+			{selectionMode && isDisabled && disableReason && (
+				<span class='credit-skip-reason'>
+					<SpriteIcon name='info-circle' size={12} />
+					{disableReason}
+				</span>
+			)}
 		</div>
 	);
 }
 
-function TrackCreditCard({ track }: { track: CreditViewTrack }) {
+function TrackCreditCard({
+	track,
+	selectionMode,
+	selectedCredits,
+	onCreditToggle,
+	getCreditKey,
+	isCreditDisabled,
+}: {
+	track: CreditViewTrack;
+	selectionMode?: boolean;
+	selectedCredits?: Set<string>;
+	onCreditToggle?: (key: string) => void;
+	getCreditKey?: (credit: TrackCredit, trackNumber: number | string) => string;
+	isCreditDisabled?: (credit: TrackCredit) => { disabled: boolean; reason?: string };
+}) {
 	const credits = track.credits ?? [];
 	const grouped = groupCreditsByRole(credits);
 	const sortedRoles = [...grouped.keys()].sort();
@@ -82,9 +137,25 @@ function TrackCreditCard({ track }: { track: CreditViewTrack }) {
 					<div class='role-group' key={role}>
 						<h4 class='role-name'>{role}</h4>
 						<div class='role-credits'>
-							{grouped.get(role)!.map((credit, index) => (
-								<CreditEntry credit={credit} key={index} />
-							))}
+							{grouped.get(role)!.map((credit, index) => {
+								const key = getCreditKey
+									? getCreditKey(credit, track.number)
+									: `${track.number}::${credit.name}::${credit.role}`;
+								const disabledInfo = isCreditDisabled ? isCreditDisabled(credit) : { disabled: false };
+								return (
+									<CreditEntry
+										credit={credit}
+										trackNumber={track.number}
+										selectionMode={selectionMode}
+										isSelected={selectedCredits?.has(key)}
+										onToggle={onCreditToggle}
+										isDisabled={disabledInfo.disabled}
+										disableReason={disabledInfo.reason}
+										getCreditKey={getCreditKey}
+										key={index}
+									/>
+								);
+							})}
 						</div>
 					</div>
 				))}
@@ -93,7 +164,14 @@ function TrackCreditCard({ track }: { track: CreditViewTrack }) {
 	);
 }
 
-export function CreditView({ tracks }: CreditViewProps) {
+export function CreditView({
+	tracks,
+	selectionMode,
+	selectedCredits,
+	onCreditToggle,
+	getCreditKey,
+	isCreditDisabled,
+}: CreditViewProps) {
 	const isLoading = useSignal(false);
 	const mbCredits = useSignal<Map<string, TrackCredit[]>>(new Map());
 	const error = useSignal<string | null>(null);
@@ -187,6 +265,11 @@ export function CreditView({ tracks }: CreditViewProps) {
 					return (
 						<TrackCreditCard
 							track={{ ...track, credits: mergedCredits }}
+							selectionMode={selectionMode}
+							selectedCredits={selectedCredits}
+							onCreditToggle={onCreditToggle}
+							getCreditKey={getCreditKey}
+							isCreditDisabled={isCreditDisabled}
 							key={track.number}
 						/>
 					);
