@@ -188,7 +188,7 @@ Max Concurrent: 4 (Waves 2 & 3)
 
 ## TODOs
 
-- [ ] 1. ~~Tidal v2 ArtistRoles API Validation Spike~~ → Tidal v2 Credits API Spike (CONFIRMED)
+- [x] 1. ~~Tidal v2 ArtistRoles API Validation Spike~~ → Tidal v2 Credits API Spike (CONFIRMED)
 
   > **STATUS: SPIKE COMPLETED** — Tidal v2 Credits API confirmed working during planning phase.
   > Real API calls made to album `329293912` (Drake - For All The Dogs Scary Hours Edition).
@@ -277,7 +277,7 @@ Max Concurrent: 4 (Waves 2 & 3)
   - Files: `spike.ts`, `docs/tidal-credits-spike.md`
   - Pre-commit: `deno check spike.ts`
 
-- [ ] 2. Extend HarmonyTrack with TrackCredit Type System
+- [x] 2. Extend HarmonyTrack with TrackCredit Type System
 
   **What to do**:
   - Add `TrackCredit` interface to `/harmonizer/types.ts` with fields: `name`, `creditedName?`, `role`, `originalRole?`, `mbid?`, `externalIds?`, `sources: string[]`
@@ -367,7 +367,7 @@ Max Concurrent: 4 (Waves 2 & 3)
   - Files: `harmonizer/types.ts`, `harmonizer/properties.ts`, `harmonizer/credits_test.ts`
   - Pre-commit: `deno test && deno check **/*.ts`
 
-- [ ] 3. Unified Credit→MB Role Mapping Table (Tidal + Discogs)
+- [x] 3. Unified Credit→MB Role Mapping Table (Tidal + Discogs)
 
   **What to do**:
   - Create a comprehensive TypeScript mapping table that converts BOTH Tidal and Discogs free-form role strings to MusicBrainz relationship type IDs and attribute type IDs
@@ -488,7 +488,7 @@ Max Concurrent: 4 (Waves 2 & 3)
   - Files: `mirmir/role_mapping.ts`, `mirmir/role_mapping_test.ts`
   - Pre-commit: `deno test mirmir/role_mapping_test.ts`
 
-- [ ] 4. Harmony Test Infrastructure Setup for Mirmir
+- [x] 4. Harmony Test Infrastructure Setup for Mirmir
 
   **What to do**:
   - Create test fixtures (snapshot files) from real API responses for releases with rich per-track credits
@@ -555,7 +555,7 @@ Max Concurrent: 4 (Waves 2 & 3)
   - Files: `mirmir/test/fixtures/`, `mirmir/test/helpers.ts`, `mirmir/test/helpers_test.ts`
   - Pre-commit: `deno test mirmir/test/`
 
-- [ ] 5. Docker Development Environment
+- [x] 5. Docker Development Environment
 
   **What to do**:
   - Create `Dockerfile` based on `denoland/deno:alpine` for mirmir

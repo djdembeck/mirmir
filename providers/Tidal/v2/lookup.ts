@@ -9,10 +9,12 @@ import { selectLargestImage } from '@/utils/image.ts';
 import { CacheMissError, ProviderError } from '@/utils/errors.ts';
 import { parseHyphenatedDate } from '@/utils/date.ts';
 import { parseISODuration } from '@/utils/time.ts';
+import { mapRole } from '@/mirmir/role_mapping.ts';
 
 import type {
 	AlbumItemResourceIdentifier,
 	AlbumsResource,
+	CreditsRelationshipResponse,
 	IncludedResource,
 	MultiDataDocument,
 	ResourceIdentifier,
@@ -31,6 +33,7 @@ import type {
 	Label,
 	ReleaseGroupType,
 	ReleaseInfo,
+	TrackCredit,
 } from '@/harmonizer/types.ts';
 
 type ReleaseResource = AlbumsResource | VideosResource;
@@ -171,13 +174,13 @@ export class TidalV2ReleaseLookup extends ReleaseApiLookup<TidalProvider, Single
 		}
 	}
 
-	private getFullVideoTracklist(rawRelease: SingleDataDocument<VideosResource>): HarmonyMedium[] {
+	private async getFullVideoTracklist(rawRelease: SingleDataDocument<VideosResource>): Promise<HarmonyMedium[]> {
 		// A video only contains a single track
 		return [{
 			number: 1,
 			format: 'Digital Media',
 			tracklist: [
-				this.convertTrack(1, rawRelease.data),
+				await this.convertTrack(1, rawRelease.data),
 			],
 		}];
 	}
@@ -221,7 +224,7 @@ export class TidalV2ReleaseLookup extends ReleaseApiLookup<TidalProvider, Single
 			tracklist: [],
 		};
 
-		items.forEach((item) => {
+		for (const item of items) {
 			const track = this.getResource(item);
 			if (!track) {
 				throw new ProviderError(
@@ -243,9 +246,9 @@ export class TidalV2ReleaseLookup extends ReleaseApiLookup<TidalProvider, Single
 			}
 
 			medium.tracklist.push(
-				this.convertTrack(item.meta.trackNumber, track),
+				await this.convertTrack(item.meta.trackNumber, track),
 			);
-		});
+		}
 
 		// store the final medium
 		result.push(medium);
@@ -257,11 +260,12 @@ export class TidalV2ReleaseLookup extends ReleaseApiLookup<TidalProvider, Single
 		return result;
 	}
 
-	private convertTrack(
+	private async convertTrack(
 		number: number,
 		track: TracksResource | VideosResource,
-	): HarmonyTrack {
+	): Promise<HarmonyTrack> {
 		const { title, version } = track.attributes;
+		const credits = await this.fetchTrackCredits(track.id);
 		return {
 			number: number,
 			title: version ? `${title} (${version})` : title,
@@ -272,7 +276,47 @@ export class TidalV2ReleaseLookup extends ReleaseApiLookup<TidalProvider, Single
 			recording: {
 				externalIds: this.provider.makeExternalIds({ type: track.type === 'videos' ? 'video' : 'track', id: track.id }),
 			},
+			credits: credits.length ? credits : undefined,
 		};
+	}
+
+	private async fetchTrackCredits(trackId: string): Promise<TrackCredit[]> {
+		try {
+			const creditsUrl = new URL(`tracks/${trackId}/relationships/credits`, this.apiBaseUrl);
+			creditsUrl.searchParams.set('include', 'credits');
+			creditsUrl.searchParams.set('countryCode', this.lookup.region || this.provider.defaultRegion);
+
+			const { content } = await this.provider.query<CreditsRelationshipResponse>(creditsUrl, {
+				snapshotMaxTimestamp: this.options.snapshotMaxTimestamp,
+			});
+
+			if (!content.included?.length) {
+				return [];
+			}
+
+			return content.included
+				.filter((resource) => resource.type === 'credits' && resource.attributes?.name && resource.attributes?.role)
+				.map((resource) => {
+					const { name, role } = resource.attributes;
+					const mapping = mapRole(role, 'Tidal');
+					return {
+						name,
+						role: mapping.mbRelationshipType,
+						sources: ['Tidal'],
+						originalRole: role,
+						externalIds: [{
+							provider: 'tidal',
+							type: 'credit',
+							id: resource.id,
+						}],
+					} satisfies TrackCredit;
+				});
+		} catch (error: unknown) {
+			getLogger('harmony.provider').warn(
+				`Failed to fetch credits for Tidal track ${trackId}: ${error instanceof Error ? error.message : String(error)}`,
+			);
+			return [];
+		}
 	}
 
 	private getArtists(resource: ReleaseResource | TracksResource | VideosResource): ArtistCreditName[] {

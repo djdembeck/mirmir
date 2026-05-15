@@ -137,6 +137,152 @@ snapshot[`Discogs provider > release lookup > VA soundtrack CD without release d
               name: "Walter Carlos",
             },
           ],
+          credits: [
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "135480",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Rachel Elkind",
+              originalRole: "Composed By",
+              role: "work-level",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "8672",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Walter Carlos",
+              originalRole: "Composed By",
+              role: "work-level",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "452823",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ed Thrasher",
+              originalRole: "Art Direction [Original Art Direction]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Cover [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Artwork [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "69819",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "John Wood",
+              originalRole: "Edited By [Edited For LP By]",
+              role: "editor",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "504550",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Phillip Ramey",
+              originalRole: "Liner Notes",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "135480",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Rachel Elkind",
+              originalRole: "Producer [Selections Produced By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "249825",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joe Boyd",
+              originalRole: "Supervised By [Supervised For LP By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+          ],
           length: 146000,
           number: "1",
           title: "Title Music From A Clockwork Orange",
@@ -154,6 +300,120 @@ snapshot[`Discogs provider > release lookup > VA soundtrack CD without release d
               ],
               joinPhrase: undefined,
               name: "Gioacchino Rossini",
+            },
+          ],
+          credits: [
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "442174",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Gioacchino Rossini",
+              originalRole: "Composed By",
+              role: "work-level",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "452823",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ed Thrasher",
+              originalRole: "Art Direction [Original Art Direction]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Cover [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Artwork [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "69819",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "John Wood",
+              originalRole: "Edited By [Edited For LP By]",
+              role: "editor",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "504550",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Phillip Ramey",
+              originalRole: "Liner Notes",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "249825",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joe Boyd",
+              originalRole: "Supervised By [Supervised For LP By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
             },
           ],
           length: 357000,
@@ -175,6 +435,152 @@ snapshot[`Discogs provider > release lookup > VA soundtrack CD without release d
               name: "Walter Carlos",
             },
           ],
+          credits: [
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "135480",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Rachel Elkind",
+              originalRole: "Composed By",
+              role: "work-level",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "8672",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Walter Carlos",
+              originalRole: "Composed By",
+              role: "work-level",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "452823",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ed Thrasher",
+              originalRole: "Art Direction [Original Art Direction]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Cover [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Artwork [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "69819",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "John Wood",
+              originalRole: "Edited By [Edited For LP By]",
+              role: "editor",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "504550",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Phillip Ramey",
+              originalRole: "Liner Notes",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "135480",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Rachel Elkind",
+              originalRole: "Producer [Selections Produced By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "249825",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joe Boyd",
+              originalRole: "Supervised By [Supervised For LP By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+          ],
           length: 109000,
           number: "3",
           title: "Theme From A Clockwork Orange (Beethoviana)",
@@ -192,6 +598,120 @@ snapshot[`Discogs provider > release lookup > VA soundtrack CD without release d
               ],
               joinPhrase: undefined,
               name: "Ludwig van Beethoven",
+            },
+          ],
+          credits: [
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "95544",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ludwig van Beethoven",
+              originalRole: "Composed By",
+              role: "work-level",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "452823",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ed Thrasher",
+              originalRole: "Art Direction [Original Art Direction]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Cover [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Artwork [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "69819",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "John Wood",
+              originalRole: "Edited By [Edited For LP By]",
+              role: "editor",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "504550",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Phillip Ramey",
+              originalRole: "Liner Notes",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "249825",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joe Boyd",
+              originalRole: "Supervised By [Supervised For LP By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
             },
           ],
           length: 232000,
@@ -213,6 +733,168 @@ snapshot[`Discogs provider > release lookup > VA soundtrack CD without release d
               name: "Walter Carlos",
             },
           ],
+          credits: [
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "8672",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Walter Carlos",
+              originalRole: "Arranged By",
+              role: "arranger",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "95544",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ludwig van Beethoven",
+              originalRole: "Composed By",
+              role: "work-level",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "135480",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Rachel Elkind",
+              originalRole: "Featuring [Articulations]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "452823",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ed Thrasher",
+              originalRole: "Art Direction [Original Art Direction]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Cover [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Artwork [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "69819",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "John Wood",
+              originalRole: "Edited By [Edited For LP By]",
+              role: "editor",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "504550",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Phillip Ramey",
+              originalRole: "Liner Notes",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "135480",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Rachel Elkind",
+              originalRole: "Producer [Selections Produced By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "249825",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joe Boyd",
+              originalRole: "Supervised By [Supervised For LP By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+          ],
           length: 427000,
           number: "5",
           title: "March From A Clockwork Orange (Ninth Symphony, Fourth Movement, Abridged)",
@@ -230,6 +912,136 @@ snapshot[`Discogs provider > release lookup > VA soundtrack CD without release d
               ],
               joinPhrase: undefined,
               name: "Walter Carlos",
+            },
+          ],
+          credits: [
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "442174",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Gioacchino Rossini",
+              originalRole: "Composed By",
+              role: "work-level",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "452823",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ed Thrasher",
+              originalRole: "Art Direction [Original Art Direction]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Cover [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Artwork [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "69819",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "John Wood",
+              originalRole: "Edited By [Edited For LP By]",
+              role: "editor",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "504550",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Phillip Ramey",
+              originalRole: "Liner Notes",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "135480",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Rachel Elkind",
+              originalRole: "Producer [Selections Produced By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "249825",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joe Boyd",
+              originalRole: "Supervised By [Supervised For LP By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
             },
           ],
           length: 80000,
@@ -251,6 +1063,120 @@ snapshot[`Discogs provider > release lookup > VA soundtrack CD without release d
               name: "Sir Edward Elgar",
             },
           ],
+          credits: [
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "255804",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Sir Edward Elgar",
+              originalRole: "Composed By",
+              role: "work-level",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "452823",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ed Thrasher",
+              originalRole: "Art Direction [Original Art Direction]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Cover [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Artwork [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "69819",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "John Wood",
+              originalRole: "Edited By [Edited For LP By]",
+              role: "editor",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "504550",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Phillip Ramey",
+              originalRole: "Liner Notes",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "249825",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joe Boyd",
+              originalRole: "Supervised By [Supervised For LP By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+          ],
           length: 275000,
           number: "7",
           title: "Pomp And Circumstance March No. I",
@@ -268,6 +1194,120 @@ snapshot[`Discogs provider > release lookup > VA soundtrack CD without release d
               ],
               joinPhrase: undefined,
               name: "Sir Edward Elgar",
+            },
+          ],
+          credits: [
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "255804",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Sir Edward Elgar",
+              originalRole: "Composed By",
+              role: "work-level",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "452823",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ed Thrasher",
+              originalRole: "Art Direction [Original Art Direction]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Cover [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Artwork [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "69819",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "John Wood",
+              originalRole: "Edited By [Edited For LP By]",
+              role: "editor",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "504550",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Phillip Ramey",
+              originalRole: "Liner Notes",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "249825",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joe Boyd",
+              originalRole: "Supervised By [Supervised For LP By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
             },
           ],
           length: 98000,
@@ -289,6 +1329,136 @@ snapshot[`Discogs provider > release lookup > VA soundtrack CD without release d
               name: "Walter Carlos",
             },
           ],
+          credits: [
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "8672",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Walter Carlos",
+              originalRole: "Composed By",
+              role: "work-level",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "452823",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ed Thrasher",
+              originalRole: "Art Direction [Original Art Direction]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Cover [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Artwork [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "69819",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "John Wood",
+              originalRole: "Edited By [Edited For LP By]",
+              role: "editor",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "504550",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Phillip Ramey",
+              originalRole: "Liner Notes",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "135480",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Rachel Elkind",
+              originalRole: "Producer [Selections Produced By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "249825",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joe Boyd",
+              originalRole: "Supervised By [Supervised For LP By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+          ],
           length: 258000,
           number: "9",
           title: "Timesteps (Excerpt)",
@@ -306,6 +1476,120 @@ snapshot[`Discogs provider > release lookup > VA soundtrack CD without release d
               ],
               joinPhrase: undefined,
               name: "Terry Tucker",
+            },
+          ],
+          credits: [
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "254072",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Terry Tucker",
+              originalRole: "Composed By",
+              role: "work-level",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "452823",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ed Thrasher",
+              originalRole: "Art Direction [Original Art Direction]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Cover [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Artwork [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "69819",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "John Wood",
+              originalRole: "Edited By [Edited For LP By]",
+              role: "editor",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "504550",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Phillip Ramey",
+              originalRole: "Liner Notes",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "249825",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joe Boyd",
+              originalRole: "Supervised By [Supervised For LP By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
             },
           ],
           length: 107000,
@@ -327,6 +1611,120 @@ snapshot[`Discogs provider > release lookup > VA soundtrack CD without release d
               name: "Erika Eigen",
             },
           ],
+          credits: [
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "254070",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Erika Eigen",
+              originalRole: "Composed By",
+              role: "work-level",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "452823",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ed Thrasher",
+              originalRole: "Art Direction [Original Art Direction]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Cover [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Artwork [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "69819",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "John Wood",
+              originalRole: "Edited By [Edited For LP By]",
+              role: "editor",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "504550",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Phillip Ramey",
+              originalRole: "Liner Notes",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "249825",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joe Boyd",
+              originalRole: "Supervised By [Supervised For LP By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+          ],
           length: 64000,
           number: "11",
           title: "I Want To Marry A Lighthouse Keeper",
@@ -344,6 +1742,120 @@ snapshot[`Discogs provider > release lookup > VA soundtrack CD without release d
               ],
               joinPhrase: undefined,
               name: "Gioacchino Rossini",
+            },
+          ],
+          credits: [
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "442174",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Gioacchino Rossini",
+              originalRole: "Composed By",
+              role: "work-level",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "452823",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ed Thrasher",
+              originalRole: "Art Direction [Original Art Direction]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Cover [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Artwork [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "69819",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "John Wood",
+              originalRole: "Edited By [Edited For LP By]",
+              role: "editor",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "504550",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Phillip Ramey",
+              originalRole: "Liner Notes",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "249825",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joe Boyd",
+              originalRole: "Supervised By [Supervised For LP By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
             },
           ],
           length: 182000,
@@ -365,6 +1877,152 @@ snapshot[`Discogs provider > release lookup > VA soundtrack CD without release d
               name: "Walter Carlos",
             },
           ],
+          credits: [
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "8672",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Walter Carlos",
+              originalRole: "Arranged By",
+              role: "arranger",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "95544",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ludwig van Beethoven",
+              originalRole: "Composed By",
+              role: "work-level",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "452823",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ed Thrasher",
+              originalRole: "Art Direction [Original Art Direction]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Cover [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Artwork [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "69819",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "John Wood",
+              originalRole: "Edited By [Edited For LP By]",
+              role: "editor",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "504550",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Phillip Ramey",
+              originalRole: "Liner Notes",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "135480",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Rachel Elkind",
+              originalRole: "Producer [Selections Produced By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "249825",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joe Boyd",
+              originalRole: "Supervised By [Supervised For LP By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+          ],
           length: 189000,
           number: "13",
           title: "Suicide Scherzo (Ninth Symphony, Second Movement, Abridged)",
@@ -384,6 +2042,120 @@ snapshot[`Discogs provider > release lookup > VA soundtrack CD without release d
               name: "Ludwig van Beethoven",
             },
           ],
+          credits: [
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "95544",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ludwig van Beethoven",
+              originalRole: "Composed By",
+              role: "work-level",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "452823",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ed Thrasher",
+              originalRole: "Art Direction [Original Art Direction]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Cover [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Artwork [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "69819",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "John Wood",
+              originalRole: "Edited By [Edited For LP By]",
+              role: "editor",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "504550",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Phillip Ramey",
+              originalRole: "Liner Notes",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "249825",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joe Boyd",
+              originalRole: "Supervised By [Supervised For LP By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+          ],
           length: 99000,
           number: "14",
           title: "Ninth Symphony, Fourth Movement (Abridged)",
@@ -401,6 +2173,136 @@ snapshot[`Discogs provider > release lookup > VA soundtrack CD without release d
               ],
               joinPhrase: undefined,
               name: "Gene Kelly",
+            },
+          ],
+          credits: [
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "555147",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Arthur Freed",
+              originalRole: "Composed By",
+              role: "work-level",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "555146",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Nacio Herb Brown",
+              originalRole: "Composed By",
+              role: "work-level",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "452823",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Ed Thrasher",
+              originalRole: "Art Direction [Original Art Direction]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Cover [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "2162400",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Philip Castle",
+              originalRole: "Artwork [Cover Art]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "69819",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "John Wood",
+              originalRole: "Edited By [Edited For LP By]",
+              role: "editor",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "504550",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Phillip Ramey",
+              originalRole: "Liner Notes",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "249825",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joe Boyd",
+              originalRole: "Supervised By [Supervised For LP By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
             },
           ],
           length: 157000,
@@ -562,6 +2464,312 @@ snapshot[`Discogs provider > release lookup > double vinyl LP with medium titles
               name: "Pink Floyd",
             },
           ],
+          credits: [
+            {
+              creditedName: "Barrett",
+              externalIds: [
+                {
+                  id: "178489",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Syd Barrett",
+              originalRole: "Written-By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Bass Guitar",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: "BG",
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Lacquer Cut By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Lead Guitar",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Organ",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Keyboards",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "246097",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Nick Mason",
+              originalRole: "Percussion",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "171450",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "James Guthrie",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "171450",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "James Guthrie",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "409280",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joel Plante",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "409280",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joel Plante",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Sleeve [Sleeve Design]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Design [Sleeve Design]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Photography By [Photographs By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+          ],
           length: undefined,
           number: "A1",
           title: "Astronomy Domine",
@@ -579,6 +2787,360 @@ snapshot[`Discogs provider > release lookup > double vinyl LP with medium titles
               ],
               joinPhrase: undefined,
               name: "Pink Floyd",
+            },
+          ],
+          credits: [
+            {
+              creditedName: "Gilmour",
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Written-By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: "Mason",
+              externalIds: [
+                {
+                  id: "246097",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Nick Mason",
+              originalRole: "Written-By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: "Wright",
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Written-By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: "Waters",
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Written-By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Bass Guitar",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: "BG",
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Lacquer Cut By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Lead Guitar",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Organ",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Keyboards",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "246097",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Nick Mason",
+              originalRole: "Percussion",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "171450",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "James Guthrie",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "171450",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "James Guthrie",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "409280",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joel Plante",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "409280",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joel Plante",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Sleeve [Sleeve Design]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Design [Sleeve Design]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Photography By [Photographs By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
             },
           ],
           length: undefined,
@@ -600,6 +3162,312 @@ snapshot[`Discogs provider > release lookup > double vinyl LP with medium titles
               name: "Pink Floyd",
             },
           ],
+          credits: [
+            {
+              creditedName: "Waters",
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Written-By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Bass Guitar",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: "BG",
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Lacquer Cut By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Lead Guitar",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Organ",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Keyboards",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "246097",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Nick Mason",
+              originalRole: "Percussion",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "171450",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "James Guthrie",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "171450",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "James Guthrie",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "409280",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joel Plante",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "409280",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joel Plante",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Sleeve [Sleeve Design]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Design [Sleeve Design]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Photography By [Photographs By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+          ],
           length: undefined,
           number: "B1",
           title: "Set The Controls For The Heart Of The Sun",
@@ -617,6 +3485,360 @@ snapshot[`Discogs provider > release lookup > double vinyl LP with medium titles
               ],
               joinPhrase: undefined,
               name: "Pink Floyd",
+            },
+          ],
+          credits: [
+            {
+              creditedName: "Gilmour",
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Written-By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: "Mason",
+              externalIds: [
+                {
+                  id: "246097",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Nick Mason",
+              originalRole: "Written-By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: "Wright",
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Written-By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: "Waters",
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Written-By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Bass Guitar",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: "BG",
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Lacquer Cut By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Lead Guitar",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Organ",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Keyboards",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "246097",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Nick Mason",
+              originalRole: "Percussion",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "171450",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "James Guthrie",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "171450",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "James Guthrie",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "409280",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joel Plante",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "409280",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joel Plante",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Sleeve [Sleeve Design]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Design [Sleeve Design]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Photography By [Photographs By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
             },
           ],
           length: undefined,
@@ -645,6 +3867,296 @@ snapshot[`Discogs provider > release lookup > double vinyl LP with medium titles
               name: "Richard Wright",
             },
           ],
+          credits: [
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Bass Guitar",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: "BG",
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Lacquer Cut By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Lead Guitar",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Organ",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Keyboards",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "246097",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Nick Mason",
+              originalRole: "Percussion",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "171450",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "James Guthrie",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "171450",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "James Guthrie",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "409280",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joel Plante",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "409280",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joel Plante",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Sleeve [Sleeve Design]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Design [Sleeve Design]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Photography By [Photographs By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+          ],
           length: undefined,
           number: "C1",
           title: "Sysyphus: Part 1 / Part 2 / Part 3 / Part 4",
@@ -662,6 +4174,312 @@ snapshot[`Discogs provider > release lookup > double vinyl LP with medium titles
               ],
               joinPhrase: undefined,
               name: "Roger Waters",
+            },
+          ],
+          credits: [
+            {
+              creditedName: "Waters",
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Written-By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Bass Guitar",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: "BG",
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Lacquer Cut By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Lead Guitar",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Organ",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Keyboards",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "246097",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Nick Mason",
+              originalRole: "Percussion",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "171450",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "James Guthrie",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "171450",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "James Guthrie",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "409280",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joel Plante",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "409280",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joel Plante",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Sleeve [Sleeve Design]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Design [Sleeve Design]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Photography By [Photographs By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
             },
           ],
           length: undefined,
@@ -683,6 +4501,312 @@ snapshot[`Discogs provider > release lookup > double vinyl LP with medium titles
               name: "Roger Waters",
             },
           ],
+          credits: [
+            {
+              creditedName: "Waters",
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Written-By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Bass Guitar",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: "BG",
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Lacquer Cut By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Lead Guitar",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Organ",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Keyboards",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "246097",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Nick Mason",
+              originalRole: "Percussion",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "171450",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "James Guthrie",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "171450",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "James Guthrie",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "409280",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joel Plante",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "409280",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joel Plante",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Sleeve [Sleeve Design]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Design [Sleeve Design]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Photography By [Photographs By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+          ],
           length: undefined,
           number: "C3",
           title: "Several Species Of Small Furry Animals Gathered Together In A Cave And Grooving With A Pict",
@@ -702,6 +4826,296 @@ snapshot[`Discogs provider > release lookup > double vinyl LP with medium titles
               name: "David Gilmour",
             },
           ],
+          credits: [
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Bass Guitar",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: "BG",
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Lacquer Cut By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Lead Guitar",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Organ",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Keyboards",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "246097",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Nick Mason",
+              originalRole: "Percussion",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "171450",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "James Guthrie",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "171450",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "James Guthrie",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "409280",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joel Plante",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "409280",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joel Plante",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Sleeve [Sleeve Design]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Design [Sleeve Design]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Photography By [Photographs By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+          ],
           length: undefined,
           number: "D1",
           title: "The Narrow Way: Part 1 / Part 2 / Part 3",
@@ -719,6 +5133,296 @@ snapshot[`Discogs provider > release lookup > double vinyl LP with medium titles
               ],
               joinPhrase: undefined,
               name: "Nick Mason",
+            },
+          ],
+          credits: [
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Bass Guitar",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110862",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Roger Waters",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: "BG",
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Lacquer Cut By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Lead Guitar",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110863",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "David Gilmour",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Organ",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Keyboards",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "110861",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Richard Wright",
+              originalRole: "Vocals",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "246097",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Nick Mason",
+              originalRole: "Percussion",
+              role: "performer",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "307942",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Bernie Grundman",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "171450",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "James Guthrie",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "171450",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "James Guthrie",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "409280",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joel Plante",
+              originalRole: "Remastered By",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "409280",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Joel Plante",
+              originalRole: "Mastered By",
+              role: "mastering",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Sleeve [Sleeve Design]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Design [Sleeve Design]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
+            },
+            {
+              creditedName: undefined,
+              externalIds: [
+                {
+                  id: "1826972",
+                  provider: "discogs",
+                  type: "artist",
+                },
+              ],
+              name: "Hipgnosis (2)",
+              originalRole: "Photography By [Photographs By]",
+              role: "unknown",
+              sources: [
+                "Discogs",
+              ],
             },
           ],
           length: undefined,

@@ -1,0 +1,89 @@
+Task 8: MusicBrainz Provider — Read Existing Artist-Recording Relationships
+==============================================================================
+
+Date: 2026-05-15
+
+## Files Created
+
+- `mirmir/mb_credits.ts` — Module for fetching existing artist-recording relationships from MusicBrainz
+- `mirmir/mb_credits_test.ts` — Comprehensive test suite (7 test groups, 25 steps)
+
+## Module API
+
+### `fetchRecordingCredits(mbid: string): Promise<TrackCredit[]>`
+Fetches artist-recording relationships for a single recording from MB API.
+- Endpoint: GET /ws/2/recording/{mbid}?inc=artist-rels&fmt=json
+- Rate limited to 1 req/sec
+- Returns empty array for 404/400 responses
+- Throws on other HTTP errors
+
+### `fetchReleaseCredits(recordingMbids: string[]): Promise<Map<string, TrackCredit[]>>`
+Fetches credits for all recordings in a release, respecting rate limits.
+- Iterates sequentially with 1 req/sec rate limiting
+- Returns Map from recording MBID to TrackCredit[]
+
+### `normalizeRole(mbRelType: string): string`
+Normalizes MB relationship type names to consistent role strings.
+- Maps: producer→producer, engineer→engineer, mix→mixer, mixer→mixer, mastering→mastering, recording→recording, performer→performer, instruments→instruments, vocal→vocalist, vocals→vocalist, arranger→arranger, orchestrator→orchestrator, remixer→remixer, editor→editor, programmer→programmer, djmix→djmixer
+- Unknown types preserved as-is for review
+
+### `rateLimitedFetch(url: string): Promise<Response>`
+Rate-limited fetch enforcing 1 req/sec to MusicBrainz API.
+- Uses proper User-Agent header: mirmir/0.1
+- Module-level rate limiter with resetRateLimiter() for testing
+
+### `relationToTrackCredit(relation: MBArtistRelation): TrackCredit`
+Converts a single MB artist relationship to TrackCredit.
+- name = artist.name
+- role = normalized from relation.type
+- sources = ["MusicBrainz"]
+- mbid = artist.id
+- externalIds = [{ provider: 'musicbrainz', type: 'artist', id: artist.id }]
+
+### `recordingResponseToCredits(response: MBRecordingResponse): TrackCredit[]`
+Converts all relationships from an MB recording response to TrackCredit[].
+
+## TrackCredit Fields
+
+Each credit from MB has:
+- `name`: Artist name from MB
+- `role`: Normalized role string
+- `sources`: ["MusicBrainz"]
+- `mbid`: MB artist UUID
+- `externalIds`: [{ provider: 'musicbrainz', type: 'artist', id: artist.id }]
+
+## Test Results
+
+```
+running 7 tests from ./mirmir/mb_credits_test.ts
+normalizeRole ... ok (10ms) — 11 steps
+buildRecordingUrl ... ok (1ms) — 1 step
+relationToTrackCredit ... ok (3ms) — 4 steps
+recordingResponseToCredits ... ok (5ms) — 6 steps
+rate limiting ... ok (1s) — 1 step
+fetchRecordingCredits with mock ... ok (604ms) — 1 step
+fetchReleaseCredits ... ok (1ms) — 1 step
+
+ok | 7 passed (25 steps) | 0 failed (1s)
+```
+
+## Type Check
+
+```
+deno check mirmir/mb_credits.ts — PASS
+deno check mirmir/mb_credits_test.ts — PASS
+```
+
+## Existing Tests
+
+```
+deno test mirmir/role_mapping_test.ts — 8 passed (45 steps) | 0 failed
+```
+
+## Design Decisions
+
+1. Rate limiter uses module-level state (lastRequestTime) — simple, works for sequential access
+2. MB API errors (400/404) return empty array instead of throwing — graceful degradation
+3. Response body is cancelled on error paths to avoid Deno resource leak detection
+4. Unknown MB relationship types preserved as-is (not flagged as "unknown") — allows forward compatibility
+5. Module is UI-triggered, not automatic — respects rate limits and user intent

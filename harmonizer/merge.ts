@@ -20,6 +20,7 @@ import type {
 	ProviderReleaseErrorMap,
 	ReleaseGroupType,
 	ResolvableEntity,
+	TrackCredit,
 } from './types.ts';
 
 /** Options how release metadata from different providers should be merged. */
@@ -267,6 +268,18 @@ export function mergeRelease(
 		});
 	});
 
+	// Merge track credits from all providers (combinable).
+	mergedRelease.media.forEach((medium, mediumIndex) => {
+		medium.tracklist.forEach((track, trackIndex) => {
+			if (!track.credits) return;
+			const sourceCredits = availableSourceReleases
+				.filter((release) => release.media.length)
+				.map((release) => release.media[mediumIndex].tracklist[trackIndex].credits)
+				.filter(isDefined);
+			mergeTrackCredits(track.credits, sourceCredits);
+		});
+	});
+
 	return mergedRelease;
 }
 
@@ -276,6 +289,63 @@ function mergeArtistCredit(target: ArtistCreditName[], sources: Array<ArtistCred
 
 function mergeLabels(target: Label[], sources: Array<Label[] | undefined>) {
 	mergeResolvableEntityArray(target, sources);
+}
+
+/**
+ * Merges track credits from multiple providers, unioning all credits
+ * and deduplicating by (name, role) pair.
+ *
+ * - Same person + same role from different sources → single credit with merged sources and externalIds
+ * - Same person + different role → separate credits
+ * - Different persons → separate credits
+ */
+export function mergeTrackCredits(target: TrackCredit[], sources: Array<TrackCredit[] | undefined>): void {
+	const creditMap = new Map<string, TrackCredit>();
+
+	for (const credit of target) {
+		creditMap.set(makeCreditKey(credit), { ...credit });
+	}
+
+	for (const source of sources) {
+		if (!source?.length) continue;
+		for (const credit of source) {
+			const key = makeCreditKey(credit);
+			const existing = creditMap.get(key);
+			if (existing) {
+				existing.sources = [...new Set([...existing.sources, ...credit.sources])];
+				const mergedExternalIds = mergeExternalIdArrays(existing.externalIds, credit.externalIds);
+				existing.externalIds = mergedExternalIds.length ? mergedExternalIds : undefined;
+				if (!existing.creditedName && credit.creditedName) existing.creditedName = credit.creditedName;
+				if (!existing.originalRole && credit.originalRole) existing.originalRole = credit.originalRole;
+				if (!existing.mbid && credit.mbid) existing.mbid = credit.mbid;
+			} else {
+				creditMap.set(key, { ...credit });
+			}
+		}
+	}
+
+	target.length = 0;
+	target.push(...creditMap.values());
+}
+
+/** Creates a deduplication key from a credit's normalized name and role. */
+function makeCreditKey(credit: TrackCredit): string {
+	return `${credit.name.toLowerCase()}\n${credit.role.toLowerCase()}`;
+}
+
+/** Merges two external ID arrays, deduplicating by (provider, type, id). */
+function mergeExternalIdArrays(
+	a: ExternalEntityId[] | undefined,
+	b: ExternalEntityId[] | undefined,
+): ExternalEntityId[] {
+	const map = new Map<string, ExternalEntityId>();
+	for (const id of a ?? []) {
+		map.set(makeEntityIdKey(id), id);
+	}
+	for (const id of b ?? []) {
+		map.set(makeEntityIdKey(id), id);
+	}
+	return [...map.values()];
 }
 
 /**

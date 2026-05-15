@@ -16,7 +16,8 @@ export type IncludedResource =
 	| ArtworksResource
 	| TracksResource
 	| VideosResource
-	| ProvidersResource;
+	| ProvidersResource
+	| CreditsResource;
 
 // FIXME: complete list?
 export type ResourceType = IncludedResource['type'];
@@ -25,6 +26,7 @@ export type ResourceTypeMap = {
 	albums: AlbumsResource;
 	artists: ArtistsResource;
 	artworks: ArtworksResource;
+	credits: CreditsResource;
 	providers: ProvidersResource;
 	tracks: TracksResource;
 	videos: VideosResource;
@@ -174,6 +176,23 @@ export type VideosRelationships = {
 	/** Replaces {@linkcode AlbumsAttributes.imageLinks} and {@linkcode AlbumsAttributes.videoLinks}. */
 	thumbnailArt?: MultiDataRelationship<'artworks'>;
 	providers: MultiDataRelationship<'providers'>;
+};
+
+/** Tidal v2 Credits API response (JSON:API format) */
+export type CreditsRelationshipResponse = {
+	data: Array<ResourceIdentifier<'credits'>>;
+	included: CreditsResource[];
+};
+
+export type CreditsResource = {
+	id: string;
+	type: 'credits';
+	attributes: CreditsAttributes;
+};
+
+export type CreditsAttributes = {
+	name: string;
+	role: string;
 };
 
 export type ProvidersResource = {

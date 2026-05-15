@@ -9,6 +9,7 @@ import type {
 	Label as HarmonyLabel,
 	LinkType,
 	MediumFormat,
+	TrackCredit,
 } from '@/harmonizer/types.ts';
 import {
 	ApiQueryOptions,
@@ -37,6 +38,7 @@ import type {
 	SearchResults,
 	Track,
 } from './api_types.ts';
+import { buildReleaseLevelCreditMap, extractTrackLevelCredits } from './credits.ts';
 import { convertFormat, extractMoreDetailsFromFormatsAndStyles } from './format.ts';
 import { convertCountryStringToCodes } from './regions.ts';
 import { combineTracklistSectionsToMedia, splitTracklistIntoSections, type TracklistSection } from './tracklist.ts';
@@ -229,17 +231,22 @@ export class DiscogsReleaseLookup extends ReleaseApiLookup<DiscogsProvider, Rele
 			}
 		}
 
+		const allTrackPositions = rawRelease.tracklist
+			.filter((t) => t.type_ === 'track' || t.type_ === 'index')
+			.map((t) => t.position);
+		const releaseCreditMap = buildReleaseLevelCreditMap(rawRelease.extraartists, allTrackPositions);
+
 		return rawMedia.map((rawMedium, index) => ({
 			number: index + 1,
 			format: hasBrokenTracklist ? fallbackFormat : mediumFormats[index],
 			title: rawMedium.title,
 			tracklist: rawMedium.sections.flatMap((section) =>
-				section.tracks.map((track) => this.convertRawTrack(track, section))
+				section.tracks.map((track) => this.convertRawTrack(track, section, releaseCreditMap))
 			),
 		}));
 	}
 
-	convertRawTrack(track: Track, section?: TracklistSection): HarmonyTrack {
+	convertRawTrack(track: Track, section?: TracklistSection, releaseCreditMap?: Map<string, TrackCredit[]>): HarmonyTrack {
 		let trackNumber = track.position;
 		if (section?.hasMediumPrefix && section.positionPrefix) {
 			trackNumber = trackNumber.replace(section.positionPrefix, '');
@@ -267,11 +274,16 @@ export class DiscogsReleaseLookup extends ReleaseApiLookup<DiscogsProvider, Rele
 			}
 		}
 
+		const trackCredits = extractTrackLevelCredits(track);
+		const releaseCredits = releaseCreditMap?.get(track.position) ?? [];
+		const allCredits = [...trackCredits, ...releaseCredits];
+
 		return {
 			number: trackNumber,
 			title: trackTitle,
 			artists: track.artists?.map(this.convertRawArtist.bind(this)),
 			length: trackLengthMs,
+			credits: allCredits.length > 0 ? allCredits : undefined,
 		};
 	}
 
