@@ -1,0 +1,38 @@
+Task 12: Programmatic MB Relationship Injection via URL Seeding + Form Submission
+Date: 2026-05-15
+
+## Files Created
+- mirmir/mb_injector.ts — MBInjector class with login(), injectCredits(), dryRun()
+- mirmir/mb_injector_test.ts — 30 test steps, all passing with mocked fetch
+
+## Test Results
+```
+MBInjector ...
+  dryRun ... ok (12ms) — 11 steps
+  injectCredits ... ok (5s) — 4 steps
+  login ... ok (3s) — 3 steps
+  rate limiting ... ok (3s) — 1 step
+  Songwriter work-level skip ... ok (1ms) — 1 step
+  multiple attributes on a single credit ... ok (2ms) — 2 steps
+  empty credits array ... ok (0ms) — 1 step
+MBInjector ... ok (11s)
+
+1 passed (30 steps) | 0 failed
+```
+
+## Type Check
+```
+deno check mirmir/mb_injector.ts mirmir/mb_injector_test.ts — PASS
+```
+
+## Key Implementation Details
+- MBInjector class authenticates via session-based login (GET /login for CSRF, POST /login for session cookie)
+- injectCredits() builds rels.{N}.* form fields and POSTs to /recording/{mbid}/edit
+- dryRun() returns same structure without making any HTTP calls
+- Work-level credits (Composer, Lyricist, Songwriter) are skipped with logged warning
+- Credits without mbid are skipped
+- Credits with unconfirmed mappings (empty UUIDs) are skipped
+- Attributes with empty typeIds are silently omitted from form fields
+- Rate limited to 1 req/sec (MB bot guidelines)
+- Edit notes included in all submissions: "Imported with mirmir, using data from: [sources]"
+- rels.{N}.backward = "1" (recording is entity1 in MB relationship model)

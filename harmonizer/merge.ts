@@ -1,0 +1,439 @@
+import { makeReleasesCompatible } from './compatibility.ts';
+import { immutableReleaseProperties, immutableTrackProperties } from './properties.ts';
+import { guessTypesForRelease, mergeTypes } from './release_types.ts';
+import { isDefined } from '@/utils/predicate.ts';
+import { cloneInto, copyTo, isFilled } from '@/utils/record.ts';
+import { matchBySimilarName, similarNames } from '@/utils/similarity.ts';
+
+import type {
+	ArtistCreditName,
+	CountryCode,
+	ExternalEntityId,
+	HarmonyRelease,
+	ImmutableTrackProperty,
+	Label,
+	MergedHarmonyRelease,
+	PreferenceProperty,
+	ProviderMessage,
+	ProviderName,
+	ProviderPreferences,
+	ProviderReleaseErrorMap,
+	ReleaseGroupType,
+	ResolvableEntity,
+	TrackCredit,
+} from './types.ts';
+
+/** Options how release metadata from different providers should be merged. */
+export interface MergeOptions {
+	/** Names of the preferred providers for the whole release or individual properties. */
+	prefer?: ProviderName[] | ProviderPreferences;
+	/** Primary provider whose data should be used in case of any incompatibility. */
+	primaryProvider?: ProviderName;
+}
+
+/**
+ * Merges the given release data from different providers into a single, combined release.
+ * @param releaseMap - Source releases from different providers.
+ * @param preferences - Preferred providers for the whole release or individual properties.
+ * @returns Merged release (with immutable properties from their preferred providers as well as some combined properties).
+ */
+export function mergeRelease(
+	releaseMap: ProviderReleaseErrorMap,
+	options: MergeOptions = {},
+): MergedHarmonyRelease {
+	const incompatibleData = makeReleasesCompatible(releaseMap, options.primaryProvider);
+
+	const availableProviders: ProviderName[] = Object.entries(releaseMap)
+		.filter(([_providerName, releaseOrError]) => !(releaseOrError instanceof Error))
+		.map(([providerName]) => providerName);
+
+	const providerErrors = Object.entries(releaseMap)
+		.filter(([_providerName, releaseOrError]) => releaseOrError instanceof Error) as [ProviderName, Error][];
+
+	if (availableProviders.length === 0) {
+		throw new AggregateError(
+			providerErrors.map(([_providerName, error]) => error),
+			'No provider returned a release',
+		);
+	}
+
+	const errorMessages: ProviderMessage[] = providerErrors.map(([providerName, error]) => ({
+		provider: providerName,
+		text: error.message,
+		type: 'error',
+	}));
+
+	// create an empty merge target
+	const mergedRelease: MergedHarmonyRelease = {
+		title: '',
+		artists: [],
+		externalLinks: [],
+		media: [],
+		types: [],
+		info: {
+			providers: [],
+			messages: errorMessages,
+			sourceMap: {},
+			incompatibleData,
+		},
+	};
+
+	// check whether we prefer to use the same provider for all properties, fallback to preferred media provider
+	const preferences = options.prefer ?? {};
+	const preferSameProvider = Array.isArray(preferences);
+	const preferredProviders: ProviderName[] = preferSameProvider ? preferences : preferences.media ?? [];
+
+	// if preferences have been specified for individual properties, copy these during a second merge phase
+	const deferredProperties = new Set(preferSameProvider ? [] : Object.keys(preferences) as PreferenceProperty[]);
+
+	// if a media preference has been specified it also acts as the main provider preference (see above)
+	deferredProperties.delete('media');
+
+	// keep track of properties which have to be copied during the initial merge phase
+	const missingReleaseProperties = new Set(immutableReleaseProperties.filter((prop) => !deferredProperties.has(prop)));
+	const missingTrackProperties = new Set(immutableTrackProperties.filter((prop) => !deferredProperties.has(prop)));
+
+	// create temporary sets to speed up merging lists of regions
+	const availableRegions = new Set<CountryCode>();
+	const excludedRegions = new Set<CountryCode>();
+
+	// temporary list of all release group types
+	const releaseGroupTypes = new Array<Iterable<ReleaseGroupType>>();
+
+	orderByPreference(availableProviders, preferredProviders);
+
+	// Phase 1: Clone properties without specific provider preferences
+	for (const providerName of availableProviders) {
+		const sourceRelease = releaseMap[providerName] as HarmonyRelease;
+		const sourceIsTemplate = sourceRelease.info.providers[0].isTemplate;
+
+		// Clone missing properties into the merge target and keep track of their sources.
+		missingReleaseProperties.forEach((property) => {
+			const value = cloneInto(mergedRelease, sourceRelease, property);
+
+			if (isFilled(value)) {
+				mergedRelease.info.sourceMap[property] = providerName;
+				if (!sourceIsTemplate) {
+					// Template data is still allowed to be overwritten by other providers.
+					// FIXME: Least preferred template would overwrite earlier templates.
+					// Unproblematic as long as there can be only one (MB) template release.
+					// TODO: We need the negative counterpart of provider preferences for this.
+					// It would be useful to de-prioritize/down-rank templates and bad sources (e.g. iTunes ACs).
+					missingReleaseProperties.delete(property);
+				}
+			}
+		});
+
+		// As long as the merged release does not have media, nothing will happen here.
+		if (mergedRelease.media.length && sourceRelease.media.length) {
+			missingTrackProperties.forEach((property) => {
+				mergedRelease.media.forEach((medium, mediumIndex) => {
+					medium.tracklist.forEach((track, trackIndex) => {
+						copyTo(track, sourceRelease.media[mediumIndex].tracklist[trackIndex], property);
+					});
+				});
+
+				// Assume that if one track is filled, most of the other tracks are also filled.
+				// This is better than overwriting all tracks with data again just because e.g. one track was not filled.
+				// Filling each track separately using data from multiple providers leads to potentially inconsistent data.
+				if (mergedRelease.media.some((medium) => medium.tracklist.some((track) => isFilled(track[property])))) {
+					mergedRelease.info.sourceMap[property] = providerName;
+					if (!sourceIsTemplate) {
+						missingTrackProperties.delete(property);
+					}
+				}
+			});
+		}
+
+		// keep external links and info for all providers
+		mergedRelease.externalLinks.push(...sourceRelease.externalLinks);
+		mergedRelease.info.providers.push(...sourceRelease.info.providers);
+		mergedRelease.info.messages.push(...sourceRelease.info.messages);
+
+		// Merge release group types
+		if (sourceRelease.types) {
+			releaseGroupTypes.push(sourceRelease.types);
+		}
+
+		// combine availabilities
+		sourceRelease.availableIn?.forEach((region) => {
+			availableRegions.add(region);
+			excludedRegions.delete(region);
+		});
+		sourceRelease.excludedFrom?.forEach((region) => {
+			// make sure the current region is not available through another provider
+			if (!availableRegions.has(region)) {
+				excludedRegions.add(region);
+			}
+		});
+	}
+
+	// guess types from titles and merge all release types
+	releaseGroupTypes.push(guessTypesForRelease(mergedRelease));
+	mergedRelease.types = mergeTypes(...releaseGroupTypes);
+
+	// assign temporary sets to the merge target
+	if (availableRegions.size) {
+		mergedRelease.availableIn = Array.from(availableRegions);
+		mergedRelease.excludedFrom = Array.from(excludedRegions);
+	}
+
+	// Phase 2: Clone individual properties from their preferred providers
+	if (!preferSameProvider) {
+		(Object.entries(preferences) as [PreferenceProperty, ProviderName[]][])
+			.forEach(([property, preferredProviders]) => {
+				if (property === 'media' || property === 'externalId') {
+					// handled during phase 1 and phase 3
+					return;
+				}
+
+				orderByPreference(availableProviders, preferredProviders);
+
+				for (const providerName of availableProviders) {
+					const sourceRelease = releaseMap[providerName] as HarmonyRelease;
+					const sourceIsTemplate = sourceRelease.info.providers[0].isTemplate;
+
+					if (isTrackProperty(property)) {
+						if (!sourceRelease.media.length) continue;
+
+						mergedRelease.media.forEach((medium, mediumIndex) => {
+							medium.tracklist.forEach((track, trackIndex) => {
+								copyTo(track, sourceRelease.media[mediumIndex].tracklist[trackIndex], property);
+							});
+						});
+
+						if (mergedRelease.media.some((medium) => medium.tracklist.some((track) => isFilled(track[property])))) {
+							mergedRelease.info.sourceMap[property] = providerName;
+							if (!sourceIsTemplate) {
+								break;
+							}
+						}
+					} else {
+						const value = cloneInto(mergedRelease, sourceRelease, property);
+
+						if (isFilled(value)) {
+							mergedRelease.info.sourceMap[property] = providerName;
+							if (!sourceIsTemplate) {
+								break;
+							}
+						}
+					}
+				}
+			});
+	}
+
+	// Phase 3: Merge properties which have a custom merge algorithm
+	if (!preferSameProvider && preferences.externalId) {
+		orderByPreference(availableProviders, preferences.externalId);
+	}
+	const availableSourceReleases = availableProviders.map((providerName) => releaseMap[providerName] as HarmonyRelease);
+
+	// Combine external IDs of matching artist credits.
+	mergeArtistCredit(mergedRelease.artists, availableSourceReleases.map((release) => release.artists));
+	mergedRelease.media.forEach((medium, mediumIndex) => {
+		medium.tracklist.forEach((track, trackIndex) => {
+			if (track.artists) {
+				mergeArtistCredit(
+					track.artists,
+					availableSourceReleases
+						.filter((release) => release.media.length)
+						.map((release) => release.media[mediumIndex].tracklist[trackIndex].artists),
+				);
+			}
+		});
+	});
+
+	// Combine external IDs of matching labels.
+	if (mergedRelease.labels) {
+		mergeLabels(mergedRelease.labels, availableSourceReleases.map((release) => release.labels));
+	}
+
+	// Keep external recording IDs from all providers.
+	mergedRelease.media.forEach((medium, mediumIndex) => {
+		medium.tracklist.forEach((track, trackIndex) => {
+			track.recording = {};
+			const sourceRecordings = availableSourceReleases
+				.filter((release) => release.media.length)
+				.flatMap((release) => release.media[mediumIndex].tracklist[trackIndex].recording)
+				.filter(isDefined);
+			const recordingIds = sourceRecordings.flatMap((recording) => recording.externalIds ?? []);
+			if (recordingIds) {
+				track.recording.externalIds = recordingIds;
+			}
+			// Keep recording MBID if it is unique across all sources.
+			const recordingMbids = sourceRecordings.map((recording) => recording.mbid).filter(isDefined);
+			if (new Set(recordingMbids).size === 1) {
+				track.recording.mbid = recordingMbids[0];
+			}
+		});
+	});
+
+	// Merge track credits from all providers (combinable).
+	mergedRelease.media.forEach((medium, mediumIndex) => {
+		medium.tracklist.forEach((track, trackIndex) => {
+			if (!track.credits) return;
+			const sourceCredits = availableSourceReleases
+				.filter((release) => release.media.length)
+				.map((release) => release.media[mediumIndex].tracklist[trackIndex].credits)
+				.filter(isDefined);
+			mergeTrackCredits(track.credits, sourceCredits);
+		});
+	});
+
+	return mergedRelease;
+}
+
+function mergeArtistCredit(target: ArtistCreditName[], sources: Array<ArtistCreditName[] | undefined>) {
+	mergeResolvableEntityArray(target, sources);
+}
+
+function mergeLabels(target: Label[], sources: Array<Label[] | undefined>) {
+	mergeResolvableEntityArray(target, sources);
+}
+
+/**
+ * Merges track credits from multiple providers, unioning all credits
+ * and deduplicating by (name, role) pair.
+ *
+ * - Same person + same role from different sources → single credit with merged sources and externalIds
+ * - Same person + different role → separate credits
+ * - Different persons → separate credits
+ */
+export function mergeTrackCredits(target: TrackCredit[], sources: Array<TrackCredit[] | undefined>): void {
+	const creditMap = new Map<string, TrackCredit>();
+
+	for (const credit of target) {
+		creditMap.set(makeCreditKey(credit), { ...credit });
+	}
+
+	for (const source of sources) {
+		if (!source?.length) continue;
+		for (const credit of source) {
+			const key = makeCreditKey(credit);
+			const existing = creditMap.get(key);
+			if (existing) {
+				existing.sources = [...new Set([...existing.sources, ...credit.sources])];
+				const mergedExternalIds = mergeExternalIdArrays(existing.externalIds, credit.externalIds);
+				existing.externalIds = mergedExternalIds.length ? mergedExternalIds : undefined;
+				if (!existing.creditedName && credit.creditedName) existing.creditedName = credit.creditedName;
+				if (!existing.originalRole && credit.originalRole) existing.originalRole = credit.originalRole;
+				if (!existing.mbid && credit.mbid) existing.mbid = credit.mbid;
+			} else {
+				creditMap.set(key, { ...credit });
+			}
+		}
+	}
+
+	target.length = 0;
+	target.push(...creditMap.values());
+}
+
+/** Creates a deduplication key from a credit's normalized name and role. */
+function makeCreditKey(credit: TrackCredit): string {
+	return `${credit.name.toLowerCase()}\n${credit.role.toLowerCase()}`;
+}
+
+/** Merges two external ID arrays, deduplicating by (provider, type, id). */
+function mergeExternalIdArrays(
+	a: ExternalEntityId[] | undefined,
+	b: ExternalEntityId[] | undefined,
+): ExternalEntityId[] {
+	const map = new Map<string, ExternalEntityId>();
+	for (const id of a ?? []) {
+		map.set(makeEntityIdKey(id), id);
+	}
+	for (const id of b ?? []) {
+		map.set(makeEntityIdKey(id), id);
+	}
+	return [...map.values()];
+}
+
+/**
+ * Combines the external IDs of matching resolvable entities.
+ *
+ * All entity arrays must have the same length and order.
+ */
+export function mergeSortedResolvableEntityArray<T extends ResolvableEntity>(
+	target: T[],
+	sources: Array<T[] | undefined>,
+) {
+	target.forEach((targetItem, index) => {
+		const externalIds = new Map<string, ExternalEntityId>();
+		if (targetItem.externalIds?.length) {
+			for (const externalId of targetItem.externalIds) {
+				externalIds.set(makeEntityIdKey(externalId), externalId);
+			}
+		}
+		for (const source of sources) {
+			if (!source || source.length !== target.length) continue;
+			const sourceItem = source[index];
+			if (
+				sourceItem.externalIds?.length &&
+				sourceItem.name && targetItem.name &&
+				similarNames(sourceItem.name, targetItem.name)
+			) {
+				for (const externalId of sourceItem.externalIds) {
+					externalIds.set(makeEntityIdKey(externalId), externalId);
+				}
+			}
+		}
+		targetItem.externalIds = [...externalIds.values()];
+	});
+}
+
+/**
+ * Combines the external IDs of matching resolvable entities.
+ *
+ * Entity arrays can have an arbitrary length and order as long as the names of individual entities can be matched.
+ */
+export function mergeResolvableEntityArray<T extends ResolvableEntity>(target: T[], sources: Array<T[] | undefined>) {
+	target.forEach((targetItem) => {
+		const externalIds = new Map<string, ExternalEntityId>();
+		if (targetItem.externalIds?.length) {
+			for (const externalId of targetItem.externalIds) {
+				externalIds.set(makeEntityIdKey(externalId), externalId);
+			}
+		}
+		for (const source of sources) {
+			if (!source?.length) continue;
+			const matchingSourceItem = matchBySimilarName(targetItem, source, (item) => item.name);
+			if (matchingSourceItem?.externalIds?.length) {
+				for (const externalId of matchingSourceItem.externalIds) {
+					externalIds.set(makeEntityIdKey(externalId), externalId);
+				}
+			}
+		}
+		targetItem.externalIds = [...externalIds.values()];
+	});
+}
+
+function makeEntityIdKey(entityId: ExternalEntityId): string {
+	const { provider, type, id } = entityId;
+	return [provider, type, id].join('\n');
+}
+
+function isTrackProperty(property: PreferenceProperty): property is ImmutableTrackProperty {
+	return immutableTrackProperties.includes(property as ImmutableTrackProperty);
+}
+
+/**
+ * Sorts the given items according to the given order of preference.
+ * The remaining items will be kept at the end of the sorted array.
+ */
+function orderByPreference<T>(items: T[], preference: T[]) {
+	if (!preference.length) {
+		// no preferences, nothing to sort
+		return;
+	}
+
+	items.sort((a, b) => {
+		const orderA = preference.indexOf(a);
+		const orderB = preference.indexOf(b);
+		if (orderA === -1 || orderB === -1) {
+			// preference for one of the items was not specified, -1 would be sorted first, but we want them last
+			return orderB - orderA;
+		} else {
+			return orderA - orderB;
+		}
+	});
+}

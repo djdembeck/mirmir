@@ -1,0 +1,179 @@
+{
+	"schema_version": 2,
+	"active_work_id": "mirmir-revitalization-9d2a645b",
+	"works": {
+		"mirmir-revitalization-9d2a645b": {
+			"work_id": "mirmir-revitalization-9d2a645b",
+			"active_plan": "/home/djdembeck/projects/github/mirmir/.sisyphus/plans/mirmir-revitalization.md",
+			"plan_name": "mirmir-revitalization",
+			"status": "completed",
+			"started_at": "2026-05-15T22:19:51.416Z",
+			"updated_at": "2026-05-15T23:00:03.238Z",
+			"session_ids": [
+				"ses_1d2468332ffePpkjboFU63aVuA",
+				"ses_1d245ebffffesf48RB7ljVb39q",
+				"ses_1d245e4f3ffekAQCogPyGMi898"
+			],
+			"session_origins": {
+				"ses_1d2468332ffePpkjboFU63aVuA": "direct",
+				"ses_1d245ebffffesf48RB7ljVb39q": "appended",
+				"ses_1d245e4f3ffekAQCogPyGMi898": "appended"
+			},
+			"agent": "atlas",
+			"task_sessions": {
+				"todo:1": {
+					"task_key": "todo:1",
+					"task_label": "1",
+					"task_title": "\"rate limiting > enforces minimum 1 second between requests\" — FAILING",
+					"session_id": "ses_1d2350b08ffeytqSutgQI7kega",
+					"agent": "Sisyphus-Junior",
+					"category": "quick",
+					"started_at": "2026-05-15T22:21:07.946Z",
+					"ended_at": "2026-05-15T22:39:58.915Z",
+					"elapsed_ms": 1130969,
+					"status": "completed",
+					"updated_at": "2026-05-15T22:39:58.915Z"
+				},
+				"todo:6": {
+					"task_key": "todo:6",
+					"task_label": "6",
+					"task_title": "Tidal Provider: Extract Per-Track Credits via Credits API",
+					"session_id": "ses_1d23d21beffeHbTfcGlVTqdiBZ",
+					"agent": "Sisyphus-Junior",
+					"category": "deep",
+					"updated_at": "2026-05-15T22:40:20.610Z",
+					"started_at": "2026-05-15T22:34:21.833Z",
+					"status": "completed",
+					"ended_at": "2026-05-15T22:40:20.610Z",
+					"elapsed_ms": 358777
+				},
+				"todo:10": {
+					"task_key": "todo:10",
+					"task_label": "10",
+					"task_title": "Credit-Focused Web UI — Per-Track View",
+					"session_id": "ses_1d2335942ffe8LcVSI860N32Nb",
+					"agent": "Sisyphus-Junior",
+					"category": "visual-engineering",
+					"updated_at": "2026-05-15T22:45:43.138Z",
+					"started_at": "2026-05-15T22:44:24.832Z",
+					"status": "completed",
+					"ended_at": "2026-05-15T22:45:43.138Z",
+					"elapsed_ms": 78306
+				},
+				"todo:11": {
+					"task_key": "todo:11",
+					"task_label": "11",
+					"task_title": "Credit-Focused Web UI — Common Contributors View",
+					"session_id": "ses_1d22ea678ffeIy0dQ1Z1bSTWyV",
+					"agent": "Sisyphus-Junior",
+					"category": "visual-engineering",
+					"updated_at": "2026-05-15T22:53:31.267Z",
+					"started_at": "2026-05-15T22:51:38.143Z",
+					"status": "completed",
+					"ended_at": "2026-05-15T22:53:31.267Z",
+					"elapsed_ms": 113124
+				},
+				"final-wave:f1": {
+					"task_key": "final-wave:f1",
+					"task_label": "F1",
+					"task_title": "**Plan Compliance Audit** — `oracle`",
+					"session_id": "ses_1d223bae5ffeeexb5fiXQYxxjO",
+					"agent": "Sisyphus-Junior",
+					"category": "quick",
+					"started_at": "2026-05-15T22:55:43.547Z",
+					"status": "completed",
+					"updated_at": "2026-05-15T22:59:43.349Z",
+					"ended_at": "2026-05-15T22:59:43.349Z",
+					"elapsed_ms": 239802
+				}
+			},
+			"ended_at": "2026-05-15T23:00:03.238Z",
+			"elapsed_ms": 2411822
+		}
+	},
+	"active_plan": "/home/djdembeck/projects/github/mirmir/.sisyphus/plans/mirmir-revitalization.md",
+	"started_at": "2026-05-15T22:19:51.416Z",
+	"status": "completed",
+	"updated_at": "2026-05-15T23:00:03.238Z",
+	"session_ids": [
+		"ses_1d2468332ffePpkjboFU63aVuA",
+		"ses_1d245ebffffesf48RB7ljVb39q",
+		"ses_1d245e4f3ffekAQCogPyGMi898"
+	],
+	"session_origins": {
+		"ses_1d2468332ffePpkjboFU63aVuA": "direct",
+		"ses_1d245ebffffesf48RB7ljVb39q": "appended",
+		"ses_1d245e4f3ffekAQCogPyGMi898": "appended"
+	},
+	"plan_name": "mirmir-revitalization",
+	"task_sessions": {
+		"todo:1": {
+			"task_key": "todo:1",
+			"task_label": "1",
+			"task_title": "\"rate limiting > enforces minimum 1 second between requests\" — FAILING",
+			"session_id": "ses_1d2350b08ffeytqSutgQI7kega",
+			"agent": "Sisyphus-Junior",
+			"category": "quick",
+			"started_at": "2026-05-15T22:21:07.946Z",
+			"ended_at": "2026-05-15T22:39:58.915Z",
+			"elapsed_ms": 1130969,
+			"status": "completed",
+			"updated_at": "2026-05-15T22:39:58.915Z"
+		},
+		"todo:6": {
+			"task_key": "todo:6",
+			"task_label": "6",
+			"task_title": "Tidal Provider: Extract Per-Track Credits via Credits API",
+			"session_id": "ses_1d23d21beffeHbTfcGlVTqdiBZ",
+			"agent": "Sisyphus-Junior",
+			"category": "deep",
+			"updated_at": "2026-05-15T22:40:20.610Z",
+			"started_at": "2026-05-15T22:34:21.833Z",
+			"status": "completed",
+			"ended_at": "2026-05-15T22:40:20.610Z",
+			"elapsed_ms": 358777
+		},
+		"todo:10": {
+			"task_key": "todo:10",
+			"task_label": "10",
+			"task_title": "Credit-Focused Web UI — Per-Track View",
+			"session_id": "ses_1d2335942ffe8LcVSI860N32Nb",
+			"agent": "Sisyphus-Junior",
+			"category": "visual-engineering",
+			"updated_at": "2026-05-15T22:45:43.138Z",
+			"started_at": "2026-05-15T22:44:24.832Z",
+			"status": "completed",
+			"ended_at": "2026-05-15T22:45:43.138Z",
+			"elapsed_ms": 78306
+		},
+		"todo:11": {
+			"task_key": "todo:11",
+			"task_label": "11",
+			"task_title": "Credit-Focused Web UI — Common Contributors View",
+			"session_id": "ses_1d22ea678ffeIy0dQ1Z1bSTWyV",
+			"agent": "Sisyphus-Junior",
+			"category": "visual-engineering",
+			"updated_at": "2026-05-15T22:53:31.267Z",
+			"started_at": "2026-05-15T22:51:38.143Z",
+			"status": "completed",
+			"ended_at": "2026-05-15T22:53:31.267Z",
+			"elapsed_ms": 113124
+		},
+		"final-wave:f1": {
+			"task_key": "final-wave:f1",
+			"task_label": "F1",
+			"task_title": "**Plan Compliance Audit** — `oracle`",
+			"session_id": "ses_1d223bae5ffeeexb5fiXQYxxjO",
+			"agent": "Sisyphus-Junior",
+			"category": "quick",
+			"started_at": "2026-05-15T22:55:43.547Z",
+			"status": "completed",
+			"updated_at": "2026-05-15T22:59:43.349Z",
+			"ended_at": "2026-05-15T22:59:43.349Z",
+			"elapsed_ms": 239802
+		}
+	},
+	"agent": "atlas",
+	"ended_at": "2026-05-15T23:00:03.238Z",
+	"elapsed_ms": 2411822
+}

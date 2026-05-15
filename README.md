@@ -1,51 +1,97 @@
-# Mirmir
-[![GitHub](https://img.shields.io/github/license/djdembeck/mirmir)](https://github.com/djdembeck/mirmir/blob/develop/LICENSE)
-[![Docker](https://github.com/djdembeck/mirmir/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/djdembeck/mirmir/actions/workflows/docker-publish.yml)
-[![CodeFactor](https://www.codefactor.io/repository/github/djdembeck/mirmir/badge)](https://www.codefactor.io/repository/github/djdembeck/mirmir)
+# Harmony
 
-A tool written in Ruby on Rails, to seed MusicBrainz track relationships with data from Jaxsta track credits.
+> Music Metadata Aggregator and MusicBrainz Importer
 
-NOTE: Currently, this is only a data display tool, until I can determine the best course of action for seeding MB either through API, scraping or automation tools.
+## Features
 
-## Purpose
-The goal here is to make rich track-level credits easy to add to MusicBrainz, which is the upstream metadata source of many online music services. What the final product of seeding this data looks like can be seen here:
-https://musicbrainz.org/release/eecba6f1-67dc-45d6-942d-15e329d7886e
+- Lookup of release metadata from multiple sources by URL and/or GTIN
+- Metadata [providers](providers/) convert source data into a common, harmonized representation
+- Additional sources can be supported by adding more provider implementations
+- Merging of harmonized metadata from your preferred providers
+- Seeding of [MusicBrainz] releases using the merged metadata
+- Resolving of external entity identifiers to MBIDs
+- Detection of potential duplicate releases that already exist on MusicBrainz
+- Automatic guessing of title language and script
+- Permalinks which load snapshots of the originally queried source data
+- Submission of additional data like cover art and ISRCs for a MusicBrainz release
+- Link external IDs/URLs of related artists, labels and recordings to MusicBrainz
 
-But doing a release like that, can take *hours*. As such, this project aims to simplify the process by:
-- Clearly displaying relevant data, and nothing else
-- Presenting a format in which the data is easy to copy for manual data entry.
-- In the future, seeding this data into the appropriate fields, and only requiring the user to verify data accuracy.
+## Usage
 
-## Running
-Eventually, I intend to deploy this as a web service. Until it is stable enough to do so, you can run this locally in one of two ways:
+Most modules of this TypeScript codebase use web standards and should be able to run in modern browsers and other JavaScript runtimes.
+Only the [Fresh] server app and the CLI were written specifically for [Deno].
 
-### Docker (recommended):
-Since Docker is the quickest way to get up and running without worrying about requirements and dependencies, it's the recommended way to get started.
+The following instructions assume that you have the latest Deno version installed.
 
-    docker run --rm -d --name mirmir -p 3000:3000/tcp ghcr.io/djdembeck/mirmir:main
+You can start a local development server with the following command:
 
-- Open a browser to `127.0.0.1:3000`
+```sh
+deno task dev
+```
 
-### Webserver:
-#### Requirements
-- Ruby 3.0.0 or later
-- Rails 6.1.4 or later
+You can now open the logged URL in your browser to view the landing page.
+Try doing some code changes and see how the page automatically reloads.
 
-A great guide on setting up the requirements for setup, can be found here: https://gorails.com/setup/ubuntu/21.04#overview
+For a production server you should set the `PORT` environment variable to your preferred port and `DENO_DEPLOYMENT_ID` to the current git revision (commit hash or tag name).
+Alternatively you can run the [predefined task](deno.json) which automatically sets `DENO_DEPLOYMENT_ID` and runs `server/main.ts` with all permissions:
 
-#### Setup
-Getting up and running is pretty straightforward. From the project directory:
-- `gem install bundler`
-- `bundle install`
-- `rails s -b 127.0.0.1`
-- Open a browser to `127.0.0.1:3000`
+```sh
+deno task server
+```
 
+Other environment variables which are used by the server are documented in the [configuration module](config.ts) and in the [`.env.example` file](.env.example). To get started, copy `.env.example` to `.env`. Most environment variables are optional and have default values in the code. To use some providers, you need to create an app with that provider. After which, you'll get a set of client credentials, which you need to assign to the corresponding environment variables.
 
-## Running tests
-After setting up the dependencies above, tests can be run from the project folder with:
+There is also a small command line app which can be used for testing:
 
-    bundle exec rspec
+```sh
+deno task cli
+```
 
-## Notes
+[Deno]: https://deno.com
+[Fresh]: https://fresh.deno.dev
+[MusicBrainz]: https://musicbrainz.org
 
-Tidal/Spotify methods are also written but not exposed (Bearer can be retrieved from developer tools->network->name:events->request headers)
+## Architecture
+
+The entire code is written in TypeScript, the components of the web interface additionally use JSX syntax.
+
+A brief explanation of the directory structure should give you a basic idea how Harmony is working:
+
+- `harmonizer/`: Harmonized source data representation and algorithms
+  - `types.ts`: Type definitions of harmonized releases (and other entities)
+  - `merge.ts`: Merge algorithm for harmonized releases (from multiple sources)
+- `providers/`: Metadata provider implementations, one per subfolder
+  - `base.ts`: Abstract base classes from which all providers inherit
+  - `registry.ts`: Registry which manages all supported providers, instantiated in `mod.ts`
+- `lookup.ts`: Combined release lookup which accepts GTIN, URLs and/or IDs for any supported provider from the registry
+- `musicbrainz/`: MusicBrainz specific code
+  - `seeding.ts`: Release editor seeding
+  - `mbid_mapping.ts`: Resolving of external IDs/URLs to MBIDs
+- `server/`: Web app to lookup releases and import them into MusicBrainz
+  - `routes/`: Request handlers of the [Fresh] server (file-based routing)
+  - `static/`: Static files which will be served
+  - `components/`: Static [Preact] components which will be rendered as HTML by the server
+  - `islands/`: Dynamic [Preact] components which will be re-rendered by the client
+- `utils/`: Various utility functions
+
+Let us see what happens if someone looks up a release using the website:
+
+1. The Fresh app handles the request to the `/release` route in `server/routes/release.tsx`.
+2. A combined release lookup is initiated, which finds the matching provider(s) in the registry and calls their release lookup methods.
+3. Each requested provider fetches the release data and converts it into a harmonized release.
+4. Once all requested providers have been looked up, the individual releases are combined into one release using the merge algorithm.
+5. The route handler calls the MBID mapper, handles errors and renders the release page, including a hidden release seeder form.
+6. In order to create the release seed, the harmonized release is converted into the format expected by MusicBrainz where some data can only be put into the annotation.
+
+All requests which are initiated by a provider will be cached by the base class using [snap_storage] (persisted in `snaps.db` and a `snaps/` folder).
+Each snapshot contains the response body and can be accessed by request URL and a timestamp condition.
+This allows edit notes to contain permalinks which encode a timestamp and the necessary info to initiate the same lookup again, now with the underlying requests being cached.
+
+[Preact]: https://preactjs.com/
+[snap_storage]: https://github.com/kellnerd/snap_storage
+
+## Contributing
+
+Your contributions are welcome, be it code, documentation or feedback.
+
+If you want to contribute, please have a look at the hints in the [contribution guidelines](CONTRIBUTING.md).

@@ -1,0 +1,96 @@
+{
+  "data": [
+    { "id": "329293927-credit-1", "type": "credits" },
+    { "id": "329293927-credit-2", "type": "credits" },
+    { "id": "329293927-credit-3", "type": "credits" },
+    { "id": "329293927-credit-4", "type": "credits" },
+    { "id": "329293927-credit-5", "type": "credits" },
+    { "id": "329293927-credit-6", "type": "credits" },
+    { "id": "329293927-credit-7", "type": "credits" },
+    { "id": "329293927-credit-8", "type": "credits" },
+    { "id": "329293927-credit-9", "type": "credits" },
+    { "id": "329293927-credit-10", "type": "credits" }
+  ],
+  "included": [
+    {
+      "id": "329293927-credit-1",
+      "type": "credits",
+      "attributes": {
+        "name": "Drake",
+        "role": "Lyricist"
+      }
+    },
+    {
+      "id": "329293927-credit-2",
+      "type": "credits",
+      "attributes": {
+        "name": "Drake",
+        "role": "Composer"
+      }
+    },
+    {
+      "id": "329293927-credit-3",
+      "type": "credits",
+      "attributes": {
+        "name": "Noah \"40\" Shebib",
+        "role": "Producer"
+      }
+    },
+    {
+      "id": "329293927-credit-4",
+      "type": "credits",
+      "attributes": {
+        "name": "Noah \"40\" Shebib",
+        "role": "Co-Producer"
+      }
+    },
+    {
+      "id": "329293927-credit-5",
+      "type": "credits",
+      "attributes": {
+        "name": "Vinylz",
+        "role": "Producer"
+      }
+    },
+    {
+      "id": "329293927-credit-6",
+      "type": "credits",
+      "attributes": {
+        "name": "Boi-1da",
+        "role": "AdditionalProducer"
+      }
+    },
+    {
+      "id": "329293927-credit-7",
+      "type": "credits",
+      "attributes": {
+        "name": "Jahaan Sweet",
+        "role": "Keyboard"
+      }
+    },
+    {
+      "id": "329293927-credit-8",
+      "type": "credits",
+      "attributes": {
+        "name": "Lil Yachty",
+        "role": "Featured Artist"
+      }
+    },
+    {
+      "id": "329293927-credit-9",
+      "type": "credits",
+      "attributes": {
+        "name": "Noel Cadastre",
+        "role": "Recording Engineer"
+      }
+    },
+    {
+      "id": "329293927-credit-10",
+      "type": "credits",
+      "attributes": {
+        "name": "Chris Athens",
+        "role": "Mastering Engineer"
+      }
+    }
+  ]
+}

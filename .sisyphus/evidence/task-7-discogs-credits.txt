@@ -1,0 +1,187 @@
+[0m[38;5;245mrunning 5 tests from ./providers/Discogs/credits.test.ts[0m
+parseTrackRange ...
+  parses comma-separated single values ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+  parses numeric ranges ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  parses mixed single values and ranges ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  parses full range "1-10" ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  parses single value ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  returns empty for non-matching positions ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  parses vinyl positions with range ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  parses mixed vinyl and numeric positions ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+parseTrackRange ... [0m[32mok[0m [0m[38;5;245m(27ms)[0m
+convertExtraartistToCredits ...
+  maps "Produced By" to producer role ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  preserves creditedName from ANV ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  sets creditedName to undefined when ANV is empty ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  splits compound roles into separate credits ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  maps bracket notation roles ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  populates externalIds with discogs provider ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  returns empty array for empty role ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+convertExtraartistToCredits ... [0m[32mok[0m [0m[38;5;245m(5ms)[0m
+extractTrackLevelCredits ...
+  extracts credits from track extraartists ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  returns empty for track without extraartists ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  extracts creditedName from track-level ANV ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+extractTrackLevelCredits ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+buildReleaseLevelCreditMap ...
+  distributes credits by track range "1, 3-5, 7" ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  distributes credits to all tracks when tracks field is empty ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  handles multiple extraartists with overlapping track ranges ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  returns empty map for undefined extraartists ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  skips extraartists with empty role ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+buildReleaseLevelCreditMap ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+Discogs credits integration with fixture ...
+  extracts track-level credits from fixture data ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  extracts release-level credits with track ranges from fixture ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  preserves ANV from release-level extraartists ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+Discogs credits integration with fixture ... [0m[32mok[0m [0m[38;5;245m(6ms)[0m
+[0m[38;5;245mrunning 2 tests from ./providers/Discogs/format.test.ts[0m
+convertFormat ...
+  File ... [0m[32mok[0m [0m[38;5;245m(18ms)[0m
+  3x CD ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  2x Vinyl LP ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  Box Set ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+convertFormat ... [0m[32mok[0m [0m[38;5;245m(23ms)[0m
+extractMoreDetailsFromFormatsAndStyles ...
+  detects Album and defaults to Official ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  detects Bootleg Compilation ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  detects Promo Single and sets digital packaging to None ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  detects Mixtape ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  detects Score Album as Soundtrack ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  deduplicates (mapped) release group types ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  detects Radioplay Broadcast as Audio Drama ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  handles compilation box set which includes album and single ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+extractMoreDetailsFromFormatsAndStyles ... [0m[32mok[0m [0m[38;5;245m(6ms)[0m
+[0m[38;5;245mrunning 1 test from ./providers/Discogs/mod.test.ts[0m
+Discogs provider ...
+  extraction of entity type and ID from an URL ...
+    supports release URL ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+    supports release URL with slug ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    supports release URL with locale, slug and tracking parameter ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    supports artist URL ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    supports artist URL with slug ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    supports label URL ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    supports label URL with slug ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    supports master release URL ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    supports master release URL with slug ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+    ignores genre URL ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  extraction of entity type and ID from an URL ... [0m[32mok[0m [0m[38;5;245m(11ms)[0m
+  construction of a canonical entity URL ...
+    reconstructs release URL ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    reconstructs artist URL ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    reconstructs label URL ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+    reconstructs master release URL ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  construction of a canonical entity URL ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+  rejects invalid release IDs ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  release lookup ...
+    VA soundtrack CD without release date ... [0m[32mok[0m [0m[38;5;245m(38ms)[0m
+    double vinyl LP with medium titles and sub-tracks ... [0m[32mok[0m [0m[38;5;245m(12ms)[0m
+    obligatory maxi-single with multiple release countries ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+    audiobook with section titles that span across multiple CDs ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+    huge box set with named mediums, named sections and index tracks used as sections ... [0m[32mok[0m [0m[38;5;245m(8ms)[0m
+  release lookup ... [0m[32mok[0m [0m[38;5;245m(66ms)[0m
+Discogs provider ... [0m[32mok[0m [0m[38;5;245m(90ms)[0m
+[0m[38;5;245mrunning 1 test from ./providers/Discogs/regions.test.ts[0m
+convertCountryStringToCodes ...
+  converts standard country name: Spain ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  converts non-standard country name: Ivory Coast ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  converts abbreviated country name: UK ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  converts abbreviated country name: US ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports special region: Worldwide ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports special region: Europe ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports historical region with ISO code: USSR ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  ignores disputed region without ISO code ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  ignores continent ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  ignores historical region without ISO code ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  ignores the combination Africa ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  ignores the combination Asia ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination Australasia ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination Australia & New Zealand ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination Benelux ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination Central America ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination Czech Republic & Slovakia ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination France & Benelux ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination Germany & Switzerland ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination Germany, Austria, & Switzerland ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination Gulf Cooperation Council ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination Hong Kong & Thailand ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  ignores the combination Middle East ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination North America (inc Mexico) ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  ignores the combination North & South America ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination Russia & CIS ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination Scandinavia ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  supports the combination Singapore & Malaysia ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination Singapore, Malaysia & Hong Kong ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination Singapore, Malaysia, Hong Kong & Thailand ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination South America ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination South East Asia ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination South Pacific ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination UK & Europe ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination UK, Europe & Israel ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination UK, Europe & Japan ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination UK, Europe & US ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination UK & France ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination UK & Germany ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination UK & Ireland ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination UK & US ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination USA & Canada ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination USA & Europe ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  supports the combination USA, Canada & Europe ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  supports the combination USA, Canada & UK ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+convertCountryStringToCodes ... [0m[32mok[0m [0m[38;5;245m(34ms)[0m
+[0m[38;5;245mrunning 1 test from ./providers/Discogs/tracklist.test.ts[0m
+splitTracklistIntoSections ...
+  handles simple numeric tracklist ... [0m[32mok[0m [0m[38;5;245m(14ms)[0m
+  splits tracklist with medium number prefixes ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  splits tracklist with medium format and number prefixes ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  detects track positions with side prefix ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  handles side numbers ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  handles mixed tracklist with numbered mediums and side prefixes ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  detects sides after numeric positions without medium prefix ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  detects numeric positions without medium prefix after sides as new medium ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+splitTracklistIntoSections ... [0m[32mok[0m [0m[38;5;245m(22ms)[0m
+
+[0m[32mok[0m | 10 passed (114 steps) | 0 failed [0m[38;5;245m(924ms)[0m
+
+---
+Credits test details:
+[0m[38;5;245mrunning 5 tests from ./providers/Discogs/credits.test.ts[0m
+parseTrackRange ...
+  parses comma-separated single values ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+  parses numeric ranges ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  parses mixed single values and ranges ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  parses full range "1-10" ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  parses single value ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  returns empty for non-matching positions ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  parses vinyl positions with range ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  parses mixed vinyl and numeric positions ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+parseTrackRange ... [0m[32mok[0m [0m[38;5;245m(9ms)[0m
+convertExtraartistToCredits ...
+  maps "Produced By" to producer role ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  preserves creditedName from ANV ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  sets creditedName to undefined when ANV is empty ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  splits compound roles into separate credits ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  maps bracket notation roles ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  populates externalIds with discogs provider ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  returns empty array for empty role ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+convertExtraartistToCredits ... [0m[32mok[0m [0m[38;5;245m(6ms)[0m
+extractTrackLevelCredits ...
+  extracts credits from track extraartists ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  returns empty for track without extraartists ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  extracts creditedName from track-level ANV ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+extractTrackLevelCredits ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+buildReleaseLevelCreditMap ...
+  distributes credits by track range "1, 3-5, 7" ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  distributes credits to all tracks when tracks field is empty ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  handles multiple extraartists with overlapping track ranges ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  returns empty map for undefined extraartists ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  skips extraartists with empty role ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+buildReleaseLevelCreditMap ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+Discogs credits integration with fixture ...
+  extracts track-level credits from fixture data ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  extracts release-level credits with track ranges from fixture ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  preserves ANV from release-level extraartists ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+Discogs credits integration with fixture ... [0m[32mok[0m [0m[38;5;245m(3ms)[0m
+
+[0m[32mok[0m | 5 passed (26 steps) | 0 failed [0m[38;5;245m(39ms)[0m
+

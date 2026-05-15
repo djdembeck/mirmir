@@ -1,0 +1,60 @@
+Task 9: Combinable Credit Merge Algorithm
+Date: 2026-05-15
+
+## Implementation Summary
+
+### Files Modified
+1. `harmonizer/merge.ts` - Added `mergeTrackCredits()` function and Phase 3 credit merge logic
+2. `harmonizer/merge.test.ts` - Added 12 test cases for `mergeTrackCredits()`
+
+### Changes in harmonizer/merge.ts
+
+1. Added `TrackCredit` to type imports (line 23)
+
+2. Added `mergeTrackCredits()` exported function (after `mergeLabels`):
+   - Takes `target: TrackCredit[]` and `sources: Array<TrackCredit[] | undefined>`
+   - Uses a Map keyed by normalized (name, role) pair for deduplication
+   - When same person+role found across sources: merges sources, externalIds, creditedName, originalRole, mbid
+   - When same person+different role: creates separate credits
+   - Case-insensitive deduplication key
+
+3. Added `makeCreditKey()` helper: normalizes name+role to lowercase for dedup
+
+4. Added `mergeExternalIdArrays()` helper: deduplicates ExternalEntityId by (provider, type, id)
+
+5. Added Phase 3 credit merge block (after recording merge, before return):
+   - Iterates all media/tracklist
+   - Collects credits from all available source releases for each track position
+   - Calls `mergeTrackCredits()` on each track's credits
+
+### Test Results
+
+```
+deno test --allow-read --allow-env harmonizer/
+11 passed (225 steps) | 0 failed
+```
+
+New test cases (12):
+- unions credits from two providers for the same track
+- deduplicates same person/role across providers
+- preserves different roles from different providers
+- creates separate credits for same person with different role
+- merges externalIds when deduplicating
+- preserves creditedName from the most specific source
+- keeps existing creditedName when source has none
+- deduplicates externalIds by provider+type+id
+- handles empty source arrays
+- is case-insensitive for deduplication
+- merges mbid from source when target has none
+- merges originalRole from source when target has none
+
+### Existing Tests: 0 regressions
+All pre-existing merge tests (mergeSortedResolvableEntityArray, mergeResolvableEntityArray) still pass.
+
+### Type Check
+```
+deno check harmonizer/merge.ts harmonizer/merge.test.ts
+Check harmonizer/merge.ts
+Check harmonizer/merge.test.ts
+```
+No type errors.

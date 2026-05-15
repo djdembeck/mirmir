@@ -1,0 +1,81 @@
+Task 13: MB Injection UI — Credit Selection + Injection Flow
+=============================================================
+Date: 2026-05-15
+Branch: feat/mirmir-revitalization
+
+FILES CREATED
+-------------
+1. server/islands/CreditSelector.tsx
+   - Manages credit selection state with checkboxes
+   - Groups credits by role with "Select all / Deselect all" per role group
+   - Disables credits without MBID (shows "No artist MBID")
+   - Disables work-level credits (Composer, Lyricist) with tooltip "Work-level relationship — skip for v1"
+   - Exports getCreditKey() and isCreditInjectable() helpers
+
+2. server/islands/InjectionFlow.tsx
+   - 5-step injection workflow: Review → Dry Run → Confirm → Progress → Results
+   - Review step: shows selected credits grouped by track
+   - Dry Run step: calls /api/inject with dryRun=true, displays wouldSubmit/wouldSkip counts and details
+   - Confirm step: modal-style warning "You are about to edit MusicBrainz"
+   - Progress step: spinner + progress bar showing "X of Y credits processed"
+   - Results step: success/failure per credit with edit URLs
+   - Defaults to test.musicbrainz.org
+
+3. server/islands/CreditInjector.tsx
+   - Wrapper component that toggles between "view" and "select" modes
+   - Shows MB editing warning prominently when in select mode
+   - Integrates CreditSelector + InjectionFlow
+   - Passes selected credits to InjectionFlow
+
+4. server/routes/api/inject.ts
+   - POST /api/inject endpoint
+   - Accepts { recordingMbid, credits, dryRun? }
+   - Reads MIRMIR_MB_USERNAME, MIRMIR_MB_PASSWORD, MIRMIR_MB_BASE_URL from env
+   - Returns 503 if credentials not configured
+   - Uses MBInjector class for dryRun and actual injection
+
+FILES MODIFIED
+--------------
+5. server/islands/CreditView.tsx
+   - Added selectionMode, selectedCredits, onCreditToggle, getCreditKey, isCreditDisabled props
+   - CreditEntry now renders checkbox in selection mode
+   - TrackCreditCard passes selection props down
+   - Backward compatible: defaults to view mode (selectionMode=false)
+
+6. server/routes/release.tsx
+   - Replaced CreditView import with CreditInjector
+   - CreditInjector receives tracks with recordingMbid for injection capability
+   - Added CommonContributors import (was already used but missing import)
+
+7. server/static/harmony.css
+   - Added ~400 lines of CSS for injection UI components
+   - Styles for: credit-selector, credit-role-group, injection-step-indicator,
+     injection-confirm-dialog, progress-bar, result-stat, dryrun-stat, etc.
+   - Uses existing CSS variables (theme-fill, brand-red, button-accent-fill, etc.)
+
+VERIFICATION
+------------
+- deno check server/islands/CreditSelector.tsx: PASS
+- deno check server/islands/InjectionFlow.tsx: PASS
+- deno check server/islands/CreditInjector.tsx: PASS
+- deno check server/islands/CreditView.tsx: PASS
+- deno check server/routes/api/inject.ts: PASS
+- deno check server/routes/release.tsx: PASS
+- deno task check (full project): PASS
+
+DESIGN SYSTEM COMPLIANCE
+------------------------
+- All colors use CSS variables from :root (page-fill, theme-fill, brand-red, etc.)
+- Spacing uses em/rem units consistent with existing styles
+- Buttons use existing Button component
+- Icons use existing SpriteIcon component
+- Message boxes use existing .message.warning/.error classes
+- No hardcoded magic numbers for visual properties
+
+SECURITY & SAFETY
+-----------------
+- No auto-injection without user confirmation
+- Confirmation dialog explicitly warns about MB editing
+- Defaults to test.musicbrainz.org (not production)
+- No real MB API calls from UI — all go through /api/inject endpoint
+- Credentials read from env vars only

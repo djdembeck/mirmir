@@ -1,0 +1,64 @@
+Task 6: Tidal Provider — Extract Per-Track Credits via Credits API
+==================================================================
+
+Date: 2026-05-15
+
+## Changes Made
+
+### 1. providers/Tidal/v2/api_types.ts
+- Added `CreditsRelationshipResponse` type for Credits API response (JSON:API format)
+- Added `CreditsResource` type with `id`, `type: 'credits'`, `attributes: { name, role }`
+- Added `CreditsAttributes` type
+- Added `credits` to `IncludedResource` union and `ResourceTypeMap`
+
+### 2. providers/Tidal/v2/lookup.ts
+- Added imports: `mapRole` from `@/mirmir/role_mapping.ts`, `TrackCredit` from `@/harmonizer/types.ts`, `CreditsRelationshipResponse` from `./api_types.ts`
+- Changed `convertTrack()` from sync to async — now calls `fetchTrackCredits()` for each track
+- Added `fetchTrackCredits(trackId)` private method:
+  - Constructs URL: `tracks/{trackId}/relationships/credits?include=credits&countryCode={region}`
+  - Uses `this.provider.query()` for API call (handles auth and rate limiting)
+  - Parses JSON:API response, filters valid credits from `included` array
+  - Maps each credit to `TrackCredit` with:
+    - `name` = `attributes.name`
+    - `role` = `mapRole(attributes.role, 'Tidal').mbRelationshipType` (normalized)
+    - `originalRole` = `attributes.role` (raw Tidal string)
+    - `sources` = `["Tidal"]`
+    - `externalIds` = `[{ provider: 'tidal', type: 'credit', id: resource.id }]`
+  - Graceful degradation: try/catch returns `[]` on error, logs warning
+- Changed `getFullAlbumTracklist()`: `items.forEach` → `for...of` loop (sequential credit fetching, respects rate limits)
+- Changed `getFullVideoTracklist()`: now async, awaits `convertTrack()`
+- Track `credits` field: `credits.length ? credits : undefined` (omitted when empty)
+
+### 3. providers/Tidal/v2/credits.test.ts (NEW)
+- 2 test suites, 27 steps total:
+  - `mapRole integration` (13 steps): Tests all 12 tidalRoleMap entries + unmapped role fallback
+  - `credit extraction from fixture` (5 steps): Tests against tidal-credits-response.json fixture
+  - `graceful degradation` (3 steps): Empty included, no credits, missing attributes
+  - `tidalRoleMap coverage` (1 step): Verifies all observed Tidal roles are in the map
+  - `fetchTrackCredits returns empty array on API error` (1 step): Stub test
+
+### 4. Snapshot updates
+- 4 Tidal provider snapshots updated to include `credits: undefined` on tracks
+  (expected: credits API calls fail in test mode since no testdata exists for credits endpoint)
+
+## Test Results
+
+```
+deno test --allow-read --allow-env providers/Tidal/
+3 passed (52 steps) | 0 failed
+
+deno test --allow-read --allow-env mirmir/test/
+1 passed (11 steps) | 0 failed
+
+deno check providers/Tidal/v2/lookup.ts providers/Tidal/v2/api_types.ts providers/Tidal/v2/credits.test.ts
+All pass
+```
+
+## Key Design Decisions
+
+1. **Sequential credit fetching**: `for...of` loop instead of `Promise.all` to respect Tidal rate limits
+2. **Graceful degradation**: Each track's credit fetch is wrapped in try/catch; failures log a warning and continue
+3. **Credits omitted when empty**: `credits: undefined` instead of `credits: []` to keep output clean
+4. **Role normalization**: Uses `mapRole(role, 'Tidal').mbRelationshipType` as the normalized `role` field
+5. **Original role preserved**: `originalRole` stores the raw Tidal string (e.g., "Co-Producer", "AdditionalProducer")
+6. **External IDs**: Each credit gets `{ provider: 'tidal', type: 'credit', id: resource.id }`

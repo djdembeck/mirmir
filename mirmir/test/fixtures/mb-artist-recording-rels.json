@@ -1,0 +1,83 @@
+{
+  "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "title": "Virginia Beach",
+  "length": 182000,
+  "artist-credit": [
+    {
+      "artist": {
+        "id": "12345678-1234-1234-1234-123456789012",
+        "name": "Drake",
+        "sort-name": "Drake",
+        "disambiguation": "Canadian rapper"
+      },
+      "name": "Drake",
+      "joinphrase": ""
+    }
+  ],
+  "relations": [
+    {
+      "type": "producer",
+      "direction": "backward",
+      "artist": {
+        "id": "23456789-2345-2345-2345-234567890123",
+        "name": "Noah \"40\" Shebib",
+        "sort-name": "Shebib, Noah",
+        "disambiguation": "Canadian producer"
+      },
+      "attributes": [],
+      "attribute-ids": {}
+    },
+    {
+      "type": "producer",
+      "direction": "backward",
+      "artist": {
+        "id": "34567890-3456-3456-3456-345678901234",
+        "name": "Vinylz",
+        "sort-name": "Vinylz",
+        "disambiguation": "American producer"
+      },
+      "attributes": [],
+      "attribute-ids": {}
+    },
+    {
+      "type": "engineer",
+      "direction": "backward",
+      "artist": {
+        "id": "45678901-4567-4567-4567-456789012345",
+        "name": "Noel Cadastre",
+        "sort-name": "Cadastre, Noel",
+        "disambiguation": "Recording engineer"
+      },
+      "attributes": ["recording"],
+      "attribute-ids": {
+        "recording": "7a50e3f7-9089-4116-8f0a-8f0a8f0a8f0a"
+      }
+    },
+    {
+      "type": "mixer",
+      "direction": "backward",
+      "artist": {
+        "id": "45678901-4567-4567-4567-456789012345",
+        "name": "Noel Cadastre",
+        "sort-name": "Cadastre, Noel",
+        "disambiguation": "Recording engineer"
+      },
+      "attributes": [],
+      "attribute-ids": {}
+    },
+    {
+      "type": "engineer",
+      "direction": "backward",
+      "artist": {
+        "id": "56789012-5678-5678-5678-567890123456",
+        "name": "Chris Athens",
+        "sort-name": "Athens, Chris",
+        "disambiguation": "Mastering engineer"
+      },
+      "attributes": ["mastering"],
+      "attribute-ids": {
+        "mastering": "8b60f4f8-9190-5227-9f1b-9f1b9f1b9f1b"
+      }
+    }
+  ]
+}
