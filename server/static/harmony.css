@@ -570,3 +570,127 @@ div[role='tooltip'] > ol, div[role='tooltip'] > ul {
 		max-width: 100%;
 	}
 }
+
+/* CreditView.tsx */
+
+.credit-view {
+	margin: 1.5em 0;
+}
+
+.credit-view-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	margin-bottom: 1em;
+}
+
+.credit-view-header h3 {
+	margin: 0;
+}
+
+.credit-empty {
+	color: var(--text);
+	opacity: 0.6;
+	font-style: italic;
+	text-align: center;
+	padding: 1em;
+}
+
+.credit-track-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 1em;
+}
+
+.track-credit-card {
+	background-color: var(--even-fill);
+	border: 1px solid var(--button-border);
+	border-radius: 0.3em;
+	overflow: hidden;
+}
+
+.track-credit-header {
+	background-color: var(--theme-fill);
+	color: var(--theme-text);
+	padding: 0.5em 0.75em;
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+
+.track-number {
+	font-weight: bold;
+	font-variant: tabular-nums;
+	min-width: 1.5em;
+	text-align: right;
+}
+
+.track-title {
+	font-weight: 500;
+}
+
+.track-credit-body {
+	padding: 0.75em;
+}
+
+.role-group {
+	margin-bottom: 0.75em;
+}
+
+.role-group:last-child {
+	margin-bottom: 0;
+}
+
+.role-name {
+	margin: 0 0 0.3em 0;
+	font-size: 0.9em;
+	text-transform: capitalize;
+	color: var(--text);
+	opacity: 0.8;
+}
+
+.role-credits {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3em;
+}
+
+.credit-entry {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.3em;
+}
+
+.credit-name {
+	cursor: pointer;
+	user-select: all;
+}
+
+.credit-name:hover {
+	color: var(--link-accent);
+}
+
+.credit-original-role {
+	font-size: 0.8em;
+	opacity: 0.6;
+}
+
+.source-badge {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.15em 0.4em;
+	border-radius: 0.2em;
+	font-size: 0.7em;
+	line-height: 1;
+	white-space: nowrap;
+	color: var(--badge-text);
+}
+
+@media screen and (max-width: 40rem) {
+	.credit-track-grid {
+		grid-template-columns: 1fr;
+	}
+}

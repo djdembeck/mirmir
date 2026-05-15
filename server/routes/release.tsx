@@ -2,6 +2,7 @@ import { ErrorMessageBox } from '@/server/components/MessageBox.tsx';
 import { Release } from '@/server/components/Release.tsx';
 import ReleaseLookup from '@/server/components/ReleaseLookup.tsx';
 import { SpriteIcon } from '@/server/components/SpriteIcon.tsx';
+import { CreditView } from '@/server/islands/CreditView.tsx';
 import { ReleaseSeeder } from '@/server/islands/ReleaseSeeder.tsx';
 
 import { codeUrl, musicbrainzTargetServer } from '@/config.ts';
@@ -144,6 +145,18 @@ export default defineRoute(async (req, ctx) => {
 				)}
 				{errors.map((error, index) => <ErrorMessageBox error={error} currentUrl={ctx.url} key={index} />)}
 				{release && <Release release={release} releaseMap={releaseMap} />}
+				{release && (
+					<CreditView
+						tracks={release.media.flatMap((medium) =>
+							medium.tracklist.map((track) => ({
+								number: track.number ?? '?',
+								title: track.title,
+								credits: track.credits,
+								recordingMbid: track.recording?.mbid,
+							}))
+						)}
+					/>
+				)}
 				{release && (
 					<div class='row'>
 						<ReleaseSeeder

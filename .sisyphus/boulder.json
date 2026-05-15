@@ -8,7 +8,7 @@
       "plan_name": "mirmir-revitalization",
       "status": "active",
       "started_at": "2026-05-15T22:19:51.416Z",
-      "updated_at": "2026-05-15T22:39:58.915Z",
+      "updated_at": "2026-05-15T22:44:24.831Z",
       "session_ids": [
         "ses_1d2468332ffePpkjboFU63aVuA",
         "ses_1d245ebffffesf48RB7ljVb39q",
@@ -41,8 +41,21 @@
           "session_id": "ses_1d23d21beffeHbTfcGlVTqdiBZ",
           "agent": "Sisyphus-Junior",
           "category": "deep",
-          "updated_at": "2026-05-15T22:34:21.833Z",
+          "updated_at": "2026-05-15T22:40:20.610Z",
           "started_at": "2026-05-15T22:34:21.833Z",
+          "status": "completed",
+          "ended_at": "2026-05-15T22:40:20.610Z",
+          "elapsed_ms": 358777
+        },
+        "todo:10": {
+          "task_key": "todo:10",
+          "task_label": "10",
+          "task_title": "Credit-Focused Web UI — Per-Track View",
+          "session_id": "ses_1d2335942ffe8LcVSI860N32Nb",
+          "agent": "Sisyphus-Junior",
+          "category": "visual-engineering",
+          "updated_at": "2026-05-15T22:44:24.832Z",
+          "started_at": "2026-05-15T22:44:24.832Z",
           "status": "running"
         }
       }
@@ -51,7 +64,7 @@
   "active_plan": "/home/djdembeck/projects/github/mirmir/.sisyphus/plans/mirmir-revitalization.md",
   "started_at": "2026-05-15T22:19:51.416Z",
   "status": "active",
-  "updated_at": "2026-05-15T22:39:58.915Z",
+  "updated_at": "2026-05-15T22:44:24.831Z",
   "session_ids": [
     "ses_1d2468332ffePpkjboFU63aVuA",
     "ses_1d245ebffffesf48RB7ljVb39q",
@@ -84,8 +97,21 @@
       "session_id": "ses_1d23d21beffeHbTfcGlVTqdiBZ",
       "agent": "Sisyphus-Junior",
       "category": "deep",
-      "updated_at": "2026-05-15T22:34:21.833Z",
+      "updated_at": "2026-05-15T22:40:20.610Z",
       "started_at": "2026-05-15T22:34:21.833Z",
+      "status": "completed",
+      "ended_at": "2026-05-15T22:40:20.610Z",
+      "elapsed_ms": 358777
+    },
+    "todo:10": {
+      "task_key": "todo:10",
+      "task_label": "10",
+      "task_title": "Credit-Focused Web UI — Per-Track View",
+      "session_id": "ses_1d2335942ffe8LcVSI860N32Nb",
+      "agent": "Sisyphus-Junior",
+      "category": "visual-engineering",
+      "updated_at": "2026-05-15T22:44:24.832Z",
+      "started_at": "2026-05-15T22:44:24.832Z",
       "status": "running"
     }
   },

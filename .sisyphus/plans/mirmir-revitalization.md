@@ -619,7 +619,7 @@ Max Concurrent: 4 (Waves 2 & 3)
   - Files: `Dockerfile`, `docker-compose.yml`, `.env.example`
   - Pre-commit: `docker build -t mirmir .`
 
-- [ ] 6. Tidal Provider: Extract Per-Track Credits via Credits API
+- [x] 6. Tidal Provider: Extract Per-Track Credits via Credits API
 
   **What to do**:
   - Extend `/providers/Tidal/v2/lookup.ts` to extract per-track credits using the CONFIRMED Credits API endpoint
@@ -731,7 +731,7 @@ Max Concurrent: 4 (Waves 2 & 3)
   - Files: `providers/Tidal/v2/lookup.ts`, `providers/Tidal/v2/api_types.ts`, test files
   - Pre-commit: `deno test providers/Tidal/`
 
-- [ ] 7. Discogs Provider: Extract Extraartists Per-Track Credits with Role Mapping
+- [x] 7. Discogs Provider: Extract Extraartists Per-Track Credits with Role Mapping
 
   **What to do**:
   - Extend `/providers/Discogs/mod.ts` to extract per-track `extraartists` from Discogs API responses
@@ -818,7 +818,7 @@ Max Concurrent: 4 (Waves 2 & 3)
   - Files: `providers/Discogs/mod.ts`, test files
   - Pre-commit: `deno test providers/Discogs/`
 
-- [ ] 8. MusicBrainz Provider: Read Existing Artist-Recording Relationships
+- [x] 8. MusicBrainz Provider: Read Existing Artist-Recording Relationships
 
   **What to do**:
   - Extend the MusicBrainz provider (or create a new MB credits module) to fetch existing artist-recording relationships for a release's tracks
@@ -893,7 +893,7 @@ Max Concurrent: 4 (Waves 2 & 3)
   - Files: `mirmir/mb_credits.ts`, `mirmir/mb_credits_test.ts`
   - Pre-commit: `deno test mirmir/mb_credits_test.ts`
 
-- [ ] 9. Combinable Credit Merge Algorithm
+- [x] 9. Combinable Credit Merge Algorithm
 
   **What to do**:
   - Implement a custom merge function for track credits in `/harmonizer/merge.ts`

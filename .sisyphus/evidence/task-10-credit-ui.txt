@@ -1,0 +1,65 @@
+Task 10 Evidence: Credit-Focused Web UI — Per-Track View
+=======================================================
+Date: 2026-05-15
+Branch: feat/mirmir-revitalization
+
+Files Created:
+--------------
+- server/islands/CreditView.tsx (197 lines)
+  - Fresh island component (interactive Preact)
+  - Props: CreditViewProps { tracks: CreditViewTrack[] }
+  - Sub-components: SourceBadge, CreditEntry, TrackCreditCard
+  - Features:
+    * Credits grouped by role with contributor names listed
+    * Source badges (Tidal=black, Discogs=black, MusicBrainz=purple) via CSS vars
+    * Names are selectable (user-select: all CSS + cursor:pointer)
+    * "Check existing MB credits" button calls fetchRecordingCredits
+    * Empty state: "No credits found for this release."
+    * Merges fetched MB credits with existing credits (deduplicates by name+role)
+    * Loading state with disc spinner icon
+    * Error state with alert-triangle icon
+
+Files Modified:
+---------------
+- server/routes/release.tsx
+  * Imported CreditView from '@/server/islands/CreditView.tsx'
+  * Added <CreditView> below <Release> component
+  * Passes flattened tracklist from all media with number, title, credits, recordingMbid
+
+- server/fresh.gen.ts
+  * Added import for $CreditView from './islands/CreditView.tsx'
+  * Added './islands/CreditView.tsx': $CreditView to islands manifest
+
+- server/static/harmony.css
+  * Added CreditView section with styles:
+    .credit-view, .credit-view-header, .credit-empty
+    .credit-track-grid (responsive CSS grid, minmax 280px)
+    .track-credit-card, .track-credit-header, .track-number, .track-title
+    .track-credit-body, .role-group, .role-name, .role-credits
+    .credit-entry, .credit-name (user-select: all), .credit-original-role
+    .source-badge (small colored pill)
+    Mobile responsive: grid collapses to single column at <=40rem
+
+Type Checking:
+--------------
+$ export PATH="$HOME/.deno/bin:$PATH" && deno check server/islands/CreditView.tsx server/fresh.gen.ts server/routes/release.tsx
+Result: PASS (all green)
+
+$ export PATH="$HOME/.deno/bin:$PATH" && deno task check
+Result: PASS (server/fresh.gen.ts and cli.ts both green)
+
+Design System Compliance:
+-------------------------
+- Colors: Uses existing CSS variables (--tidal, --discogs, --musicbrainz, --theme-fill, --even-fill, etc.)
+- Spacing: Uses em-based spacing consistent with existing CSS (0.5em, 0.75em, 1em, etc.)
+- Typography: Uses existing font stack (sans-serif), no new fonts added
+- Components: Uses existing Button.tsx and SpriteIcon.tsx primitives
+- Layout: Card-per-track grid layout, responsive, matches existing table/card patterns
+- No hardcoded magic numbers for visual properties
+
+Notes:
+------
+- The `useCallback` dependency array includes `[tracksWithMbids]` and `[mbCredits.value]` which are stable references.
+- The component gracefully handles tracks without credits by filtering them out of the grid.
+- Empty state only shows when there are zero existing credits AND zero fetched MB credits.
+- Source badge colors use existing provider brand colors from harmony.css variables.
