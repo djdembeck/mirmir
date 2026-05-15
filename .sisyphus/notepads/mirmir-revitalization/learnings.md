@@ -144,3 +144,27 @@ The enum is a secondary classification.
 - Module-level rate limiter state (`let lastRequestTime`) works for sequential access; `resetRateLimiter()` export needed for test isolation
 - MB API User-Agent requirement: must include app name, version, and URL
 - `satisfies` keyword works for type-checking inline object literals against interfaces
+
+## Task 10: Credit-Focused Per-Track View UI (2026-05-15)
+
+- Fresh islands are registered in `fresh.gen.ts` manually (not auto-generated in this codebase) — must add both import and manifest entry
+- CSS for islands goes in `server/static/harmony.css` following the existing `/* ComponentName.tsx */` section convention
+- `useSignal` + `useCallback` pattern works well for Fresh islands with async fetch operations
+- Preact `style={{ backgroundColor: value }}` accepts CSS variable strings like `'var(--tidal)'` directly
+- `user-select: all` CSS property makes text selectable on click — perfect for copyable names
+- Grid layout `grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))` gives responsive card layout without media queries (though added mobile collapse for <=40rem)
+- Empty state should only show when BOTH existing credits AND fetched MB credits are absent
+- Merging fetched credits with existing ones requires deduplication logic (name + role match)
+- The `recordingMbid` comes from `track.recording?.mbid` on HarmonyTrack, not from TrackCredit.mbid
+- `deno check server/islands/CreditView.tsx` is sufficient for island-level type checking; `deno task check` validates full project
+- Fresh island components can import from `@/mirmir/` modules directly — no special path configuration needed beyond existing import map
+
+## Task 12: MB Injector (2026-05-15)
+
+- `rels.{N}.type` and `rels.{N}.attributes.{M}.type` both end with `.type` — when counting submitted relationships, use regex `/^rels\.\d+\.type$/` not `.endsWith('.type')`
+- `URLSearchParams.toString()` encodes spaces as `+` — when asserting body content, check for `+` not spaces
+- When mocking `globalThis.fetch`, GET requests have `init` as `undefined` — check `init?.method !== 'POST'` instead of `init?.method === 'GET'`
+- `dryRun()` is a pure computation that doesn't call `rateLimitedFetch` — rate limiting tests must use `login()` or `injectCredits()` instead
+- Guitar [Electric] attributes have empty typeIds (UNCONFIRMED) — they are silently omitted from form fields, not included with empty values
+- `mapRole()` requires the original role string (e.g., 'Producer') not the normalized role (e.g., 'producer') — the tidalRoleMap keys are case-sensitive
+- MB form POST uses `redirect: 'manual'` to capture Set-Cookie headers and prevent automatic redirect following
