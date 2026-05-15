@@ -1,0 +1,76 @@
+# Task 4: Harmony Test Infrastructure Setup for Mirmir
+# Evidence File - 2026-05-15
+
+## Summary
+Created test fixtures and helper module for mirmir-specific tests.
+
+## Files Created
+
+### Fixtures (mirmir/test/fixtures/)
+1. tidal-credits-response.json
+   - Realistic Tidal v2 Credits API response
+   - 10 credits with roles: Lyricist, Composer, Producer, Co-Producer, AdditionalProducer, Keyboard, Featured Artist, Recording Engineer, Mastering Engineer
+   - Based on test album 329293912 (Drake - For All The Dogs Scary Hours Edition)
+
+2. discogs-extraartists-response.json
+   - Discogs release with extraartists per track
+   - Release-level extraartists with track ranges (e.g., "1, 3-5")
+   - Track-level extraartists
+   - Includes ANV (Artist Name Variation) fields
+   - Roles: Produced By, Mastered By, Mixed By, Guitar [Electric], Vocals [Backing]
+
+3. mb-artist-recording-rels.json
+   - MusicBrainz recording with artist-rels
+   - Relationships: producer, engineer, mixer
+   - Includes artist MBIDs
+   - Follows MB API format: GET /ws/2/recording/{mbid}?inc=artist-rels&fmt=json
+
+### Test Helpers (mirmir/test/helpers.ts)
+- loadFixture(name: string): unknown - loads and parses JSON fixture
+- createMockTidalCreditsResponse(): TidalCreditsResponse
+- createMockDiscogsReleaseWithCredits(): DiscogsRelease
+- createMockMBRecordingWithRels(): MBRecordingResponse
+- createMockTrackCredit(overrides?: Partial<TrackCredit>): TrackCredit
+- Local TrackCredit interface (for use until T2 creates the official type)
+
+### Test Suite (mirmir/test/helpers_test.ts)
+Tests:
+1. loadFixture parses Tidal fixture correctly ✓
+2. loadFixture parses Discogs fixture correctly ✓
+3. loadFixture parses MB fixture correctly ✓
+4. createMockTrackCredit creates valid TrackCredit with defaults ✓
+5. createMockTrackCredit applies overrides ✓
+6. createMockTidalCreditsResponse returns typed fixture ✓
+7. createMockDiscogsReleaseWithCredits returns typed fixture ✓
+8. createMockMBRecordingWithRels returns typed fixture ✓
+
+## Test Results
+```
+deno test --allow-read --allow-env mirmir/test/
+
+running 1 test from ./mirmir/test/helpers_test.ts
+test helpers ...
+  loadFixture ...
+    parses Tidal fixture correctly ... ok (2ms)
+    parses Discogs fixture correctly ... ok (1ms)
+    parses MB fixture correctly ... ok (1ms)
+  loadFixture ... ok (6ms)
+  createMockTrackCredit ...
+    creates valid TrackCredit with defaults ... ok (1ms)
+    applies overrides ... ok (0ms)
+  createMockTrackCredit ... ok (2ms)
+  typed fixture loaders ...
+    createMockTidalCreditsResponse returns typed fixture ... ok (0ms)
+    createMockDiscogsReleaseWithCredits returns typed fixture ... ok (0ms)
+    createMockMBRecordingWithRels returns typed fixture ... ok (1ms)
+  typed fixture loaders ... ok (3ms)
+test helpers ... ok (17ms)
+
+ok | 1 passed (11 steps) | 0 failed (31ms)
+```
+
+## Verification
+- All 11 test steps pass
+- Fixtures follow Harmony's test patterns (@std/testing/bdd describe/it style)
+- No API credentials in fixtures
+- No live API calls in tests

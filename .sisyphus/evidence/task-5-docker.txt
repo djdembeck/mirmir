@@ -1,0 +1,727 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 334B done
+#1 DONE 0.2s
+
+#2 [internal] load metadata for docker.io/denoland/deno:alpine
+#2 DONE 0.3s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.2s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/4] FROM docker.io/denoland/deno:alpine@sha256:f36b916d304948316d9af285dba7949be6e17ed56af8b90b389295bcf4326cba
+#5 resolve docker.io/denoland/deno:alpine@sha256:f36b916d304948316d9af285dba7949be6e17ed56af8b90b389295bcf4326cba 0.1s done
+#5 DONE 0.1s
+
+#6 [2/4] WORKDIR /app
+#6 CACHED
+
+#4 [internal] load build context
+#4 transferring context: 69.15kB 0.1s done
+#4 DONE 0.2s
+
+#7 [3/4] COPY . .
+#7 DONE 0.5s
+
+#8 [4/4] RUN deno cache server/main.ts
+#8 0.966 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/server.ts
+#8 0.966 [0m[32mDownload[0m https://deno.land/std@0.216.0/log/get_logger.ts
+#8 0.966 [0m[32mDownload[0m https://jsr.io/@std/dotenv/meta.json
+#8 0.967 [0m[32mDownload[0m https://deno.land/std@0.216.0/fmt/colors.ts
+#8 0.967 [0m[32mDownload[0m https://deno.land/std@0.216.0/log/console_handler.ts
+#8 0.967 [0m[32mDownload[0m https://deno.land/std@0.216.0/log/levels.ts
+#8 0.967 [0m[32mDownload[0m https://deno.land/std@0.216.0/log/setup.ts
+#8 0.967 [0m[32mDownload[0m https://deno.land/std@0.216.0/url/join.ts
+#8 1.115 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/types.ts
+#8 1.115 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/mod.ts
+#8 1.142 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert.ts
+#8 1.142 [0m[32mDownload[0m https://deno.land/std@0.216.0/log/logger.ts
+#8 1.142 [0m[32mDownload[0m https://deno.land/std@0.216.0/log/_state.ts
+#8 1.143 [0m[32mDownload[0m https://deno.land/std@0.216.0/log/base_handler.ts
+#8 1.143 [0m[32mDownload[0m https://deno.land/std@0.216.0/log/_config.ts
+#8 1.143 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/join.ts
+#8 1.167 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/context.ts
+#8 1.167 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/deps.ts
+#8 1.167 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/types.ts
+#8 1.167 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/boot.ts
+#8 1.167 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/defines.ts
+#8 1.167 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/render.ts
+#8 1.167 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/router.ts
+#8 1.193 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assertion_error.ts
+#8 1.197 [0m[32mDownload[0m https://esm.sh/preact@10.19.6/jsx-runtime
+#8 1.198 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/runtime.ts
+#8 1.199 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-apple.tsx
+#8 1.199 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-bandcamp.tsx
+#8 1.199 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-deezer.tsx
+#8 1.199 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-git.tsx
+#8 1.199 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-spotify.tsx
+#8 1.199 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-tidal.tsx
+#8 1.199 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/alert-triangle.tsx
+#8 1.199 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/barcode.tsx
+#8 1.200 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/bug.tsx
+#8 1.200 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/copy.tsx
+#8 1.200 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/copy-check.tsx
+#8 1.200 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/database-edit.tsx
+#8 1.200 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/database-import.tsx
+#8 1.200 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/disc.tsx
+#8 1.200 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/external-link.tsx
+#8 1.200 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/help.tsx
+#8 1.200 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/info-circle.tsx
+#8 1.201 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/link.tsx
+#8 1.201 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/photo-plus.tsx
+#8 1.201 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/puzzle.tsx
+#8 1.201 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/search.tsx
+#8 1.201 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/video.tsx
+#8 1.201 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/world-pin.tsx
+#8 1.201 [0m[32mDownload[0m https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/world-www.tsx
+#8 1.201 [0m[32mDownload[0m https://esm.sh/preact@10.19.6
+#8 1.201 [0m[32mDownload[0m https://esm.sh/*preact-render-to-string@6.2.2
+#8 1.205 [0m[32mDownload[0m https://esm.sh/*@preact/signals@1.2.2
+#8 1.205 [0m[32mDownload[0m https://deno.land/x/es_utils@v0.2.1/array/scalar.js
+#8 1.206 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/_common/assert_path.ts
+#8 1.206 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/normalize.ts
+#8 1.209 [0m[32mDownload[0m https://jsr.io/@kellnerd/musicbrainz/meta.json
+#8 1.250 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/constants.ts
+#8 1.250 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/build_id.ts
+#8 1.250 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/runtime/csp.ts
+#8 1.250 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/runtime/utils.ts
+#8 1.250 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/build/mod.ts
+#8 1.250 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/rendering/preact_hooks.ts
+#8 1.250 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/code_frame.ts
+#8 1.250 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/config.ts
+#8 1.250 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/compose.ts
+#8 1.250 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/fs_extract.ts
+#8 1.250 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/build/aot_snapshot.ts
+#8 1.250 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/error_overlay.tsx
+#8 1.250 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/constants.ts
+#8 1.251 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/tailwind_aot_error_page.tsx
+#8 1.251 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/mod.ts
+#8 1.251 [0m[32mDownload[0m https://deno.land/std@0.216.0/fs/walk.ts
+#8 1.251 [0m[32mDownload[0m https://deno.land/std@0.216.0/http/server.ts
+#8 1.251 [0m[32mDownload[0m https://deno.land/std@0.216.0/http/status.ts
+#8 1.251 [0m[32mDownload[0m https://deno.land/std@0.216.0/media_types/content_type.ts
+#8 1.251 [0m[32mDownload[0m https://deno.land/std@0.216.0/encoding/hex.ts
+#8 1.251 [0m[32mDownload[0m https://deno.land/std@0.216.0/regexp/escape.ts
+#8 1.251 [0m[32mDownload[0m https://deno.land/std@0.216.0/jsonc/mod.ts
+#8 1.251 [0m[32mDownload[0m https://esm.sh/*preact-render-to-string@6.3.1
+#8 1.252 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/mod.ts
+#8 1.252 [0m[32mDownload[0m https://esm.sh/@babel/helper-validator-identifier@7.22.20
+#8 1.252 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/mod.ts
+#8 1.252 [0m[32mDownload[0m https://deno.land/std@0.216.0/testing/snapshot.ts
+#8 1.252 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/rendering/state.ts
+#8 1.252 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/rendering/template.tsx
+#8 1.252 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/rendering/fresh_tags.tsx
+#8 1.291 [0m[32mDownload[0m https://esm.sh/preact@10.19.6/denonext/preact.mjs
+#8 1.291 [0m[32mDownload[0m https://esm.sh/preact@10.19.6/denonext/jsx-runtime.mjs
+#8 1.291 [0m[32mDownload[0m https://esm.sh/preact@10.19.6/jsx-runtime/src/index.d.ts
+#8 1.294 [0m[32mDownload[0m https://deno.land/std@0.216.0/http/cookie.ts
+#8 1.294 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/runtime/head.ts
+#8 1.294 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/runtime/Partial.tsx
+#8 1.320 [0m[32mDownload[0m https://esm.sh/preact@10.19.6/src/index.d.ts
+#8 1.320 [0m[32mDownload[0m https://esm.sh/*preact-render-to-string@6.2.2/denonext/preact-render-to-string.mjs
+#8 1.320 [0m[32mDownload[0m https://esm.sh/preact-render-to-string@6.2.2/src/index.d.ts
+#8 1.321 [0m[32mDownload[0m https://deno.land/x/snap_storage@v0.6.4/mod.ts
+#8 1.321 [0m[32mDownload[0m https://deno.land/x/es_utils@v0.2.1/object/zipObject.js
+#8 1.321 [0m[32mDownload[0m https://esm.sh/ts-custom-error@3.3.1
+#8 1.321 [0m[32mDownload[0m https://deno.land/x/es_utils@v0.2.1/object/flatten.js
+#8 1.321 [0m[32mDownload[0m https://esm.sh/*@preact/signals@1.2.2/denonext/signals.mjs
+#8 1.321 [0m[32mDownload[0m https://esm.sh/@preact/signals@1.2.2/dist/signals.d.ts
+#8 1.321 [0m[32mDownload[0m https://deno.land/x/es_utils@v0.2.1/string/transform.js
+#8 1.322 [0m[32mDownload[0m https://deno.land/x/es_utils@v0.2.1/types.d.ts
+#8 1.322 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/_common/normalize.ts
+#8 1.322 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/_common/normalize_string.ts
+#8 1.322 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/_util.ts
+#8 1.322 [0m[32mDownload[0m https://esm.sh/preact@10.19.6/hooks
+#8 1.322 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/runtime/build_id.ts
+#8 1.322 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/build/esbuild.ts
+#8 1.322 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/runtime/active_url.ts
+#8 1.322 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/default_error_page.tsx
+#8 1.322 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/init_safe_deps.ts
+#8 1.322 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/mod.ts
+#8 1.322 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/basename.ts
+#8 1.322 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/constants.ts
+#8 1.322 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/dirname.ts
+#8 1.323 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/extname.ts
+#8 1.323 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/format.ts
+#8 1.323 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/from_file_url.ts
+#8 1.323 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/is_absolute.ts
+#8 1.323 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/join.ts
+#8 1.323 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/normalize.ts
+#8 1.323 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/parse.ts
+#8 1.323 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/relative.ts
+#8 1.323 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/resolve.ts
+#8 1.323 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/to_file_url.ts
+#8 1.323 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/to_namespaced_path.ts
+#8 1.323 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/common.ts
+#8 1.324 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/_interface.ts
+#8 1.324 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/glob_to_regexp.ts
+#8 1.324 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/is_glob.ts
+#8 1.324 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/join_globs.ts
+#8 1.324 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/normalize_glob.ts
+#8 1.324 [0m[32mDownload[0m https://deno.land/std@0.216.0/fs/_to_path_string.ts
+#8 1.324 [0m[32mDownload[0m https://deno.land/std@0.216.0/fs/_create_walk_entry.ts
+#8 1.324 [0m[32mDownload[0m https://deno.land/std@0.216.0/async/delay.ts
+#8 1.324 [0m[32mDownload[0m https://deno.land/std@0.216.0/media_types/parse_media_type.ts
+#8 1.324 [0m[32mDownload[0m https://deno.land/std@0.216.0/media_types/get_charset.ts
+#8 1.324 [0m[32mDownload[0m https://deno.land/std@0.216.0/media_types/format_media_type.ts
+#8 1.324 [0m[32mDownload[0m https://deno.land/std@0.216.0/media_types/_db.ts
+#8 1.324 [0m[32mDownload[0m https://deno.land/std@0.216.0/media_types/type_by_extension.ts
+#8 1.324 [0m[32mDownload[0m https://deno.land/std@0.216.0/encoding/_util.ts
+#8 1.324 [0m[32mDownload[0m https://deno.land/std@0.216.0/jsonc/parse.ts
+#8 1.326 [0m[32mDownload[0m https://jsr.io/@std/collections/meta.json
+#8 1.326 [0m[32mDownload[0m https://jsr.io/@std/uuid/meta.json
+#8 1.333 [0m[32mDownload[0m https://esm.sh/*preact-render-to-string@6.3.1/denonext/preact-render-to-string.mjs
+#8 1.333 [0m[32mDownload[0m https://esm.sh/preact-render-to-string@6.3.1/src/index.d.ts
+#8 1.333 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_almost_equals.ts
+#8 1.333 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_array_includes.ts
+#8 1.333 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_equals.ts
+#8 1.333 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_exists.ts
+#8 1.333 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_false.ts
+#8 1.333 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_greater_or_equal.ts
+#8 1.333 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_greater.ts
+#8 1.333 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_instance_of.ts
+#8 1.334 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_is_error.ts
+#8 1.334 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_less_or_equal.ts
+#8 1.334 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_less.ts
+#8 1.334 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_match.ts
+#8 1.334 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_not_equals.ts
+#8 1.334 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_not_instance_of.ts
+#8 1.334 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_not_match.ts
+#8 1.334 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_not_strict_equals.ts
+#8 1.334 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_object_match.ts
+#8 1.334 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_rejects.ts
+#8 1.335 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_strict_equals.ts
+#8 1.335 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_string_includes.ts
+#8 1.335 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/assert_throws.ts
+#8 1.335 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/equal.ts
+#8 1.335 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/fail.ts
+#8 1.335 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/unimplemented.ts
+#8 1.335 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/unreachable.ts
+#8 1.339 [0m[32mDownload[0m https://esm.sh/@babel/helper-validator-identifier@7.22.20/denonext/helper-validator-identifier.mjs
+#8 1.339 [0m[32mDownload[0m https://esm.sh/@types/babel__helper-validator-identifier@~7.15.2/index.d.ts
+#8 1.339 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/basename.ts
+#8 1.339 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/constants.ts
+#8 1.339 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/dirname.ts
+#8 1.339 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/extname.ts
+#8 1.339 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/format.ts
+#8 1.339 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/from_file_url.ts
+#8 1.339 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/is_absolute.ts
+#8 1.339 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/parse.ts
+#8 1.339 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/relative.ts
+#8 1.339 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/resolve.ts
+#8 1.339 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/to_file_url.ts
+#8 1.339 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/to_namespaced_path.ts
+#8 1.339 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/common.ts
+#8 1.340 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/glob_to_regexp.ts
+#8 1.340 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/is_glob.ts
+#8 1.340 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/join_globs.ts
+#8 1.340 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/posix/normalize_glob.ts
+#8 1.340 [0m[32mDownload[0m https://deno.land/std@0.216.0/fs/ensure_file.ts
+#8 1.340 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/htmlescape.ts
+#8 1.340 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/server/serializer.ts
+#8 1.340 [0m[32mDownload[0m https://esm.sh/preact@10.19.6/src/jsx.d.ts
+#8 1.341 [0m[32mDownload[0m https://deno.land/x/es_utils@v0.2.1/string/simplify.js
+#8 1.342 [0m[32mDownload[0m https://deno.land/std@0.216.0/encoding/base64.ts
+#8 1.344 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/meta.json
+#8 1.352 [0m[32mDownload[0m https://esm.sh/preact@10.25.4/src/index.d.ts
+#8 1.352 [0m[32mDownload[0m https://esm.sh/lande@1.0.10
+#8 1.353 [0m[32mDownload[0m https://jsr.io/@deno/gfm/meta.json
+#8 1.358 [0m[32mDownload[0m https://deno.land/x/snap_storage@v0.6.4/src/snap_storage.ts
+#8 1.358 [0m[32mDownload[0m https://deno.land/x/snap_storage@v0.6.4/src/error.ts
+#8 1.358 [0m[32mDownload[0m https://deno.land/x/snap_storage@v0.6.4/src/snapshot.ts
+#8 1.398 [0m[32mDownload[0m https://esm.sh/ts-custom-error@3.3.1/denonext/ts-custom-error.mjs
+#8 1.398 [0m[32mDownload[0m https://esm.sh/ts-custom-error@3.3.1/dist/custom-error.d.ts
+#8 1.398 [0m[32mDownload[0m https://esm.sh/*@preact/signals-core@1.5.1
+#8 1.398 [0m[32mDownload[0m https://esm.sh/@preact/signals-core@1.8.0/dist/signals-core.d.ts
+#8 1.398 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/_common/constants.ts
+#8 1.398 [0m[32mDownload[0m https://esm.sh/preact@10.19.6/denonext/hooks.mjs
+#8 1.398 [0m[32mDownload[0m https://esm.sh/preact@10.19.6/hooks/src/index.d.ts
+#8 1.398 [0m[32mDownload[0m https://deno.land/x/esbuild@v0.20.2/mod.js
+#8 1.398 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/build/deps.ts
+#8 1.398 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/basename.ts
+#8 1.398 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/constants.ts
+#8 1.398 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/dirname.ts
+#8 1.398 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/extname.ts
+#8 1.398 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/format.ts
+#8 1.398 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/from_file_url.ts
+#8 1.399 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/is_absolute.ts
+#8 1.399 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/join.ts
+#8 1.399 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/normalize.ts
+#8 1.399 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/parse.ts
+#8 1.399 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/relative.ts
+#8 1.399 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/resolve.ts
+#8 1.399 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/to_file_url.ts
+#8 1.399 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/to_namespaced_path.ts
+#8 1.399 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/common.ts
+#8 1.399 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/glob_to_regexp.ts
+#8 1.399 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/is_glob.ts
+#8 1.399 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/join_globs.ts
+#8 1.399 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/normalize_glob.ts
+#8 1.399 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/_os.ts
+#8 1.400 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/_common/common.ts
+#8 1.400 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/_common/glob_to_reg_exp.ts
+#8 1.400 [0m[32mDownload[0m https://deno.land/std@0.216.0/media_types/_util.ts
+#8 1.400 [0m[32mDownload[0m https://deno.land/std@0.216.0/media_types/vendor/mime-db.v1.52.0.ts
+#8 1.400 [0m[32mDownload[0m https://deno.land/std@0.216.0/json/common.ts
+#8 1.400 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/_format.ts
+#8 1.400 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/_diff.ts
+#8 1.400 [0m[32mDownload[0m https://deno.land/std@0.216.0/assert/_constants.ts
+#8 1.634 [0m[32mDownload[0m https://esm.sh/@types/babel__helper-validator-identifier@7.15.2/index.d.ts
+#8 1.634 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/_common/basename.ts
+#8 1.634 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/_common/strip_trailing_separators.ts
+#8 1.634 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/_common/dirname.ts
+#8 1.634 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/_common/format.ts
+#8 1.634 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/_common/from_file_url.ts
+#8 1.634 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/_common/relative.ts
+#8 1.634 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/_common/to_file_url.ts
+#8 1.634 [0m[32mDownload[0m https://deno.land/std@0.216.0/fs/ensure_dir.ts
+#8 1.634 [0m[32mDownload[0m https://deno.land/std@0.216.0/fs/_get_file_info_type.ts
+#8 1.634 [0m[32mDownload[0m https://deno.land/x/fresh@1.6.8/src/runtime/deserializer.ts
+#8 1.634 [0m[32mDownload[0m https://deno.land/x/es_utils@v0.2.1/async/rateLimit.js
+#8 1.635 [0m[32mDownload[0m https://deno.land/std@0.216.0/html/entities.ts
+#8 1.635 [0m[32mDownload[0m https://esm.sh/preact@10.25.4/src/jsx.d.ts
+#8 1.635 [0m[32mDownload[0m https://esm.sh/toygrad@^2.6.0?target=denonext
+#8 1.635 [0m[32mDownload[0m https://esm.sh/lande@1.0.10/denonext/lande.mjs
+#8 1.635 [0m[32mDownload[0m https://esm.sh/lande@1.0.10/standalone/t50.d.ts
+#8 1.635 [0m[32mDownload[0m https://deno.land/x/snap_storage@v0.6.4/src/deps.ts
+#8 1.635 [0m[32mDownload[0m https://esm.sh/*@preact/signals-core@1.5.1/denonext/signals-core.mjs
+#8 1.635 [0m[32mDownload[0m https://esm.sh/@preact/signals-core@1.5.1/dist/signals-core.d.ts
+#8 1.635 [0m[32mDownload[0m https://deno.land/x/denoflate@1.2.1/mod.ts
+#8 1.635 [0m[32mDownload[0m https://deno.land/x/esbuild@v0.20.2/mod.d.ts
+#8 1.635 [0m[32mDownload[0m https://deno.land/std@0.216.0/path/windows/_util.ts
+#8 1.635 [0m[32mDownload[0m https://jsr.io/@luca/esbuild-deno-loader/meta.json
+#8 1.671 [0m[32mDownload[0m https://deno.land/x/es_utils@v0.2.1/async/delay.js
+#8 1.834 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0?target=denonext
+#8 1.834 [0m[32mDownload[0m https://deno.land/std@0.224.0/assert/assert.ts
+#8 1.834 [0m[32mDownload[0m https://deno.land/std@0.206.0/crypto/mod.ts
+#8 1.834 [0m[32mDownload[0m https://deno.land/std@0.224.0/encoding/hex.ts
+#8 1.834 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/mod.ts
+#8 1.834 [0m[32mDownload[0m https://deno.land/x/sqlite@v3.9.1/mod.ts
+#8 1.834 [0m[32mDownload[0m https://deno.land/x/denoflate@1.2.1/pkg/denoflate.js
+#8 1.834 [0m[32mDownload[0m https://deno.land/x/denoflate@1.2.1/pkg/denoflate_bg.wasm.js
+#8 1.913 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/denonext/toygrad.mjs
+#8 1.913 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/index.d.ts
+#8 1.913 [0m[32mDownload[0m https://deno.land/std@0.224.0/assert/assertion_error.ts
+#8 1.913 [0m[32mDownload[0m https://deno.land/std@0.206.0/crypto/crypto.ts
+#8 1.913 [0m[32mDownload[0m https://deno.land/std@0.206.0/crypto/unstable_keystack.ts
+#8 1.913 [0m[32mDownload[0m https://deno.land/std@0.206.0/crypto/timing_safe_equal.ts
+#8 1.913 [0m[32mDownload[0m https://deno.land/std@0.206.0/crypto/to_hash_string.ts
+#8 1.913 [0m[32mDownload[0m https://deno.land/std@0.224.0/encoding/_util.ts
+#8 1.913 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/mod.ts
+#8 1.913 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/mod.ts
+#8 1.913 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/basename.ts
+#8 1.913 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/constants.ts
+#8 1.913 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/dirname.ts
+#8 1.913 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/extname.ts
+#8 1.913 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/format.ts
+#8 1.913 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/from_file_url.ts
+#8 1.914 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/is_absolute.ts
+#8 1.914 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/join.ts
+#8 1.914 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/normalize.ts
+#8 1.914 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/parse.ts
+#8 1.914 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/relative.ts
+#8 1.914 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/resolve.ts
+#8 1.914 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/to_file_url.ts
+#8 1.914 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/to_namespaced_path.ts
+#8 1.914 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/common.ts
+#8 1.914 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/_interface.ts
+#8 1.914 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/glob_to_regexp.ts
+#8 1.914 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/is_glob.ts
+#8 1.914 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/join_globs.ts
+#8 1.914 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/normalize_glob.ts
+#8 1.914 [0m[32mDownload[0m https://deno.land/x/sqlite@v3.9.1/src/db.ts
+#8 1.914 [0m[32mDownload[0m https://deno.land/x/sqlite@v3.9.1/src/error.ts
+#8 1.914 [0m[32mDownload[0m https://deno.land/x/sqlite@v3.9.1/src/constants.ts
+#8 1.915 [0m[32mDownload[0m https://deno.land/x/sqlite@v3.9.1/src/query.ts
+#8 1.915 [0m[32mDownload[0m https://deno.land/x/sqlite@v3.9.1/src/function.ts
+#8 1.915 [0m[32mDownload[0m https://deno.land/x/sqlite@v3.9.1/build/sqlite.js
+#8 2.093 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/encoder.d.ts
+#8 2.093 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/index.d.ts
+#8 2.093 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/neural_network.d.ts
+#8 2.093 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/tensor.d.ts
+#8 2.093 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/trainers/index.d.ts
+#8 2.093 [0m[32mDownload[0m https://deno.land/std@0.206.0/crypto/_wasm/mod.ts
+#8 2.093 [0m[32mDownload[0m https://deno.land/std@0.206.0/crypto/_fnv/mod.ts
+#8 2.093 [0m[32mDownload[0m https://deno.land/std@0.206.0/encoding/base64url.ts
+#8 2.093 [0m[32mDownload[0m https://deno.land/std@0.206.0/assert/assert.ts
+#8 2.093 [0m[32mDownload[0m https://deno.land/std@0.206.0/encoding/hex.ts
+#8 2.093 [0m[32mDownload[0m https://deno.land/std@0.206.0/encoding/base64.ts
+#8 2.093 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/basename.ts
+#8 2.093 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/constants.ts
+#8 2.093 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/dirname.ts
+#8 2.093 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/extname.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/format.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/from_file_url.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/is_absolute.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/join.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/normalize.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/parse.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/relative.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/resolve.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/to_file_url.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/to_namespaced_path.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/common.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/glob_to_regexp.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/is_glob.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/join_globs.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/normalize_glob.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/basename.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/constants.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/dirname.ts
+#8 2.094 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/extname.ts
+#8 2.095 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/format.ts
+#8 2.095 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/from_file_url.ts
+#8 2.095 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/is_absolute.ts
+#8 2.095 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/join.ts
+#8 2.095 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/normalize.ts
+#8 2.095 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/parse.ts
+#8 2.095 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/relative.ts
+#8 2.095 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/resolve.ts
+#8 2.095 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/to_file_url.ts
+#8 2.095 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/to_namespaced_path.ts
+#8 2.095 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/common.ts
+#8 2.095 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/glob_to_regexp.ts
+#8 2.095 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/is_glob.ts
+#8 2.095 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/join_globs.ts
+#8 2.095 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/normalize_glob.ts
+#8 2.095 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/_os.ts
+#8 2.095 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/_common/common.ts
+#8 2.095 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/_common/glob_to_reg_exp.ts
+#8 2.096 [0m[32mDownload[0m https://deno.land/x/sqlite@v3.9.1/src/wasm.ts
+#8 2.096 [0m[32mDownload[0m https://deno.land/x/sqlite@v3.9.1/build/vfs.js
+#8 2.096 [0m[32mDownload[0m https://deno.land/x/sqlite@v3.9.1/build/sqlite.d.ts
+#8 2.154 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/types.d.ts
+#8 2.476 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/abstract.d.ts
+#8 2.476 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/abstract_activation.d.ts
+#8 2.476 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/abstract_hidden.d.ts
+#8 2.476 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/abstract_input.d.ts
+#8 2.476 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/abstract_output.d.ts
+#8 2.476 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/conv.d.ts
+#8 2.476 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/dense.d.ts
+#8 2.476 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/dropout.d.ts
+#8 2.476 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/input.d.ts
+#8 2.477 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/leakyrelu.d.ts
+#8 2.477 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/maxout.d.ts
+#8 2.477 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/pool.d.ts
+#8 2.477 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/regression.d.ts
+#8 2.477 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/relu.d.ts
+#8 2.477 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/sigmoid.d.ts
+#8 2.477 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/softmax.d.ts
+#8 2.477 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/tanh.d.ts
+#8 2.477 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/trainers/adadelta.d.ts
+#8 2.477 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/trainers/adagrad.d.ts
+#8 2.477 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/trainers/adam.d.ts
+#8 2.477 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/trainers/nesterov.d.ts
+#8 2.477 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/trainers/sgd.d.ts
+#8 2.477 [0m[32mDownload[0m https://deno.land/std@0.206.0/crypto/_wasm/lib/deno_std_wasm_crypto.generated.mjs
+#8 2.477 [0m[32mDownload[0m https://deno.land/std@0.206.0/crypto/_fnv/fnv32.ts
+#8 2.477 [0m[32mDownload[0m https://deno.land/std@0.206.0/crypto/_fnv/fnv64.ts
+#8 2.477 [0m[32mDownload[0m https://deno.land/std@0.206.0/assert/assertion_error.ts
+#8 2.478 [0m[32mDownload[0m https://deno.land/std@0.206.0/encoding/_util.ts
+#8 2.478 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/_common/basename.ts
+#8 2.478 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/_common/constants.ts
+#8 2.478 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/_common/strip_trailing_separators.ts
+#8 2.478 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/windows/_util.ts
+#8 2.478 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/_common/dirname.ts
+#8 2.478 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/_common/assert_path.ts
+#8 2.478 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/_common/format.ts
+#8 2.478 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/_common/from_file_url.ts
+#8 2.478 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/_common/normalize.ts
+#8 2.478 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/_common/normalize_string.ts
+#8 2.478 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/_common/relative.ts
+#8 2.478 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/_common/to_file_url.ts
+#8 2.478 [0m[32mDownload[0m https://deno.land/std@0.224.0/path/posix/_util.ts
+#8 2.751 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/layers/abstract_activation_elementwise.d.ts
+#8 2.874 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/buffer.d.ts
+#8 2.874 [0m[32mDownload[0m https://esm.sh/toygrad@2.6.0/dist/trainers/abstract.d.ts
+#8 2.874 [0m[32mDownload[0m https://deno.land/std@0.206.0/crypto/_fnv/util.ts
+#8 3.140 [0m[32mDownload[0m https://jsr.io/@std/dotenv/0.225.6_meta.json
+#8 3.140 [0m[32mDownload[0m https://jsr.io/@kellnerd/musicbrainz/0.4.2_meta.json
+#8 3.140 [0m[32mDownload[0m https://jsr.io/@std/collections/1.1.7_meta.json
+#8 3.140 [0m[32mDownload[0m https://jsr.io/@std/uuid/1.1.1_meta.json
+#8 3.140 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56_meta.json
+#8 3.140 [0m[32mDownload[0m https://jsr.io/@deno/gfm/0.8.2_meta.json
+#8 3.140 [0m[32mDownload[0m https://jsr.io/@luca/esbuild-deno-loader/0.10.3_meta.json
+#8 3.267 [0m[32mDownload[0m https://jsr.io/@denosaurs/emoji/meta.json
+#8 3.267 [0m[32mDownload[0m https://jsr.io/@std/async/meta.json
+#8 3.267 [0m[32mDownload[0m https://jsr.io/@std/path/meta.json
+#8 3.268 [0m[32mDownload[0m https://jsr.io/@std/jsonc/meta.json
+#8 3.268 [0m[32mDownload[0m https://jsr.io/@std/assert/meta.json
+#8 3.268 [0m[32mDownload[0m https://jsr.io/@std/encoding/meta.json
+#8 3.268 [0m[32mDownload[0m https://registry.npmjs.org/marked
+#8 3.268 [0m[32mDownload[0m https://registry.npmjs.org/github-slugger
+#8 3.268 [0m[32mDownload[0m https://registry.npmjs.org/marked-alert
+#8 3.268 [0m[32mDownload[0m https://registry.npmjs.org/marked-footnote
+#8 3.268 [0m[32mDownload[0m https://registry.npmjs.org/marked-gfm-heading-id
+#8 3.268 [0m[32mDownload[0m https://registry.npmjs.org/prismjs
+#8 3.269 [0m[32mDownload[0m https://registry.npmjs.org/sanitize-html
+#8 3.269 [0m[32mDownload[0m https://registry.npmjs.org/he
+#8 3.269 [0m[32mDownload[0m https://registry.npmjs.org/katex
+#8 3.348 [0m[32mDownload[0m https://jsr.io/@denosaurs/emoji/0.3.1_meta.json
+#8 3.348 [0m[32mDownload[0m https://jsr.io/@std/async/1.3.0_meta.json
+#8 3.357 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1_meta.json
+#8 3.357 [0m[32mDownload[0m https://jsr.io/@std/jsonc/0.213.1_meta.json
+#8 3.357 [0m[32mDownload[0m https://jsr.io/@std/assert/1.0.19_meta.json
+#8 3.358 [0m[32mDownload[0m https://jsr.io/@std/encoding/0.213.1_meta.json
+#8 3.458 [0m[32mDownload[0m https://jsr.io/@denosaurs/emoji/0.3.1/all.json
+#8 3.459 [0m[32mDownload[0m https://jsr.io/@std/json/meta.json
+#8 3.544 [0m[32mDownload[0m https://jsr.io/@std/assert/0.213.1_meta.json
+#8 3.668 [0m[32mDownload[0m https://jsr.io/@std/json/0.213.1_meta.json
+#8 3.738 [0m[32mDownload[0m https://esm.sh/preact@10.19.6/debug
+#8 3.738 [0m[32mDownload[0m https://deno.land/x/esbuild@v0.20.2/wasm.js
+#8 3.789 [0m[32mDownload[0m https://esm.sh/preact@10.19.6/denonext/devtools.mjs
+#8 3.789 [0m[32mDownload[0m https://esm.sh/preact@10.19.6/denonext/debug.mjs
+#8 3.789 [0m[32mDownload[0m https://esm.sh/preact@10.19.6/debug/src/index.d.ts
+#8 3.789 [0m[32mDownload[0m https://deno.land/x/esbuild@v0.20.2/wasm.d.ts
+#8 3.820 [0m[32mDownload[0m https://jsr.io/@std/dotenv/0.225.6/load.ts
+#8 3.820 [0m[32mDownload[0m https://jsr.io/@kellnerd/musicbrainz/0.4.2/data/entity.ts
+#8 3.820 [0m[32mDownload[0m https://jsr.io/@kellnerd/musicbrainz/0.4.2/mod.ts
+#8 3.820 [0m[32mDownload[0m https://jsr.io/@kellnerd/musicbrainz/0.4.2/api_types.ts
+#8 3.820 [0m[32mDownload[0m https://jsr.io/@std/collections/1.1.7/chunk.ts
+#8 3.820 [0m[32mDownload[0m https://jsr.io/@kellnerd/musicbrainz/0.4.2/data/release.ts
+#8 3.820 [0m[32mDownload[0m https://jsr.io/@kellnerd/musicbrainz/0.4.2/data/release_group.ts
+#8 3.820 [0m[32mDownload[0m https://jsr.io/@std/uuid/1.1.1/common.ts
+#8 3.820 [0m[32mDownload[0m https://jsr.io/@kellnerd/musicbrainz/0.4.2/seeding/release.ts
+#8 3.820 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/deno-dom-wasm.ts
+#8 3.820 [0m[32mDownload[0m https://jsr.io/@deno/gfm/0.8.2/mod.ts
+#8 3.820 [0m[32mDownload[0m https://jsr.io/@luca/esbuild-deno-loader/0.10.3/mod.ts
+#8 3.820 [0m[32mDownload[0m https://jsr.io/@std/dotenv/0.225.6/mod.ts
+#8 3.820 [0m[32mDownload[0m https://jsr.io/@kellnerd/musicbrainz/0.4.2/client.ts
+#8 3.820 [0m[32mDownload[0m https://jsr.io/@kellnerd/musicbrainz/0.4.2/error.ts
+#8 3.820 [0m[32mDownload[0m https://jsr.io/@kellnerd/musicbrainz/0.4.2/api_includes.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@kellnerd/musicbrainz/0.4.2/common_types.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@kellnerd/musicbrainz/0.4.2/data/artist.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@kellnerd/musicbrainz/0.4.2/utils/type_utils.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@std/uuid/1.1.1/constants.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/build/deno-wasm/deno-wasm-dynamic.js
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/parser.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/api.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@deno/gfm/0.8.2/style.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@luca/esbuild-deno-loader/0.10.3/src/esbuild_types.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@luca/esbuild-deno-loader/0.10.3/src/plugin_deno_resolver.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@luca/esbuild-deno-loader/0.10.3/src/plugin_deno_loader.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@luca/esbuild-deno-loader/0.10.3/src/shared.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@std/dotenv/0.225.6/parse.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@std/dotenv/0.225.6/stringify.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@kellnerd/musicbrainz/0.4.2/utils/entity.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/build/deno-wasm/deno-wasm.js
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/deserialize.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/dom/node.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/dom/element.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/dom/document.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/dom/document-fragment.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/dom/dom-parser.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/dom/elements/html-template-element.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/dom/selectors/selectors.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/dom/node-list.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/dom/html-collection.ts
+#8 3.821 [0m[32mDownload[0m https://jsr.io/@luca/esbuild-deno-loader/0.10.3/vendor/x/importmap/mod.ts
+#8 3.822 [0m[32mDownload[0m https://jsr.io/@luca/esbuild-deno-loader/0.10.3/vendor/x/importmap/_util.ts
+#8 3.822 [0m[32mDownload[0m https://jsr.io/@luca/esbuild-deno-loader/0.10.3/src/loader_native.ts
+#8 3.822 [0m[32mDownload[0m https://jsr.io/@luca/esbuild-deno-loader/0.10.3/src/loader_portable.ts
+#8 3.822 [0m[32mDownload[0m https://jsr.io/@luca/esbuild-deno-loader/0.10.3/src/deno.ts
+#8 3.822 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/constructor-lock.ts
+#8 3.822 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/dom/utils.ts
+#8 3.822 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/dom/utils-types.ts
+#8 3.822 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/dom/string-cache.ts
+#8 3.822 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/dom/selectors/custom-api.ts
+#8 3.822 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/dom/selectors/nwsapi-types.ts
+#8 3.822 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/dom/selectors/sizzle-types.ts
+#8 3.822 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/dom/selectors/nwsapi.js
+#8 3.822 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/src/dom/selectors/sizzle.js
+#8 3.822 [0m[32mDownload[0m https://jsr.io/@denosaurs/emoji/0.3.1/mod.ts
+#8 3.822 [0m[32mDownload[0m https://jsr.io/@std/async/1.3.0/delay.ts
+#8 3.822 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/mod.ts
+#8 3.822 [0m[32mDownload[0m https://jsr.io/@std/jsonc/0.213.1/mod.ts
+#8 3.822 [0m[32mDownload[0m https://jsr.io/@std/assert/1.0.19/assert.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/encoding/0.213.1/base32.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@denosaurs/emoji/0.3.1/emoji.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/mod.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/mod.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/constants.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/basename.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/dirname.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/extname.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/format.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/from_file_url.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/is_absolute.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/join.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/normalize.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/parse.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/relative.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/resolve.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/to_file_url.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/to_namespaced_path.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/common.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/separator.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/_interface.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/glob_to_regexp.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/is_glob.ts
+#8 3.823 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/join_globs.ts
+#8 3.824 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/normalize_glob.ts
+#8 3.824 [0m[32mDownload[0m https://jsr.io/@std/jsonc/0.213.1/parse.ts
+#8 3.824 [0m[32mDownload[0m https://jsr.io/@std/assert/1.0.19/assertion_error.ts
+#8 3.824 [0m[32mDownload[0m https://jsr.io/@std/encoding/0.213.1/_util.ts
+#8 3.824 [0m[32mDownload[0m https://jsr.io/@denosaurs/emoji/0.3.1/types.ts
+#8 3.824 [0m[32mDownload[0m https://jsr.io/@denosaurs/emoji/0.3.1/unicode.ts
+#8 3.824 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/basename.ts
+#8 3.824 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/constants.ts
+#8 3.824 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/dirname.ts
+#8 3.824 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/extname.ts
+#8 3.824 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/format.ts
+#8 3.824 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/from_file_url.ts
+#8 3.824 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/is_absolute.ts
+#8 3.824 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/join.ts
+#8 3.824 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/normalize.ts
+#8 3.824 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/parse.ts
+#8 3.824 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/relative.ts
+#8 3.825 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/resolve.ts
+#8 3.825 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/to_file_url.ts
+#8 3.825 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/to_namespaced_path.ts
+#8 3.825 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/common.ts
+#8 3.825 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/separator.ts
+#8 3.825 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/glob_to_regexp.ts
+#8 3.825 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/is_glob.ts
+#8 3.825 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/join_globs.ts
+#8 3.825 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/normalize_glob.ts
+#8 3.825 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/basename.ts
+#8 3.825 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/constants.ts
+#8 3.825 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/dirname.ts
+#8 3.826 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/extname.ts
+#8 3.826 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/format.ts
+#8 3.826 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/from_file_url.ts
+#8 3.826 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/is_absolute.ts
+#8 3.826 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/join.ts
+#8 3.826 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/normalize.ts
+#8 3.826 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/parse.ts
+#8 3.826 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/relative.ts
+#8 3.826 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/resolve.ts
+#8 3.826 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/to_file_url.ts
+#8 3.826 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/to_namespaced_path.ts
+#8 3.826 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/common.ts
+#8 3.826 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/separator.ts
+#8 3.826 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/glob_to_regexp.ts
+#8 3.827 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/is_glob.ts
+#8 3.827 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/join_globs.ts
+#8 3.827 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/normalize_glob.ts
+#8 3.827 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/_os.ts
+#8 3.827 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/_common/common.ts
+#8 3.827 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/_common/glob_to_reg_exp.ts
+#8 3.827 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/_common/basename.ts
+#8 3.827 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/_common/constants.ts
+#8 3.827 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/_common/strip_trailing_separators.ts
+#8 3.828 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/windows/_util.ts
+#8 3.828 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/_common/dirname.ts
+#8 3.828 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/_common/assert_path.ts
+#8 3.828 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/_common/format.ts
+#8 3.828 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/_common/from_file_url.ts
+#8 3.828 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/_common/normalize.ts
+#8 3.828 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/_common/normalize_string.ts
+#8 3.828 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/_common/relative.ts
+#8 3.828 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/_common/to_file_url.ts
+#8 3.828 [0m[32mDownload[0m https://jsr.io/@std/path/0.213.1/posix/_util.ts
+#8 3.828 [0m[32mDownload[0m https://jsr.io/@std/assert/0.213.1/assert.ts
+#8 3.828 [0m[32mDownload[0m https://jsr.io/@std/json/0.213.1/common.ts
+#8 3.828 [0m[32mDownload[0m https://jsr.io/@std/assert/0.213.1/assertion_error.ts
+#8 3.828 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/build/deno-wasm/deno-wasm_bg-wasm.js
+#8 3.828 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/build/deno-wasm/deno-wasm_bg.wasm
+#8 3.828 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/build/deno-wasm/env.js
+#8 3.828 [0m[32mDownload[0m https://jsr.io/@b-fuze/deno-dom/0.1.56/build/deno-wasm/wbg.js
+#8 4.214 [0m[32mDownload[0m https://registry.npmjs.org/deepmerge
+#8 4.214 [0m[32mDownload[0m https://registry.npmjs.org/escape-string-regexp
+#8 4.214 [0m[32mDownload[0m https://registry.npmjs.org/htmlparser2
+#8 4.214 [0m[32mDownload[0m https://registry.npmjs.org/is-plain-object
+#8 4.214 [0m[32mDownload[0m https://registry.npmjs.org/launder
+#8 4.214 [0m[32mDownload[0m https://registry.npmjs.org/parse-srcset
+#8 4.214 [0m[32mDownload[0m https://registry.npmjs.org/postcss
+#8 4.215 [0m[32mDownload[0m https://registry.npmjs.org/commander
+#8 4.259 [0m[32mDownload[0m https://registry.npmjs.org/domelementtype
+#8 4.259 [0m[32mDownload[0m https://registry.npmjs.org/domhandler
+#8 4.259 [0m[32mDownload[0m https://registry.npmjs.org/domutils
+#8 4.259 [0m[32mDownload[0m https://registry.npmjs.org/entities
+#8 4.259 [0m[32mDownload[0m https://registry.npmjs.org/dayjs
+#8 4.259 [0m[32mDownload[0m https://registry.npmjs.org/nanoid
+#8 4.259 [0m[32mDownload[0m https://registry.npmjs.org/picocolors
+#8 4.259 [0m[32mDownload[0m https://registry.npmjs.org/source-map-js
+#8 4.293 [0m[32mDownload[0m https://registry.npmjs.org/dom-serializer
+#8 4.318 [0m[32mDownload[0m https://registry.npmjs.org/prismjs/-/prismjs-1.30.0.tgz
+#8 4.318 [0m[32mDownload[0m https://registry.npmjs.org/katex/-/katex-0.16.46.tgz
+#8 4.318 [0m[32mDownload[0m https://registry.npmjs.org/he/-/he-1.2.0.tgz
+#8 4.318 [0m[32mDownload[0m https://registry.npmjs.org/marked-footnote/-/marked-footnote-1.4.0.tgz
+#8 4.318 [0m[32mDownload[0m https://registry.npmjs.org/sanitize-html/-/sanitize-html-2.17.4.tgz
+#8 4.318 [0m[32mDownload[0m https://registry.npmjs.org/marked-alert/-/marked-alert-2.1.2.tgz
+#8 4.318 [0m[32mDownload[0m https://registry.npmjs.org/marked/-/marked-12.0.2.tgz
+#8 4.318 [0m[32mDownload[0m https://registry.npmjs.org/github-slugger/-/github-slugger-2.0.0.tgz
+#8 4.318 [0m[32mDownload[0m https://registry.npmjs.org/marked-gfm-heading-id/-/marked-gfm-heading-id-3.2.0.tgz
+#8 4.318 [0m[32mDownload[0m https://registry.npmjs.org/commander/-/commander-8.3.0.tgz
+#8 4.318 [0m[32mDownload[0m https://registry.npmjs.org/is-plain-object/-/is-plain-object-5.0.0.tgz
+#8 4.318 [0m[32mDownload[0m https://registry.npmjs.org/parse-srcset/-/parse-srcset-1.0.2.tgz
+#8 4.318 [0m[32mDownload[0m https://registry.npmjs.org/postcss/-/postcss-8.5.14.tgz
+#8 4.318 [0m[32mDownload[0m https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz
+#8 4.319 [0m[32mDownload[0m https://registry.npmjs.org/htmlparser2/-/htmlparser2-10.1.0.tgz
+#8 4.319 [0m[32mDownload[0m https://registry.npmjs.org/launder/-/launder-1.7.1.tgz
+#8 4.319 [0m[32mDownload[0m https://registry.npmjs.org/deepmerge/-/deepmerge-4.3.1.tgz
+#8 4.319 [0m[32mDownload[0m https://registry.npmjs.org/nanoid/-/nanoid-3.3.12.tgz
+#8 4.319 [0m[32mDownload[0m https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz
+#8 4.319 [0m[32mDownload[0m https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz
+#8 4.319 [0m[32mDownload[0m https://registry.npmjs.org/domutils/-/domutils-3.2.2.tgz
+#8 4.319 [0m[32mDownload[0m https://registry.npmjs.org/domelementtype/-/domelementtype-2.3.0.tgz
+#8 4.319 [0m[32mDownload[0m https://registry.npmjs.org/entities/-/entities-7.0.1.tgz
+#8 4.319 [0m[32mDownload[0m https://registry.npmjs.org/domhandler/-/domhandler-5.0.3.tgz
+#8 4.319 [0m[32mDownload[0m https://registry.npmjs.org/dayjs/-/dayjs-1.11.20.tgz
+#8 4.319 [0m[32mDownload[0m https://registry.npmjs.org/dom-serializer/-/dom-serializer-2.0.0.tgz
+#8 4.319 [0m[32mDownload[0m https://registry.npmjs.org/entities/-/entities-4.5.0.tgz
+#8 4.552 [0m[38;5;245mInstalled[0m 15 [0m[38;5;245mpackages[0m [0m[38;5;245min[0m 3s
+#8 4.552 [0m[38;5;245mReused[0m 0 [0m[38;5;245mpackages from cache[0m
+#8 4.552 [0m[38;5;245mDownloaded[0m 15 [0m[38;5;245mpackages from JSR[0m
+#8 4.552 [0m[32m+++++++++++++++[0m
+#8 4.552 [0m[38;5;245mDownloaded[0m 27 [0m[38;5;245mpackages from npm[0m
+#8 4.552 [0m[32m+++++++++++++++++++++++++++[0m
+#8 4.552 
+#8 4.552 [0m[36mDependencies:[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mjsr:[0m@b-fuze/deno-dom [0m[38;5;245m0.1.56[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mjsr:[0m@deno/gfm [0m[38;5;245m0.8.2[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mjsr:[0m@denosaurs/emoji [0m[38;5;245m0.3.1[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mjsr:[0m@kellnerd/musicbrainz [0m[38;5;245m0.4.2[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mjsr:[0m@luca/esbuild-deno-loader [0m[38;5;245m0.10.3[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mjsr:[0m@std/assert [0m[38;5;245m0.213.1[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mjsr:[0m@std/assert [0m[38;5;245m1.0.19[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mjsr:[0m@std/async [0m[38;5;245m1.3.0[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mjsr:[0m@std/collections [0m[38;5;245m1.1.7[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mjsr:[0m@std/dotenv [0m[38;5;245m0.225.6[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mjsr:[0m@std/encoding [0m[38;5;245m0.213.1[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mjsr:[0m@std/json [0m[38;5;245m0.213.1[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mjsr:[0m@std/jsonc [0m[38;5;245m0.213.1[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mjsr:[0m@std/path [0m[38;5;245m0.213.1[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mjsr:[0m@std/uuid [0m[38;5;245m1.1.1[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mnpm:[0mgithub-slugger [0m[38;5;245m2.0.0[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mnpm:[0mhe [0m[38;5;245m1.2.0[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mnpm:[0mkatex [0m[38;5;245m0.16.46[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mnpm:[0mmarked [0m[38;5;245m12.0.2[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mnpm:[0mmarked-alert [0m[38;5;245m2.1.2[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mnpm:[0mmarked-footnote [0m[38;5;245m1.4.0[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mnpm:[0mmarked-gfm-heading-id [0m[38;5;245m3.2.0[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mnpm:[0mprismjs [0m[38;5;245m1.30.0[0m
+#8 4.552 [0m[32m+[0m [0m[38;5;245mnpm:[0msanitize-html [0m[38;5;245m2.17.4[0m
+#8 4.552 
+#8 DONE 4.9s
+
+#9 exporting to image
+#9 exporting layers
+#9 exporting layers 2.3s done
+#9 exporting manifest sha256:d7a760370775f48c9c4050ceb0c099995c24e27576a5b592745288a1a71e408e 0.1s done
+#9 exporting config sha256:d4f441fe68d5ad3909942e49f0e27d0bd7bb3f1644ec652263ca3ef3b0659b47 0.1s done
+#9 exporting attestation manifest sha256:505b8977e7035eec4dc8a53ec97eebe17564cf13417e9f7034eb11e1599bd8e1
+#9 exporting attestation manifest sha256:505b8977e7035eec4dc8a53ec97eebe17564cf13417e9f7034eb11e1599bd8e1 0.2s done
+#9 exporting manifest list sha256:fe8a1771c3502e9596804da89b07d42e59625d775709924dd8df404522812bc3
+#9 exporting manifest list sha256:fe8a1771c3502e9596804da89b07d42e59625d775709924dd8df404522812bc3 0.1s done
+#9 naming to docker.io/library/mirmir:latest 0.0s done
+#9 unpacking to docker.io/library/mirmir:latest
+#9 unpacking to docker.io/library/mirmir:latest 1.1s done
+#9 DONE 4.1s
+Build completed successfully on Fri May 15 05:25:12 PM CDT 2026

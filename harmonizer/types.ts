@@ -87,6 +87,7 @@ export type HarmonyTrack = {
 	isrc?: string;
 	availableIn?: CountryCode[];
 	recording?: ResolvableEntity;
+	credits?: TrackCredit[];
 };
 
 export type ArtistCreditName = ResolvableEntity & {
@@ -96,6 +97,24 @@ export type ArtistCreditName = ResolvableEntity & {
 };
 
 type ArtistCredit = ArtistCreditName[];
+
+/** Structured credit for a track contributor. */
+export interface TrackCredit {
+	/** Contributor name (e.g., "Drake"). */
+	name: string;
+	/** Normalized role (e.g., "producer", "mixer"). */
+	role: string;
+	/** Provider names that contributed this credit (e.g., ["Tidal", "Discogs"]). */
+	sources: string[];
+	/** Name as credited on the release (e.g., ANV from Discogs). */
+	creditedName?: string;
+	/** Raw role string from source (e.g., "Co-Producer"). */
+	originalRole?: string;
+	/** MusicBrainz ID if known. */
+	mbid?: string;
+	/** Provider-specific IDs. */
+	externalIds?: ExternalEntityId[];
+}
 
 export type Label = ResolvableEntity & {
 	catalogNumber?: string;

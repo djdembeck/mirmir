@@ -38,4 +38,5 @@ export const immutableTrackProperties = [
 /** Track properties which can be combined from data of multiple providers. */
 export const combinableTrackProperties = [
 	'recording',
+	'credits',
 ] as const satisfies Array<keyof HarmonyTrack>;

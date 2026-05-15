@@ -1,0 +1,59 @@
+[0m[38;5;245mrunning 7 tests from ./mirmir/role_mapping_test.ts[0m
+Tidal role mapping ...
+  maps "Producer" to MB producer relationship ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  maps "Featured Artist" to MB performer with guest attribute ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  maps "AdditionalProducer" to MB producer with additional attribute ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  maps "Co-Producer" to MB producer with co attribute ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  maps "Drum Kit" to MB performer with drums attribute ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  maps "Keyboard" to MB performer with keyboard attribute ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  maps "Mastering Engineer" to MB mastering ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  maps "Mixing" and "Mixing Engineer" to MB mixer ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  maps "Recording Engineer" to MB recording ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+Tidal role mapping ... [0m[32mok[0m [0m[38;5;245m(11ms)[0m
+Discogs role mapping ...
+  maps "Produced By" to MB producer relationship ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  maps "Mixed By" to MB mixer ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  maps "Co-Produced By" to MB producer with co attribute ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  maps "Executive Producer" to MB producer with executive attribute ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  maps "Mastered By" to MB mastering ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  maps "Recorded By" to MB recording ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  maps "Arranged By" to MB arranger ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  maps "Remixer" to MB remixer ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  maps "DJ Mix" to MB djmixer ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+Discogs role mapping ... [0m[32mok[0m [0m[38;5;245m(7ms)[0m
+bracket notation parsing ...
+  parses "Guitar [Electric]" into base role and attribute ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  parses "Vocals [Backing]" into base role and attribute ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  parses "Piano [Rhodes]" into base role and attribute ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  handles roles without brackets ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  handles multiple bracket attributes ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  resolves bracket notation via mapRole for Discogs ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+bracket notation parsing ... [0m[32mok[0m [0m[38;5;245m(4ms)[0m
+compound role splitting ...
+  splits "Produced By, Mixed By" into two roles ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  splits "Produced By & Mixed By" into two roles ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  returns single role when no separator present ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  handles three compound roles ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+compound role splitting ... [0m[32mok[0m [0m[38;5;245m(2ms)[0m
+unmappable roles ...
+  flags unknown Tidal role as unmappable ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  flags unknown Discogs role as unmappable ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+unmappable roles ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+work-level roles ...
+  marks Composer as work-level from Tidal ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  marks Lyricist as work-level from Tidal ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  marks Composer as work-level from Discogs ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  marks Lyricist as work-level from Discogs ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  marks Songwriter as work-level from Discogs ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  does NOT mark Producer as work-level ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+  isWorkLevelRole detects "Composed By" ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  isWorkLevelRole detects "Written By" ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  isWorkLevelRole returns false for "Producer" ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+work-level roles ... [0m[32mok[0m [0m[38;5;245m(5ms)[0m
+role map coverage ...
+  tidalRoleMap has all 12 confirmed Tidal roles ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+  discogsRoleMap has 30+ entries ... [0m[32mok[0m [0m[38;5;245m(0ms)[0m
+role map coverage ... [0m[32mok[0m [0m[38;5;245m(1ms)[0m
+
+[0m[32mok[0m | 7 passed (41 steps) | 0 failed [0m[38;5;245m(49ms)[0m
+
