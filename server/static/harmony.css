@@ -1,0 +1,572 @@
+:root {
+	--input-padding-x: 0.2rem;
+	--input-padding-y: 0.3rem;
+	--page-fill: #ffffff;
+	--text: #000000;
+	--brand-orange: #ffb92c;
+	--brand-red: #c45555;
+	--brand-dark: #323541;
+	--brand-light: #e3e4e8;
+	--theme-fill: var(--brand-light);
+	--theme-text: var(--brand-dark);
+	--nav-accent: var(--brand-red);
+	--badge-fill: #414a63;
+	--badge-text: #ffffff;
+	--tooltip-fill: #bbbbbb;
+	--odd-fill: #efefef;
+	--even-fill: #f8f8f8;
+	--input-fill: var(--page-fill);
+	--input-border: #999999;
+	--button-fill: var(--even-fill);
+	--button-focus: var(--odd-fill);
+	--button-border: #dcdcdc;
+	--button-accent-fill: #0066cc;
+	--button-accent-focus: #004d99;
+	--button-accent-text: #ffffff;
+	--link: #0066cc;
+	--link-accent: var(--brand-red);
+	/* Provider brand colors */
+	--apple: #fc3c44;
+	--bandcamp: #1da0c3;
+	--beatport: #00e586;
+	--brainz: #eb743b;
+	--deezer: #a238ff;
+	--discogs: #121212;
+	--mora: #02082a;
+	--musicbrainz: #ba478f;
+	--ototoy: #e07e01;
+	--spotify: #1db954;
+	--tidal: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--page-fill: #222222;
+		--text: #ffffff;
+		--theme-fill: var(--brand-dark);
+		--theme-text: var(--brand-light);
+		--nav-accent: var(--brand-orange);
+		--tooltip-fill: #555555;
+		--odd-fill: #3d3d3d;
+		--even-fill: #333333;
+		--button-border: #666666;
+		--link: #3399ff;
+		--link-accent: var(--brand-orange);
+	}
+}
+
+body {
+	background-color: var(--page-fill);
+	color: var(--text);
+	font-family: sans-serif;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	min-height: 100vh;
+}
+main {
+	/* push everything after the main content (i.e. the footer) to the bottom of the viewport */
+	flex-grow: 1;
+	margin: 1em;
+}
+
+header {
+	background-color: var(--theme-fill);
+	color: var(--theme-text);
+	font-family: 'Roboto', sans-serif;
+	padding: 1.5rem;
+}
+header > h1 {
+	font-size: 3rem;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+img.banner-logo {
+	height: 3rem;
+	margin: 0.5rem;
+}
+
+h1 + p.subtitle {
+	font-size: 1.2em;
+}
+
+.center {
+	text-align: center;
+}
+
+ul.inline {
+	display: inline-block;
+	padding-inline: 0;
+}
+ul.inline > li {
+	display: inline;
+}
+ul.inline > li:not(:last-child)::after {
+	content: ' · ';
+}
+
+.ml-1 {
+	margin-left: 0.25em;
+}
+
+.ml-2 {
+	margin-left: 0.5em;
+}
+
+a:link, a:visited {
+	color: var(--link);
+}
+a:hover {
+	color: var(--link-accent);
+}
+
+a.label, span.label {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.4em;
+	border-radius: 0.2em;
+	font-size: 0.8em;
+	line-height: 0.8em;
+	white-space: nowrap;
+	background-color: var(--badge-fill);
+	color: var(--badge-text);
+}
+a.label {
+	text-decoration: none;
+	background-color: #209cee;
+}
+
+ul.alt-values {
+	font-size: 0.8rem;
+	opacity: 0.7;
+	margin: 0;
+	padding-left: 1.2em;
+	list-style: square;
+}
+
+span.label svg.icon, ul.alt-values svg.icon {
+	height: 16px;
+	width: 16px;
+}
+
+a > svg.icon {
+	vertical-align: top;
+	height: 18px;
+	width: 18px;
+}
+
+button > svg.icon {
+	vertical-align: middle;
+}
+
+/* forms */
+
+div.row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 1em 0;
+	gap: 0.5em;
+}
+form.center > div.row {
+	justify-content: center;
+}
+
+div.row > label.col {
+	width: 10em;
+}
+
+input {
+	padding: var(--input-padding-y) var(--input-padding-x);
+	box-sizing: border-box;
+}
+
+input:disabled {
+	cursor: not-allowed;
+}
+
+input[type='text'] {
+	width: 25em;
+	max-width: 100%;
+	color: var(--text);
+	background-color: var(--input-fill);
+	border: 1px solid var(--input-border);
+	border-radius: 0.2em;
+}
+input#region-input {
+	width: 14em;
+}
+
+input[type='submit'], button {
+	color: var(--text);
+	background-color: var(--button-fill);
+	border: 2px outset var(--button-border);
+	border-radius: 0.3em;
+}
+input[type='submit']:active, button:active {
+	border-style: inset;
+}
+input[type='submit']:focus, button:focus, input[type='submit']:hover, button:hover {
+	background-color: var(--button-focus);
+	cursor: pointer;
+}
+
+/* tables */
+
+table {
+	margin: 1em 0;
+}
+
+tbody > tr:nth-child(odd) {
+	background-color: var(--odd-fill);
+}
+tbody > tr:nth-child(even) {
+	background-color: var(--even-fill);
+}
+
+td, th {
+	padding: 0.1em 0.2em;
+}
+
+td.numeric {
+	text-align: right;
+	font-variant: tabular-nums;
+}
+td.numeric > ul {
+	text-align: left;
+}
+
+td.provider-icon {
+	color: var(--badge-text);
+}
+
+td ul {
+	margin: 0;
+	padding-left: 1em;
+	list-style: square;
+}
+
+caption > ul.alt-values {
+	text-align: left;
+	display: table;
+	margin: 0 auto;
+}
+
+/* CopyButton.tsx */
+
+button.copy {
+	background: none;
+	border: none;
+	opacity: 0.5;
+}
+button.copy:hover {
+	opacity: 0.8;
+}
+
+td > button.copy:first-child, div.region-list > button.copy {
+	float: right;
+}
+
+/* CoverImage.tsx */
+
+figure.cover-image {
+	width: min-content;
+	display: inline-block;
+}
+
+figure.cover-image img {
+	height: 200px;
+}
+
+figure.cover-image > figcaption {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25em;
+	justify-content: center;
+}
+
+/* InputWithOverlay.tsx */
+
+div.input-with-overlay {
+	position: relative;
+	display: inline-block;
+	max-width: 100%;
+}
+
+div.input-with-overlay > div.overlay {
+	position: absolute;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding-left: var(--input-padding-x);
+	pointer-events: none;
+}
+
+div.input-with-overlay > input {
+	padding-left: 2rem;
+}
+
+/* ISRC.tsx */
+
+code.isrc > span:not(:last-child)::after {
+	content: '-';
+}
+
+/* LinkedEntity.tsx */
+
+span.entity-links > a {
+	text-decoration-style: dotted;
+	color: inherit;
+}
+span.entity-links > a:hover {
+	color: var(--link-accent);
+}
+
+/* LinkWithMusicBrainz.tsx, actions.tsx */
+
+div.action-group {
+	margin: 1.5em auto;
+}
+
+/* MessageBox.tsx, LinkWithMusicBrainz.tsx, actions.tsx */
+
+div.message, div.action {
+	display: flex;
+	align-items: center;
+	background-color: var(--theme-fill);
+	color: var(--theme-text);
+	margin: 0.5em;
+	padding: 0.3em 0.5em;
+	border-radius: 5px;
+}
+
+div.message > svg.icon, div.action > svg.icon {
+	min-width: fit-content;
+	margin-right: 0.3em;
+}
+
+div.message span.provider {
+	font-weight: bold;
+	margin-right: 0.5em;
+}
+
+div.message p, div.message ul, div.action p, div.action ul {
+	margin: 0;
+}
+
+div.message.debug {
+	background-color: #eaf8ec;
+	color: #329c3b;
+}
+div.message.info {
+	background-color: #e7effd;
+	color: #0e4ecc;
+}
+div.message.warning {
+	background-color: #fff2e8;
+	color: #ea6100;
+}
+div.message.error {
+	background-color: #ffe7e7;
+	color: #de0604;
+}
+
+/** NavigationBar.tsx */
+
+nav {
+	background-color: var(--theme-fill);
+	color: var(--theme-text);
+	border-bottom: 1px solid var(--nav-accent);
+}
+
+nav.sticky {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+nav > ul {
+	list-style: none;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+
+nav > ul > li {
+	border-bottom: 3px solid transparent;
+}
+nav > ul > li:hover {
+	color: var(--nav-accent);
+	border-color: var(--nav-accent);
+}
+
+nav > ul > li > a {
+	height: 1.8rem;
+	padding: 0.5rem;
+	display: inline-flex;
+	align-items: center;
+}
+
+nav a:link, nav a:visited {
+	color: inherit;
+	text-decoration: none;
+}
+
+nav img.icon-logo {
+	height: 2rem;
+	margin-right: 0.3rem;
+}
+
+/* OpenAllLinks.tsx */
+
+button.open-all-links {
+	padding: 0.4em;
+	border-radius: 0.2em;
+	line-height: 0.8em;
+	background-color: var(--button-accent-fill);
+	border: none;
+	color: var(--button-accent-text);
+	font-size: inherit;
+	font-family: inherit;
+}
+
+button.open-all-links:focus, button.open-all-links:hover {
+	background-color: var(--button-accent-focus);
+}
+
+/* ProviderInput.tsx */
+
+label.provider-input {
+	background-color: var(--badge-fill);
+	color: var(--badge-text);
+	padding: 0.2em 0.4em;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+
+label.bandcamp, td.bandcamp {
+	background-color: var(--bandcamp);
+}
+label.beatport, td.beatport {
+	background-color: var(--beatport);
+}
+label.deezer, td.deezer {
+	background-color: var(--deezer);
+}
+label.discogs, td.discogs {
+	background-color: var(--discogs);
+}
+label.itunes, td.itunes {
+	background-color: var(--apple);
+}
+label.mora, td.mora {
+	background-color: var(--mora);
+}
+label.musicbrainz, td.musicbrainz {
+	background-color: var(--musicbrainz);
+}
+label.ototoy, td.ototoy {
+	background-color: var(--ototoy);
+}
+label.spotify, td.spotify {
+	background-color: var(--spotify);
+}
+label.tidal, td.tidal {
+	background-color: var(--tidal);
+}
+
+/* ProviderIcon.tsx */
+
+span > svg.icon {
+	vertical-align: top;
+}
+
+/* RegionList.tsx */
+
+div.region-list > span.label + button {
+	margin-left: 0.3em;
+}
+
+/* Release.tsx */
+
+h2.release-title {
+	margin-bottom: 0;
+}
+
+/* Tooltip.tsx */
+
+span.tooltip-anchor {
+	position: relative;
+	font-size: 1rem;
+	font-weight: normal;
+	--arrow-length: 15px;
+	--icon-size: 24px;
+}
+
+span.tooltip-anchor.placeholder {
+	height: var(--icon-size);
+	width: var(--icon-size);
+}
+
+span.tooltip-anchor > svg.icon {
+	cursor: pointer;
+}
+
+div[role='tooltip'] {
+	position: absolute;
+	display: none;
+	background-color: var(--tooltip-fill);
+	color: var(--text);
+	padding: 0.5em;
+	border-radius: 0.3em;
+	min-width: 15rem;
+	text-align: center;
+	cursor: initial;
+	/* Center tooltip above the tooltip anchor icon. */
+	transform: translateX(calc(-50% - var(--icon-size) / 2));
+	bottom: calc(var(--arrow-length) + var(--icon-size));
+}
+div[role='tooltip']:after {
+	position: absolute;
+	content: '';
+	border: var(--arrow-length) solid transparent;
+	border-top-color: var(--tooltip-fill);
+	border-bottom: 0;
+	/* Center arrow at the bottom of the tooltip. */
+	bottom: calc(1px - var(--arrow-length));
+	left: calc(50% - var(--arrow-length));
+}
+
+span.tooltip-anchor:hover > div[role='tooltip'] {
+	display: inline-block;
+}
+
+div[role='tooltip'] > ol, div[role='tooltip'] > ul {
+	margin: 0;
+	padding-inline-start: 1.5em;
+	text-align: left;
+}
+
+@media screen and (min-width: 46rem) {
+	table.release-info {
+		max-width: 45rem;
+	}
+}
+
+@media screen and (max-width: 40rem) {
+	/* Put the tooltip anchor into a block (which is as wide as the page) to be able to use its width for the tooltip. */
+	span.tooltip-anchor {
+		display: block;
+	}
+	div[role='tooltip'] {
+		max-width: 100%;
+	}
+}

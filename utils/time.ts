@@ -1,0 +1,54 @@
+/** Formats milliseconds as colon-separated duration string. */
+export function formatDuration(ms: number | undefined, { showMs }: {
+	showMs?: boolean;
+} = {}): string | undefined {
+	if (ms === undefined) return;
+
+	const timeComponents: number[] = [];
+
+	let seconds = ms / 1000;
+	seconds = showMs === false ? Math.round(seconds) : Math.floor(seconds);
+	timeComponents.unshift(seconds % 60);
+
+	const minutes = Math.floor(seconds / 60);
+	timeComponents.unshift(minutes % 60);
+
+	const hours = Math.floor(minutes / 60);
+	if (hours) {
+		timeComponents.unshift(hours);
+	}
+
+	let duration = timeComponents.map((component, index) => {
+		if (index) {
+			// zero-pad all used time components except for the leading one
+			return component.toString().padStart(2, '0');
+		} else {
+			return component;
+		}
+	}).join(':');
+
+	ms %= 1000;
+	if ((ms && showMs !== false) || showMs) {
+		duration += '.' + ms.toFixed(0).padStart(3, '0');
+	}
+
+	return duration;
+}
+
+/** Converts an ISO-8601 duration (e.g. PT41M5S) to milliseconds. */
+export function parseISODuration(duration: string): number {
+	const match = duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+	if (!match) {
+		return 0;
+	}
+	const hours = match[1] ? parseInt(match[1], 10) : 0;
+	const minutes = match[2] ? parseInt(match[2], 10) : 0;
+	const seconds = match[3] ? parseInt(match[3], 10) : 0;
+	return (hours * 60 * 60 + minutes * 60 + seconds) * 1000;
+}
+
+/** Converts colon-separated duration strings (e.g. HH:mm:ss) to seconds */
+export function parseDuration(duration: string): number {
+	return duration.split(':')
+		.reduce((acc, val) => acc * 60 + Number(val), 0);
+}

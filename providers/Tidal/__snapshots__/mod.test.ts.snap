@@ -1,0 +1,822 @@
+export const snapshot = {};
+
+snapshot[`Tidal provider > release lookup > live album with video tracks and featured artist (v1 API) 1`] = `
+{
+  artists: [
+    {
+      creditedName: "JAY Z",
+      externalIds: [
+        {
+          id: "7804",
+          provider: "tidal",
+          type: "artist",
+        },
+      ],
+      name: "JAY Z",
+    },
+  ],
+  copyright: "© 2012 S. Carter Enterprises, LLC.",
+  externalLinks: [
+    {
+      types: [
+        "paid streaming",
+      ],
+      url: "https://tidal.com/browse/album/130201923",
+    },
+  ],
+  gtin: "00602508779602",
+  images: [
+    {
+      thumbUrl: "https://resources.tidal.com/images/bf26cf4f/1f9a/4f70/a485/e707c3c89079/320x320.jpg",
+      types: [
+        "front",
+      ],
+      url: "https://resources.tidal.com/images/bf26cf4f/1f9a/4f70/a485/e707c3c89079/1280x1280.jpg",
+    },
+  ],
+  info: {
+    messages: [],
+    providers: [
+      {
+        apiUrl: "https://openapi.tidal.com/albums/130201923?countryCode=GB",
+        id: "130201923",
+        internalName: "tidal",
+        lookup: {
+          method: "id",
+          region: "GB",
+          value: "130201923",
+        },
+        name: "Tidal",
+        url: "https://tidal.com/album/130201923",
+      },
+    ],
+  },
+  labels: [],
+  media: [
+    {
+      format: "Digital Media",
+      number: 1,
+      tracklist: [
+        {
+          artists: [
+            {
+              creditedName: "JAY Z",
+              externalIds: [
+                {
+                  id: "7804",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "JAY Z",
+            },
+          ],
+          isrc: "USJZ11200001",
+          length: 273000,
+          number: 1,
+          title: "Empire State Of Mind (Live)",
+          type: "audio",
+        },
+        {
+          artists: [
+            {
+              creditedName: "JAY Z",
+              externalIds: [
+                {
+                  id: "7804",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "JAY Z",
+            },
+          ],
+          isrc: "USJZ11200002",
+          length: 195000,
+          number: 2,
+          title: "Run This Town (Live)",
+          type: "audio",
+        },
+        {
+          artists: [
+            {
+              creditedName: "JAY Z",
+              externalIds: [
+                {
+                  id: "7804",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "JAY Z",
+            },
+          ],
+          isrc: "USJZ11200003",
+          length: 212000,
+          number: 3,
+          title: "On to the Next One (Live)",
+          type: "audio",
+        },
+        {
+          artists: [
+            {
+              creditedName: "JAY Z",
+              externalIds: [
+                {
+                  id: "7804",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "JAY Z",
+            },
+          ],
+          isrc: "USJZ11200004",
+          length: 247000,
+          number: 4,
+          title: "Give It To Me/Big Pimpin (Live)",
+          type: "audio",
+        },
+        {
+          artists: [
+            {
+              creditedName: "JAY Z",
+              externalIds: [
+                {
+                  id: "7804",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "JAY Z",
+            },
+          ],
+          isrc: "USJZ11200005",
+          length: 79000,
+          number: 5,
+          title: "03' Bonnie & Clyde (Live)",
+          type: "audio",
+        },
+        {
+          artists: [
+            {
+              creditedName: "Beyoncé",
+              externalIds: [
+                {
+                  id: "1566",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "Beyoncé",
+            },
+            {
+              creditedName: "JAY Z",
+              externalIds: [
+                {
+                  id: "7804",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "JAY Z",
+            },
+          ],
+          isrc: "USJZ11200006",
+          length: 187000,
+          number: 6,
+          title: "Crazy In Love (Live)",
+          type: "audio",
+        },
+        {
+          artists: [
+            {
+              creditedName: "JAY Z",
+              externalIds: [
+                {
+                  id: "7804",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "JAY Z",
+            },
+          ],
+          isrc: "USJZ11200007",
+          length: 152000,
+          number: 7,
+          title: "Public Service Announcement (Live)",
+          type: "audio",
+        },
+        {
+          artists: [
+            {
+              creditedName: "JAY Z",
+              externalIds: [
+                {
+                  id: "7804",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "JAY Z",
+            },
+            {
+              creditedName: "Beyoncé",
+              externalIds: [
+                {
+                  id: "1566",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "Beyoncé",
+            },
+          ],
+          isrc: "USJZ11200008",
+          length: 350000,
+          number: 8,
+          title: "Young Forever (Live)",
+          type: "audio",
+        },
+        {
+          artists: [
+            {
+              creditedName: "JAY Z",
+              externalIds: [
+                {
+                  id: "7804",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "JAY Z",
+            },
+          ],
+          isrc: "USJZ11200009",
+          length: 274000,
+          number: 9,
+          title: "Empire State Of Mind (Live)",
+          type: "video",
+        },
+        {
+          artists: [
+            {
+              creditedName: "JAY Z",
+              externalIds: [
+                {
+                  id: "7804",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "JAY Z",
+            },
+          ],
+          isrc: "USJZ11200010",
+          length: 196000,
+          number: 10,
+          title: "Run This Town (Live)",
+          type: "video",
+        },
+        {
+          artists: [
+            {
+              creditedName: "JAY Z",
+              externalIds: [
+                {
+                  id: "7804",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "JAY Z",
+            },
+          ],
+          isrc: "USJZ11200011",
+          length: 213000,
+          number: 11,
+          title: "On to the Next One (Live)",
+          type: "video",
+        },
+        {
+          artists: [
+            {
+              creditedName: "JAY Z",
+              externalIds: [
+                {
+                  id: "7804",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "JAY Z",
+            },
+          ],
+          isrc: "USJZ11200012",
+          length: 248000,
+          number: 12,
+          title: "Give It 2 Me / Big Pimpin (Live)",
+          type: "video",
+        },
+        {
+          artists: [
+            {
+              creditedName: "JAY Z",
+              externalIds: [
+                {
+                  id: "7804",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "JAY Z",
+            },
+          ],
+          isrc: "USJZ11200013",
+          length: 80000,
+          number: 13,
+          title: "03' Bonnie & Clyde (Live)",
+          type: "video",
+        },
+        {
+          artists: [
+            {
+              creditedName: "Beyoncé",
+              externalIds: [
+                {
+                  id: "1566",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "Beyoncé",
+            },
+            {
+              creditedName: "JAY Z",
+              externalIds: [
+                {
+                  id: "7804",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "JAY Z",
+            },
+          ],
+          isrc: "USJZ11200014",
+          length: 188000,
+          number: 14,
+          title: "Crazy In Love (Live)",
+          type: "video",
+        },
+        {
+          artists: [
+            {
+              creditedName: "JAY Z",
+              externalIds: [
+                {
+                  id: "7804",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "JAY Z",
+            },
+          ],
+          isrc: "USJZ11200015",
+          length: 153000,
+          number: 15,
+          title: "Public Service Announcement (Live)",
+          type: "video",
+        },
+        {
+          artists: [
+            {
+              creditedName: "JAY Z",
+              externalIds: [
+                {
+                  id: "7804",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "JAY Z",
+            },
+            {
+              creditedName: "Beyoncé",
+              externalIds: [
+                {
+                  id: "1566",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "Beyoncé",
+            },
+          ],
+          isrc: "USJZ11200016",
+          length: 351000,
+          number: 16,
+          title: "Young Forever (Live)",
+          type: "video",
+        },
+      ],
+    },
+  ],
+  packaging: "None",
+  releaseDate: {
+    date: {
+      day: 1,
+      month: 1,
+      year: 2012,
+    },
+    note: "Release predates platform launch date.",
+    quality: "assumed-invalid",
+  },
+  status: "Official",
+  title: "Live In Brooklyn",
+  types: [
+    "Album",
+  ],
+}
+`;
+
+snapshot[`Tidal provider > release lookup > single by two artists (v2 API) 1`] = `
+{
+  artists: [
+    {
+      creditedName: "Lady Gaga",
+      externalIds: [
+        {
+          id: "3534754",
+          provider: "tidal",
+          type: "artist",
+        },
+      ],
+      name: "Lady Gaga",
+    },
+    {
+      creditedName: "Bruno Mars",
+      externalIds: [
+        {
+          id: "3658521",
+          provider: "tidal",
+          type: "artist",
+        },
+      ],
+      name: "Bruno Mars",
+    },
+  ],
+  copyright: "© 2024 Interscope Records",
+  externalLinks: [
+    {
+      types: [
+        "paid streaming",
+      ],
+      url: "https://tidal.com/album/381265361",
+    },
+  ],
+  gtin: "00602475093060",
+  images: [
+    {
+      thumbUrl: "https://resources.tidal.com/images/d55c740a/fc2c/4352/ad58/ffd1bce34b87/320x320.jpg",
+      types: [
+        "front",
+      ],
+      url: "https://resources.tidal.com/images/d55c740a/fc2c/4352/ad58/ffd1bce34b87/1280x1280.jpg",
+    },
+  ],
+  info: {
+    messages: [],
+    providers: [
+      {
+        apiUrl: "https://openapi.tidal.com/v2/albums?countryCode=GB&include=artists%2Citems.artists%2Cproviders&filter%5Bid%5D=381265361",
+        id: "381265361",
+        internalName: "tidal",
+        lookup: {
+          method: "id",
+          region: "GB",
+          value: "381265361",
+        },
+        name: "Tidal",
+        url: "https://tidal.com/album/381265361",
+      },
+    ],
+  },
+  labels: [
+    {
+      name: "Universal",
+    },
+  ],
+  media: [
+    {
+      format: "Digital Media",
+      number: 1,
+      tracklist: [
+        {
+          artists: [
+            {
+              creditedName: "Lady Gaga",
+              externalIds: [
+                {
+                  id: "3534754",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "Lady Gaga",
+            },
+            {
+              creditedName: "Bruno Mars",
+              externalIds: [
+                {
+                  id: "3658521",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "Bruno Mars",
+            },
+          ],
+          isrc: "USUM72409273",
+          length: 252000,
+          number: 1,
+          recording: {
+            externalIds: [
+              {
+                id: "381265362",
+                provider: "tidal",
+                type: "track",
+              },
+            ],
+          },
+          title: "Die With A Smile",
+          type: "audio",
+        },
+      ],
+    },
+  ],
+  packaging: "None",
+  releaseDate: {
+    date: {
+      day: 16,
+      month: 8,
+      year: 2024,
+    },
+    quality: "assumed-valid",
+  },
+  status: "Official",
+  title: "Die With A Smile",
+  types: [
+    "Single",
+  ],
+}
+`;
+
+snapshot[`Tidal provider > release lookup > lyric video (v2 API) 1`] = `
+{
+  artists: [
+    {
+      creditedName: "Taylor Swift",
+      externalIds: [
+        {
+          id: "3557299",
+          provider: "tidal",
+          type: "artist",
+        },
+      ],
+      name: "Taylor Swift",
+    },
+  ],
+  copyright: "© 2024 Taylor Swift",
+  externalLinks: [
+    {
+      types: [
+        "paid streaming",
+      ],
+      url: "https://tidal.com/video/358461354",
+    },
+  ],
+  gtin: undefined,
+  images: [
+    {
+      thumbUrl: "https://resources.tidal.com/images/931df7cf/57ce/47f8/9a6e/c7cea3e19287/320x180.jpg",
+      types: [
+        "front",
+      ],
+      url: "https://resources.tidal.com/images/931df7cf/57ce/47f8/9a6e/c7cea3e19287/1280x720.jpg",
+    },
+  ],
+  info: {
+    messages: [],
+    providers: [
+      {
+        apiUrl: "https://openapi.tidal.com/v2/videos?countryCode=GB&include=artists%2Citems.artists%2Cproviders&filter%5Bid%5D=358461354",
+        id: "video/358461354",
+        internalName: "tidal",
+        lookup: {
+          method: "id",
+          region: "GB",
+          value: "video/358461354",
+        },
+        name: "Tidal",
+        url: "https://tidal.com/video/358461354",
+      },
+    ],
+  },
+  labels: [
+    {
+      name: "Universal",
+    },
+  ],
+  media: [
+    {
+      format: "Digital Media",
+      number: 1,
+      tracklist: [
+        {
+          artists: [
+            {
+              creditedName: "Taylor Swift",
+              externalIds: [
+                {
+                  id: "3557299",
+                  provider: "tidal",
+                  type: "artist",
+                },
+              ],
+              name: "Taylor Swift",
+            },
+          ],
+          isrc: "USUMV2400558",
+          length: 208000,
+          number: 1,
+          recording: {
+            externalIds: [
+              {
+                id: "358461354",
+                provider: "tidal",
+                type: "video",
+              },
+            ],
+          },
+          title: "My Boy Only Breaks His Favorite Toys (Lyric Video)",
+          type: "video",
+        },
+      ],
+    },
+  ],
+  packaging: "None",
+  releaseDate: {
+    date: {
+      day: 19,
+      month: 4,
+      year: 2024,
+    },
+    quality: "assumed-valid",
+  },
+  status: "Official",
+  title: "My Boy Only Breaks His Favorite Toys (Lyric Video)",
+  types: [
+    "Single",
+  ],
+}
+`;
+
+snapshot[`Tidal provider > release lookup > release with paginated tracklist and version info (v2 API) 1`] = `
+{
+  artists: [
+    {
+      creditedName: "Air Max '97",
+      externalIds: [
+        {
+          id: "5664171",
+          provider: "tidal",
+          type: "artist",
+        },
+      ],
+      name: "Air Max '97",
+    },
+  ],
+  isrc: "AUNMG2400056",
+  length: 135000,
+  number: 46,
+  recording: {
+    externalIds: [
+      {
+        id: "396698966",
+        provider: "tidal",
+        type: "track",
+      },
+    ],
+  },
+  title: "XTYPE",
+  type: "audio",
+}
+`;
+
+snapshot[`Tidal provider > release lookup > release with missing tracks and missing artist (v2 API) 1`] = `
+{
+  artists: [
+    {
+      externalIds: [
+        {
+          id: "4854640",
+          provider: "tidal",
+          type: "artist",
+        },
+      ],
+      name: "[unknown Tidal artist 4854640]",
+    },
+    {
+      creditedName: "Sousou Cissoko",
+      externalIds: [
+        {
+          id: "10884257",
+          provider: "tidal",
+          type: "artist",
+        },
+      ],
+      name: "Sousou Cissoko",
+    },
+    {
+      creditedName: "Maher Cissoko",
+      externalIds: [
+        {
+          id: "8157407",
+          provider: "tidal",
+          type: "artist",
+        },
+      ],
+      name: "Maher Cissoko",
+    },
+  ],
+  isrc: "SE3X91800101",
+  length: 298000,
+  number: 1,
+  recording: {
+    externalIds: [
+      {
+        id: "443692757",
+        provider: "tidal",
+        type: "track",
+      },
+    ],
+  },
+  title: "Bour Yalla",
+  type: "audio",
+}
+`;
+
+snapshot[`Tidal provider > release lookup > release with missing tracks and missing artist (v2 API) 2`] = `
+[
+  {
+    externalIds: [
+      {
+        id: "4854640",
+        provider: "tidal",
+        type: "artist",
+      },
+    ],
+    name: "[unknown Tidal artist 4854640]",
+  },
+  {
+    creditedName: "Maher Cissoko",
+    externalIds: [
+      {
+        id: "8157407",
+        provider: "tidal",
+        type: "artist",
+      },
+    ],
+    name: "Maher Cissoko",
+  },
+  {
+    creditedName: "Sousou Cissoko",
+    externalIds: [
+      {
+        id: "10884257",
+        provider: "tidal",
+        type: "artist",
+      },
+    ],
+    name: "Sousou Cissoko",
+  },
+]
+`;
+
+snapshot[`Tidal provider > release lookup > release with missing tracks and missing artist (v2 API) 3`] = `
+[
+  {
+    provider: "Tidal",
+    text: "The API returned only 8 of 10 tracks for SE, other regions may have more",
+    type: "warning",
+  },
+  {
+    provider: "Tidal",
+    text: "The API returned no data for some artists, please check the artist credits",
+    type: "error",
+  },
+]
+`;

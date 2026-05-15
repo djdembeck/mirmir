@@ -1,0 +1,65 @@
+{
+  "schema_version": 2,
+  "active_work_id": "mirmir-revitalization-9d2a645b",
+  "works": {
+    "mirmir-revitalization-9d2a645b": {
+      "work_id": "mirmir-revitalization-9d2a645b",
+      "active_plan": "/home/djdembeck/projects/github/mirmir/.sisyphus/plans/mirmir-revitalization.md",
+      "plan_name": "mirmir-revitalization",
+      "status": "active",
+      "started_at": "2026-05-15T22:19:51.416Z",
+      "updated_at": "2026-05-15T22:21:07.946Z",
+      "session_ids": [
+        "ses_1d2468332ffePpkjboFU63aVuA",
+        "ses_1d245ebffffesf48RB7ljVb39q",
+        "ses_1d245e4f3ffekAQCogPyGMi898"
+      ],
+      "session_origins": {
+        "ses_1d2468332ffePpkjboFU63aVuA": "direct",
+        "ses_1d245ebffffesf48RB7ljVb39q": "appended",
+        "ses_1d245e4f3ffekAQCogPyGMi898": "appended"
+      },
+      "agent": "atlas",
+      "task_sessions": {
+        "todo:1": {
+          "task_key": "todo:1",
+          "task_label": "1",
+          "task_title": "~~Tidal v2 ArtistRoles API Validation Spike~~ → Tidal v2 Credits API Spike (CONFIRMED)",
+          "session_id": "ses_1d245ebffffesf48RB7ljVb39q",
+          "agent": "explore",
+          "updated_at": "2026-05-15T22:21:07.946Z",
+          "started_at": "2026-05-15T22:21:07.946Z",
+          "status": "running"
+        }
+      }
+    }
+  },
+  "active_plan": "/home/djdembeck/projects/github/mirmir/.sisyphus/plans/mirmir-revitalization.md",
+  "started_at": "2026-05-15T22:19:51.416Z",
+  "status": "active",
+  "updated_at": "2026-05-15T22:21:07.946Z",
+  "session_ids": [
+    "ses_1d2468332ffePpkjboFU63aVuA",
+    "ses_1d245ebffffesf48RB7ljVb39q",
+    "ses_1d245e4f3ffekAQCogPyGMi898"
+  ],
+  "session_origins": {
+    "ses_1d2468332ffePpkjboFU63aVuA": "direct",
+    "ses_1d245ebffffesf48RB7ljVb39q": "appended",
+    "ses_1d245e4f3ffekAQCogPyGMi898": "appended"
+  },
+  "plan_name": "mirmir-revitalization",
+  "task_sessions": {
+    "todo:1": {
+      "task_key": "todo:1",
+      "task_label": "1",
+      "task_title": "~~Tidal v2 ArtistRoles API Validation Spike~~ → Tidal v2 Credits API Spike (CONFIRMED)",
+      "session_id": "ses_1d245ebffffesf48RB7ljVb39q",
+      "agent": "explore",
+      "updated_at": "2026-05-15T22:21:07.946Z",
+      "started_at": "2026-05-15T22:21:07.946Z",
+      "status": "running"
+    }
+  },
+  "agent": "atlas"
+}
