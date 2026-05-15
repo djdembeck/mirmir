@@ -5,13 +5,18 @@
 import * as $_app from './routes/_app.tsx';
 import * as $_middleware from './routes/_middleware.ts';
 import * as $about from './routes/about.tsx';
+import * as $api_inject from './routes/api/inject.ts';
 import * as $icon_sprite_svg from './routes/icon-sprite.svg.tsx';
 import * as $index from './routes/index.tsx';
 import * as $release from './routes/release.tsx';
 import * as $release_actions from './routes/release/actions.tsx';
 import * as $settings from './routes/settings.tsx';
+import * as $CommonContributors from './islands/CommonContributors.tsx';
 import * as $CopyButton from './islands/CopyButton.tsx';
+import * as $CreditInjector from './islands/CreditInjector.tsx';
+import * as $CreditSelector from './islands/CreditSelector.tsx';
 import * as $CreditView from './islands/CreditView.tsx';
+import * as $InjectionFlow from './islands/InjectionFlow.tsx';
 import * as $OpenAllLinks from './islands/OpenAllLinks.tsx';
 import * as $PersistentInput from './islands/PersistentInput.tsx';
 import * as $RegionList from './islands/RegionList.tsx';
@@ -23,6 +28,7 @@ const manifest = {
 		'./routes/_app.tsx': $_app,
 		'./routes/_middleware.ts': $_middleware,
 		'./routes/about.tsx': $about,
+		'./routes/api/inject.ts': $api_inject,
 		'./routes/icon-sprite.svg.tsx': $icon_sprite_svg,
 		'./routes/index.tsx': $index,
 		'./routes/release.tsx': $release,
@@ -30,8 +36,12 @@ const manifest = {
 		'./routes/settings.tsx': $settings,
 	},
 	islands: {
+		'./islands/CommonContributors.tsx': $CommonContributors,
 		'./islands/CopyButton.tsx': $CopyButton,
+		'./islands/CreditInjector.tsx': $CreditInjector,
+		'./islands/CreditSelector.tsx': $CreditSelector,
 		'./islands/CreditView.tsx': $CreditView,
+		'./islands/InjectionFlow.tsx': $InjectionFlow,
 		'./islands/OpenAllLinks.tsx': $OpenAllLinks,
 		'./islands/PersistentInput.tsx': $PersistentInput,
 		'./islands/RegionList.tsx': $RegionList,
